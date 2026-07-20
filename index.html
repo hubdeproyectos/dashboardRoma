@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupo Roma · Panel Interno v17</title>
+<title>Grupo Roma · Panel Interno v18</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -948,6 +948,36 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 .forum-status.error{color:#ff9a9a}.forum-status.ok{color:#69dca2}
 @media(max-width:900px){.forum-shell{grid-template-columns:1fr}.forum-list{max-height:none}.forum-frame{min-height:860px}}
 
+
+/* ── EMPRESA TRANSVERSAL · ÁREAS + POSTVENTAS ───────────── */
+.transversal-wip{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:22px;padding:24px 28px;border-radius:16px;background:linear-gradient(135deg,rgba(71,148,255,.15),rgba(20,45,82,.86) 52%,rgba(240,180,41,.08));border:1px solid rgba(71,148,255,.28);box-shadow:0 14px 36px rgba(0,0,0,.16)}
+.transversal-wip:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.025),transparent);pointer-events:none}
+.transversal-wip-copy{position:relative;z-index:1;max-width:780px}
+.transversal-wip-title{font-family:'DM Serif Display',serif;font-size:clamp(34px,5vw,62px);line-height:.95;color:#fff;letter-spacing:-1px;text-shadow:0 10px 28px rgba(0,0,0,.25)}
+.transversal-wip-copy p{margin-top:14px;color:#b9c9df;font-size:13px;line-height:1.65}
+.transversal-wip-mark{position:relative;z-index:1;font-size:70px;filter:drop-shadow(0 10px 16px rgba(0,0,0,.28));flex:none}
+.transversal-area-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:26px 0 13px}
+.transversal-area-head.compact{margin-top:30px}
+.transversal-area-head h3{font-family:'DM Serif Display',serif;font-size:24px;color:#fff;line-height:1.1}
+.transversal-area-head>span{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);text-align:right}
+.transversal-eyebrow{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.transversal-areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.trans-area-card{position:relative;overflow:hidden;background:linear-gradient(155deg,rgba(41,70,101,.92),rgba(25,48,76,.98));border:1px solid rgba(255,255,255,.09);border-top:3px solid var(--blue);border-radius:14px;padding:17px;box-shadow:0 10px 28px rgba(0,0,0,.14)}
+.trans-area-card:after{content:'';position:absolute;width:130px;height:130px;border-radius:50%;right:-58px;top:-72px;background:radial-gradient(circle,rgba(71,148,255,.15),transparent 68%);pointer-events:none}
+.trans-area-card.area-admin{border-top-color:#8aa8d6}.trans-area-card.area-compras{border-top-color:var(--amber)}.trans-area-card.area-ventas{border-top-color:var(--green)}
+.trans-area-top{position:relative;z-index:1;display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.trans-area-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(71,148,255,.12);border:1px solid rgba(71,148,255,.26);color:var(--blue);font-size:18px;flex:none}
+.area-compras .trans-area-icon{color:var(--amber);background:var(--amber-l);border-color:rgba(240,180,41,.28)}
+.area-ventas .trans-area-icon{color:var(--green);background:var(--green-l);border-color:rgba(46,200,122,.28)}
+.trans-area-kicker{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:2px}
+.trans-area-card h4{font-size:15px;letter-spacing:.7px;color:#fff}
+.trans-area-slots{display:flex;flex-direction:column;gap:8px}
+.trans-slot{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:center;padding:10px 11px;border-radius:8px;background:rgba(255,255,255,.025);border:1px dashed rgba(255,255,255,.11)}
+.trans-slot strong{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.8px;text-transform:uppercase;color:#d6e1f0}
+.trans-slot span{font-size:11px;color:var(--dim);font-style:italic}
+.transversal-postventa{margin-top:10px;padding-top:4px}
+@media(max-width:760px){.transversal-areas{grid-template-columns:1fr}.transversal-wip{padding:22px}.transversal-wip-mark{font-size:52px}.transversal-area-head{align-items:flex-start;flex-direction:column}.transversal-area-head>span{text-align:left}.trans-slot{grid-template-columns:1fr;gap:4px}}
+
 </style>
 </head>
 <body>
@@ -963,7 +993,6 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <button class="ttab forecast-tab" data-page="pronostico" onclick="showPage('pronostico',this)"><span class="ttab-icon">ϟ</span><span>Pronóstico</span></button>
     <button class="ttab" data-page="restante" onclick="showPage('restante',this)"><span class="ttab-icon">⌘</span><span>Empresa transversal</span></button>
     <button class="ttab" data-page="foro" onclick="showPage('foro',this)"><span class="ttab-icon">☵</span><span>Foro</span></button>
-    <button class="ttab" data-page="postventa" onclick="showPage('postventa',this)"><span class="ttab-icon">◇</span><span>Postventas</span></button>
   </div>
   <div class="command-center" title="Semáforo ejecutivo general">
     <div class="command-label"><strong>Centro de comando</strong><span>Estado global</span></div>
@@ -1137,37 +1166,6 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     PAGE: POSTVENTA
-════════════════════════════════════════════════════════════ -->
-<div class="page" id="page-postventa">
-  <div class="section-hdr"><h2>Postventas</h2><span>Acceso directo al asistente especializado</span></div>
-
-  <div class="pv-chat-card" aria-label="Acceso al Chat de Postventas" style="margin-top:8px">
-    <div class="pv-chat-main">
-      <div class="pv-chat-icon">✦</div>
-      <div>
-        <div class="pv-chat-kicker">Asistente conectado a ChatGPT</div>
-        <div class="pv-chat-title">Chat de Postventas</div>
-        <div class="pv-chat-text">Consultá procedimientos, respuestas a clientes, posesiones, visados, agrimensura y documentación de los barrios desde el proyecto especializado de Postventas.</div>
-        <div class="pv-chat-prompts">
-          <span class="pv-chat-prompt">¿Cómo responder este reclamo?</span>
-          <span class="pv-chat-prompt">Proceso de posesión CEPE</span>
-          <span class="pv-chat-prompt">Documentación para construir</span>
-        </div>
-      </div>
-    </div>
-    <div class="pv-chat-actions">
-      <a class="pv-chat-btn" href="https://chatgpt.com/g/g-p-6a1074e96de48191ad06f0431f9a00df-act-chat-pv/project" target="_blank" rel="noopener noreferrer"><span>↗</span> Abrir chat</a>
-      <div class="pv-chat-note">Se abre en una pestaña nueva. Requiere acceso al proyecto de Grupo Roma.</div>
-    </div>
-  </div>
-
-  <!-- Contenedores técnicos ocultos: mantienen compatibilidad con funciones heredadas -->
-  <div id="modelos-list" style="display:none"></div>
-  <div id="clientes-list" style="display:none"></div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
      PAGE: ACCIONES CEO
 ════════════════════════════════════════════════════════════ -->
 <div class="page" id="page-estrategia">
@@ -1191,24 +1189,96 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 
 <!-- PAGE: EMPRESA TRANSVERSAL -->
 <div class="page" id="page-restante">
-  <div class="section-hdr"><h2>Empresa transversal</h2><span>Coordinación entre áreas · Work in progress</span></div>
-  <section class="wip-stage" aria-label="Sección en desarrollo">
-    <div class="wip-grid"></div>
-    <div class="wip-route" aria-hidden="true">
-      <span class="wip-point start">ÁREAS</span>
-      <span class="wip-line"></span>
-      <span class="wip-cone">🚧</span>
-      <span class="wip-line"></span>
-      <span class="wip-point goal">EMPRESA INTEGRADA</span>
+  <div class="section-hdr"><h2>Empresa transversal</h2><span>Coordinación por áreas · Work in progress</span></div>
+
+  <section class="transversal-wip" aria-label="Empresa transversal en desarrollo">
+    <div class="transversal-wip-copy">
+      <div class="wip-badge">SECCIÓN EN DESARROLLO</div>
+      <div class="transversal-wip-title">WORK IN PROGRESS</div>
+      <p>Espacio transversal para ordenar prioridades, pendientes, responsables y decisiones compartidas entre las áreas de Grupo Roma.</p>
     </div>
-    <div class="wip-badge">SECCIÓN EN DESARROLLO</div>
-    <div class="wip-title">WORK IN PROGRESS</div>
-    <p class="wip-copy">Estamos diseñando un espacio transversal para conectar decisiones, iniciativas y dependencias entre Gestión, Obra, Legales, Postventas y Dirección.</p>
-    <div class="wip-preview">
-      <span>Gestión</span><span>Obra</span><span>Legales</span><span>Postventas</span><span>Dirección</span>
-    </div>
-    <div class="wip-note">Próximamente construiremos este espacio juntos para ordenar acciones compartidas, responsables y prioridades entre áreas.</div>
+    <div class="transversal-wip-mark" aria-hidden="true">🚧</div>
   </section>
+
+  <div class="transversal-area-head">
+    <div>
+      <div class="transversal-eyebrow">Tablero por áreas</div>
+      <h3>Espacios para completar</h3>
+    </div>
+    <span>Contenido a construir junto al equipo</span>
+  </div>
+
+  <div class="transversal-areas">
+    <article class="trans-area-card area-obras">
+      <div class="trans-area-top"><span class="trans-area-icon">▰</span><div><div class="trans-area-kicker">Área</div><h4>OBRAS</h4></div></div>
+      <div class="trans-area-slots">
+        <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Próxima acción</strong><span>Espacio para completar</span></div>
+      </div>
+    </article>
+
+    <article class="trans-area-card area-admin">
+      <div class="trans-area-top"><span class="trans-area-icon">▤</span><div><div class="trans-area-kicker">Área</div><h4>ADMINISTRACIÓN</h4></div></div>
+      <div class="trans-area-slots">
+        <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Próxima acción</strong><span>Espacio para completar</span></div>
+      </div>
+    </article>
+
+    <article class="trans-area-card area-compras">
+      <div class="trans-area-top"><span class="trans-area-icon">◇</span><div><div class="trans-area-kicker">Área</div><h4>COMPRAS</h4></div></div>
+      <div class="trans-area-slots">
+        <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Próxima acción</strong><span>Espacio para completar</span></div>
+      </div>
+    </article>
+
+    <article class="trans-area-card area-ventas">
+      <div class="trans-area-top"><span class="trans-area-icon">↗</span><div><div class="trans-area-kicker">Área</div><h4>VENTAS</h4></div></div>
+      <div class="trans-area-slots">
+        <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Próxima acción</strong><span>Espacio para completar</span></div>
+      </div>
+    </article>
+  </div>
+
+  <section class="transversal-postventa">
+    <div class="transversal-area-head compact">
+      <div>
+        <div class="transversal-eyebrow">Herramienta transversal</div>
+        <h3>Postventas</h3>
+      </div>
+      <span>Acceso al asistente especializado</span>
+    </div>
+
+    <div class="pv-chat-card" aria-label="Acceso al Chat de Postventas">
+      <div class="pv-chat-main">
+        <div class="pv-chat-icon">✦</div>
+        <div>
+          <div class="pv-chat-kicker">Asistente conectado a ChatGPT</div>
+          <div class="pv-chat-title">Chat de Postventas</div>
+          <div class="pv-chat-text">Consultá procedimientos, respuestas a clientes, posesiones, visados, agrimensura y documentación de los barrios desde el proyecto especializado de Postventas.</div>
+          <div class="pv-chat-prompts">
+            <span class="pv-chat-prompt">¿Cómo responder este reclamo?</span>
+            <span class="pv-chat-prompt">Proceso de posesión CEPE</span>
+            <span class="pv-chat-prompt">Documentación para construir</span>
+          </div>
+        </div>
+      </div>
+      <div class="pv-chat-actions">
+        <a class="pv-chat-btn" href="https://chatgpt.com/g/g-p-6a1074e96de48191ad06f0431f9a00df-act-chat-pv/project" target="_blank" rel="noopener noreferrer"><span>↗</span> Abrir chat</a>
+        <div class="pv-chat-note">Se abre en una pestaña nueva. Requiere acceso al proyecto de Grupo Roma.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenedores técnicos ocultos: mantienen compatibilidad con funciones heredadas -->
+  <div id="modelos-list" style="display:none"></div>
+  <div id="clientes-list" style="display:none"></div>
 </div>
 
 <!-- DETAIL OVERLAY -->
@@ -1245,7 +1315,6 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
   <button class="bnav-btn" id="bn-estrategia" onclick="showPage('estrategia',this,true)"><span class="bnav-icon">✦</span>CEO</button>
   <button class="bnav-btn" id="bn-restante" onclick="showPage('restante',this,true)"><span class="bnav-icon">⌘</span>Empresa</button>
   <button class="bnav-btn" id="bn-foro" onclick="showPage('foro',this,true)"><span class="bnav-icon">☵</span>Foro</button>
-  <button class="bnav-btn" id="bn-postventa" onclick="showPage('postventa',this,true)"><span class="bnav-icon">◈</span>Postventas</button>
 </div>
 
 <script>
@@ -3867,9 +3936,8 @@ function showPage(id, btn, fromBottomNav=false){
   } else {
     document.querySelectorAll(".bnav-btn").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
-    document.querySelectorAll(".ttab").forEach((t,i)=>{
-      const pages=["home","gestion","obra","postventa","estrategia","clientes"];
-      t.classList.toggle("active",pages[i]===id);
+    document.querySelectorAll(".ttab").forEach(t=>{
+      t.classList.toggle("active",t.dataset.page===id);
     });
   }
   window.scrollTo(0,0);
