@@ -975,8 +975,141 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 .trans-slot{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:center;padding:10px 11px;border-radius:8px;background:rgba(255,255,255,.025);border:1px dashed rgba(255,255,255,.11)}
 .trans-slot strong{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.8px;text-transform:uppercase;color:#d6e1f0}
 .trans-slot span{font-size:11px;color:var(--dim);font-style:italic}
+
+/* ── VENTAS · OBJETIVOS Y PLAN COMERCIAL ────────────────── */
+.ventas-strategy-card{grid-column:1/-1;padding:20px;border-top-color:var(--green);background:linear-gradient(145deg,rgba(29,68,73,.97),rgba(22,48,68,.99) 58%,rgba(24,64,57,.96))}
+.ventas-strategy-card:after{width:260px;height:260px;right:-90px;top:-145px;background:radial-gradient(circle,rgba(46,200,122,.18),transparent 68%)}
+.sales-strategy{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px}
+.sales-objective{padding:16px 17px;border-radius:11px;background:linear-gradient(135deg,rgba(46,200,122,.15),rgba(46,200,122,.055));border:1px solid rgba(46,200,122,.27)}
+.sales-section-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.15px;text-transform:uppercase;color:#7ce5ad;margin-bottom:7px;font-weight:700}
+.sales-objective p{font-size:14px;line-height:1.65;color:#f1f8f5;font-weight:600;max-width:1040px}
+.sales-panel-grid{display:grid;grid-template-columns:.9fr 1.45fr;gap:12px;align-items:start}
+.sales-panel{border:1px solid rgba(255,255,255,.095);border-radius:11px;background:rgba(255,255,255,.028);padding:15px}
+.sales-panel-title{display:flex;align-items:center;gap:8px;font-size:13px;color:#fff;font-weight:700;margin-bottom:11px}
+.sales-panel-title span{font-size:17px}
+.sales-panel-intro{font-size:11px;line-height:1.6;color:#bdcbdb;margin:-2px 0 11px}
+.sales-phase-list,.sales-milestones{display:flex;flex-direction:column;gap:9px}
+.sales-phase{padding:11px 12px;border-radius:9px;background:rgba(255,255,255,.025);border-left:3px solid rgba(46,200,122,.7)}
+.sales-phase.phase-crisis{border-left-color:#ff7d7d;background:rgba(255,96,96,.045)}
+.sales-phase strong{display:block;font-size:11px;color:#fff;margin-bottom:4px}
+.sales-phase p{font-size:10.5px;line-height:1.55;color:#b9c8da}
+.sales-milestone{padding:12px;border-radius:10px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.095)}
+.sales-milestone-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.sales-milestone-name{font-family:'DM Serif Display',serif;font-size:18px;color:#fff}
+.sales-milestone-badge{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:1px;text-transform:uppercase;color:#7ce5ad;border:1px solid rgba(46,200,122,.3);background:rgba(46,200,122,.08);padding:5px 7px;border-radius:999px;white-space:nowrap}
+.sales-detail{display:grid;grid-template-columns:112px 1fr;gap:9px;padding:6px 0;border-top:1px solid rgba(255,255,255,.055)}
+.sales-detail:first-of-type{border-top:0}
+.sales-detail strong{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.8px;text-transform:uppercase;color:#dce8f3}
+.sales-detail span{font-size:10.5px;line-height:1.5;color:#b8c7d9}
+.sales-conclusion{padding:14px 15px;border-radius:10px;background:rgba(240,180,41,.085);border:1px solid rgba(240,180,41,.24);font-size:11.5px;line-height:1.65;color:#f2d894}
+.sales-conclusion strong{color:#ffd976}
+.sales-support{padding:14px 15px;border-radius:10px;background:rgba(71,148,255,.07);border:1px solid rgba(71,148,255,.19)}
+.sales-support-title{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1.05px;text-transform:uppercase;color:#8fc0ff;margin-bottom:8px;font-weight:700}
+.sales-support ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px}
+.sales-support li{font-size:10.8px;line-height:1.55;color:#c0cfe0}
+@media(max-width:940px){.sales-panel-grid{grid-template-columns:1fr}.ventas-strategy-card{padding:17px}}
+@media(max-width:600px){.sales-detail{grid-template-columns:1fr;gap:3px}.sales-milestone-head{align-items:flex-start;flex-direction:column}.sales-objective p{font-size:13px}}
+
+.transversal-drive-card{position:relative;overflow:hidden;margin:0 0 22px;padding:19px 21px;border-radius:14px;background:linear-gradient(135deg,rgba(71,148,255,.16),rgba(23,50,84,.96));border:1px solid rgba(71,148,255,.34);box-shadow:0 12px 30px rgba(0,0,0,.14);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.transversal-drive-card:after{content:'';position:absolute;width:180px;height:180px;border-radius:50%;right:-65px;top:-105px;background:radial-gradient(circle,rgba(71,148,255,.22),transparent 68%);pointer-events:none}
+.transversal-drive-main{position:relative;z-index:1;display:flex;align-items:flex-start;gap:13px;min-width:0}
+.transversal-drive-icon{width:43px;height:43px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(71,148,255,.16);border:1px solid rgba(71,148,255,.32);color:#8fc0ff;font-size:21px;flex:none}
+.transversal-drive-kicker{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#8fc0ff;margin-bottom:4px}
+.transversal-drive-title{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;line-height:1.15}
+.transversal-drive-text{font-size:11px;color:#afc0d8;line-height:1.55;margin-top:5px;max-width:680px}
+.transversal-drive-btn{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:185px;padding:11px 16px;border-radius:9px;text-decoration:none;background:linear-gradient(135deg,#579fff,#2868c7);color:#fff;font-size:12px;font-weight:700;box-shadow:0 8px 22px rgba(39,104,199,.3);transition:transform .15s ease,filter .15s ease}
+.transversal-drive-btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.docs-approval-panel{display:flex;flex-direction:column;gap:16px;padding:3px 0 2px}
+.docs-approval-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#102746,#18365d);border:1px solid rgba(71,148,255,.28);border-radius:13px;padding:20px;display:flex;align-items:flex-start;gap:14px}
+.docs-approval-hero:after{content:'';position:absolute;width:190px;height:190px;border-radius:50%;right:-70px;top:-115px;background:radial-gradient(circle,rgba(71,148,255,.23),transparent 67%);pointer-events:none}
+.docs-approval-icon{position:relative;z-index:1;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(71,148,255,.16);border:1px solid rgba(71,148,255,.3);font-size:23px;flex:none}
+.docs-approval-copy{position:relative;z-index:1;min-width:0}
+.docs-approval-kicker{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#8fc0ff;margin-bottom:5px}
+.docs-approval-title{font-family:'DM Serif Display',serif;font-size:21px;color:#fff;line-height:1.15}
+.docs-approval-text{font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px}
+.docs-approval-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.docs-approval-item{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:11px 12px}
+.docs-approval-item strong{display:block;font-size:11px;color:var(--text);margin-bottom:3px}
+.docs-approval-item span{font-size:10px;color:var(--muted);line-height:1.45}
+.docs-approval-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:13px 18px;border-radius:10px;text-decoration:none;background:linear-gradient(135deg,#4794ff,#1a56cc);color:#fff;font-size:13px;font-weight:700;box-shadow:0 8px 24px rgba(71,148,255,.28);transition:transform .15s ease,filter .15s ease}
+.docs-approval-btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.docs-approval-note{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;border-radius:8px;background:rgba(240,180,41,.08);border:1px solid rgba(240,180,41,.2);font-size:10px;color:var(--amber);line-height:1.5}
+@media(max-width:720px){.transversal-drive-card{align-items:flex-start;flex-direction:column}.transversal-drive-btn{width:100%}.docs-approval-grid{grid-template-columns:1fr}.docs-approval-hero{padding:17px}}
 .transversal-postventa{margin-top:10px;padding-top:4px}
 @media(max-width:760px){.transversal-areas{grid-template-columns:1fr}.transversal-wip{padding:22px}.transversal-wip-mark{font-size:52px}.transversal-area-head{align-items:flex-start;flex-direction:column}.transversal-area-head>span{text-align:left}.trans-slot{grid-template-columns:1fr;gap:4px}}
+
+
+/* ── EMPRESA TRANSVERSAL · ORDEN Y PALETA PROFESIONAL V2 ── */
+.transversal-areas{gap:16px;align-items:start}
+.trans-area-card{
+  --area-accent:#7aa7e8;
+  --area-rgb:122,167,232;
+  border-top-color:var(--area-accent)!important;
+  background:linear-gradient(150deg,rgba(var(--area-rgb),.105),rgba(27,48,73,.97) 42%,rgba(20,38,60,.99));
+  box-shadow:0 12px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.025);
+}
+.trans-area-card:after{background:radial-gradient(circle,rgba(var(--area-rgb),.17),transparent 68%)}
+.trans-area-card .trans-area-icon{
+  color:var(--area-accent)!important;
+  background:rgba(var(--area-rgb),.12)!important;
+  border-color:rgba(var(--area-rgb),.30)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.trans-area-card .trans-area-kicker{color:rgba(var(--area-rgb),.88)}
+.trans-area-card .trans-slot{border-color:rgba(var(--area-rgb),.18);background:rgba(var(--area-rgb),.035)}
+.area-wide,.ventas-strategy-card{grid-column:1/-1}
+.area-postventas{--area-accent:#efc66f;--area-rgb:239,198,111}
+.area-gestion{--area-accent:#b39af6;--area-rgb:179,154,246}
+.area-ventas{--area-accent:#91e6ad;--area-rgb:145,230,173}
+.area-obras{--area-accent:#f0a85b;--area-rgb:240,168,91}
+.area-admin-compras{--area-accent:#51d5a0;--area-rgb:81,213,160}
+.area-legales{--area-accent:#a8b2c1;--area-rgb:168,178,193}
+.area-it{--area-accent:#59d7e8;--area-rgb:89,215,232}
+
+/* Postventas · amarillo cálido */
+.area-postventas .pv-chat-card{margin:0;background:linear-gradient(135deg,rgba(239,198,111,.13),rgba(37,50,61,.98) 58%,rgba(31,43,55,.99));border-color:rgba(239,198,111,.30)}
+.area-postventas .pv-chat-card:before{background:radial-gradient(circle,rgba(239,198,111,.20),transparent 67%)}
+.area-postventas .pv-chat-icon{color:#efc66f;background:rgba(239,198,111,.13);border-color:rgba(239,198,111,.31)}
+.area-postventas .pv-chat-kicker{color:#efc66f}
+.area-postventas .pv-chat-btn{background:linear-gradient(135deg,#f0ca79,#d9a83f);border-color:#efc66f;color:#34230b}
+.area-postventas .pv-chat-prompt{color:#ead9ad;border-color:rgba(239,198,111,.16);background:rgba(239,198,111,.045)}
+
+/* Gestión · púrpura */
+.area-gestion .transversal-drive-card{margin:0 0 13px;background:linear-gradient(135deg,rgba(179,154,246,.14),rgba(38,43,72,.98));border-color:rgba(179,154,246,.32)}
+.area-gestion .transversal-drive-card:after{background:radial-gradient(circle,rgba(179,154,246,.21),transparent 68%)}
+.area-gestion .transversal-drive-icon{color:#c3aff8;background:rgba(179,154,246,.14);border-color:rgba(179,154,246,.32)}
+.area-gestion .transversal-drive-kicker{color:#c3aff8}
+.area-gestion .transversal-drive-btn{background:linear-gradient(135deg,#a98cf1,#7655c7);box-shadow:0 8px 22px rgba(118,85,199,.28)}
+.trans-area-slots-inline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.trans-area-slots-inline .trans-slot{grid-template-columns:1fr;gap:4px}
+
+/* Ventas · verde claro */
+.ventas-strategy-card{background:linear-gradient(145deg,rgba(145,230,173,.10),rgba(24,58,63,.98) 52%,rgba(20,45,55,.99))}
+.ventas-strategy-card:after{background:radial-gradient(circle,rgba(145,230,173,.18),transparent 68%)}
+.ventas-strategy-card .sales-objective{background:linear-gradient(135deg,rgba(145,230,173,.14),rgba(145,230,173,.045));border-color:rgba(145,230,173,.26)}
+.ventas-strategy-card .sales-section-label,.ventas-strategy-card .sales-milestone-badge{color:#a6efbd}
+
+@media(max-width:760px){
+  .trans-area-slots-inline{grid-template-columns:1fr}
+  .area-wide,.ventas-strategy-card{grid-column:auto}
+}
+
+
+
+/* ── NOVEDADES COMPACTAS · RESUMEN ───────────────────────── */
+.home-news{margin:0 0 16px}
+.home-news-head{margin-bottom:8px}
+.home-news-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.home-news-card{min-width:0;padding:10px 11px;border-radius:9px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.018));border:1px solid var(--border);display:flex;align-items:flex-start;gap:8px;box-shadow:none}
+.home-news-card .badge{flex:none;margin-top:1px;padding:4px 6px;font-size:7px;letter-spacing:.45px}
+.home-news-copy{min-width:0;font-size:10.5px;line-height:1.38;color:var(--muted)}
+.home-news-copy strong{display:block;margin-bottom:2px;font-size:11px;line-height:1.25;color:var(--text)}
+.home-news-en1{border-color:rgba(46,200,122,.30)}
+.home-news-cde{border-color:rgba(255,124,64,.34)}
+.home-news-cm{border-color:rgba(71,148,255,.30)}
+.home-news-ceza{border-color:rgba(166,118,255,.30)}
+@media(max-width:1100px){.home-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.home-news-grid{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -1044,6 +1177,29 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     </div>
   </div>
 
+  <!-- Novedades ejecutivas compactas -->
+  <div class="home-news">
+    <div class="section-hdr home-news-head"><h2>Novedades</h2><span>22·07·2026</span></div>
+    <div class="home-news-grid">
+      <div class="home-news-card home-news-en1">
+        <span class="badge b-done">✓ EN1</span>
+        <div class="home-news-copy"><strong>El Naranjo 1</strong>CH2 aprobado. Próximo paso: autorización de vuelco de DPV y categorización ambiental.</div>
+      </div>
+      <div class="home-news-card home-news-cde">
+        <span class="badge b-urgent">⚡ CDE</span>
+        <div class="home-news-copy"><strong>Clos del Este</strong>Incorporado como RU1 futuro urbanizable en el anteproyecto del nuevo plan urbano; ordenanza aún en tratamiento.</div>
+      </div>
+      <div class="home-news-card home-news-cm">
+        <span class="badge b-proc">⟳ CM</span>
+        <div class="home-news-copy"><strong>Campo Madero</strong>En el día de hoy, la EPE notificó que el expediente del proyecto de baja y media tensión fue trasladado a Santa Fe. Esto no implica necesariamente su aprobación: puede recibir observaciones o pedidos de información adicional. Es un buen indicio de que el expediente continúa en movimiento.</div>
+      </div>
+      <div class="home-news-card home-news-ceza">
+        <span class="badge b-new">⚑ CEZA</span>
+        <div class="home-news-copy"><strong>CEZA</strong>El 21/07/2026, la SRH respondió sobre la zonificación reformulada conforme a la Ley del Ludueña N.º 13.246 y la obra de mitigación propuesta. La zonificación fue aprobada; la obra de mitigación fue observada y el ingeniero trabaja en la respuesta.</div>
+      </div>
+    </div>
+  </div>
+
   <!-- Todos los proyectos -->
   <div class="section-hdr"><h2>Proyectos</h2><span>Tocar para ver detalle</span></div>
   <div class="search-wrap">
@@ -1057,29 +1213,6 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <button class="chip" onclick="setFilter('completo',this)">Completos</button>
   </div>
   <div class="grid2 proj-grid" id="proj-grid"></div>
-
-  <!-- Novedades -->
-  <div style="margin-top:28px;margin-bottom:20px">
-    <div class="section-hdr"><h2>Novedades</h2><span>Abril 2026</span></div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="card" style="border-color:rgba(74,154,106,.3);display:flex;align-items:flex-start;gap:12px">
-        <span class="badge b-done" style="flex-shrink:0;margin-top:2px">✓ 20/03</span>
-        <div><strong>Clos del Este</strong> — Factibilidad de Gas aprobada por Litoral Gas (20/03/2026).</div>
-      </div>
-      <div class="card" style="border-color:rgba(74,154,106,.3);display:flex;align-items:flex-start;gap:12px">
-        <span class="badge b-done" style="flex-shrink:0;margin-top:2px">✓ 10/03</span>
-        <div><strong>Vitta Río</strong> — Factibilidad de Gas aprobada por Litoral Gas (10/03/2026). Convenio eléctrico EPE aprobado.</div>
-      </div>
-      <div class="card" style="border-color:rgba(80,128,192,.3);display:flex;align-items:flex-start;gap:12px">
-        <span class="badge b-proc" style="flex-shrink:0;margin-top:2px">⟳ 01/03</span>
-        <div><strong>Campo Madero</strong> — Proyecto eléctrico de obra complementaria: salió de EPE Sucursal Rosario y está en Área Técnica Santa Fe (01/03/2026). A la espera de novedades.</div>
-      </div>
-      <div class="card" style="border-color:rgba(201,168,64,.25);display:flex;align-items:flex-start;gap:12px">
-        <span class="badge b-new" style="flex-shrink:0;margin-top:2px">⚑ interno</span>
-        <div><strong>CEPE</strong> — Avance legal-tributario con municipalidad para posesión. <em style="color:var(--red);font-size:11px">⚠ Información interna — no comunicar a clientes.</em></div>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -1200,15 +1333,133 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <div class="transversal-wip-mark" aria-hidden="true">🚧</div>
   </section>
 
+
   <div class="transversal-area-head">
     <div>
       <div class="transversal-eyebrow">Tablero por áreas</div>
-      <h3>Espacios para completar</h3>
+      <h3>Áreas transversales</h3>
     </div>
-    <span>Contenido a construir junto al equipo</span>
+    <span>Orden ejecutivo · contenido en construcción</span>
   </div>
 
   <div class="transversal-areas">
+    <!-- 1 · POSTVENTAS -->
+    <article class="trans-area-card area-postventas area-wide">
+      <div class="trans-area-top">
+        <span class="trans-area-icon">✦</span>
+        <div><div class="trans-area-kicker">Área · Relación con clientes</div><h4>POSTVENTAS</h4></div>
+      </div>
+      <div class="pv-chat-card" aria-label="Acceso al Chat de Postventas">
+        <div class="pv-chat-main">
+          <div class="pv-chat-icon">✦</div>
+          <div>
+            <div class="pv-chat-kicker">Asistente conectado a ChatGPT</div>
+            <div class="pv-chat-title">Chat de Postventas</div>
+            <div class="pv-chat-text">Consultá procedimientos, respuestas a clientes, posesiones, visados, agrimensura y documentación de los barrios desde el proyecto especializado de Postventas.</div>
+            <div class="pv-chat-prompts">
+              <span class="pv-chat-prompt">¿Cómo responder este reclamo?</span>
+              <span class="pv-chat-prompt">Proceso de posesión CEPE</span>
+              <span class="pv-chat-prompt">Documentación para construir</span>
+            </div>
+          </div>
+        </div>
+        <div class="pv-chat-actions">
+          <a class="pv-chat-btn" href="https://chatgpt.com/g/g-p-6a1074e96de48191ad06f0431f9a00df-act-chat-pv/project" target="_blank" rel="noopener noreferrer"><span>↗</span> Abrir chat</a>
+          <div class="pv-chat-note">Se abre en una pestaña nueva. Requiere acceso al proyecto de Grupo Roma.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 · GESTIÓN -->
+    <article class="trans-area-card area-gestion area-wide">
+      <div class="trans-area-top">
+        <span class="trans-area-icon">▣</span>
+        <div><div class="trans-area-kicker">Área · Gestión y aprobaciones</div><h4>GESTIÓN</h4></div>
+      </div>
+      <a class="transversal-drive-card" href="https://drive.google.com/drive/folders/1QSUU7QtqAjUF45WLi40CZ_eFneVqeG4R?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Abrir Gestión - Aprobaciones por barrio en Google Drive">
+        <div class="transversal-drive-main">
+          <div class="transversal-drive-icon" aria-hidden="true">▣</div>
+          <div>
+            <div class="transversal-drive-kicker">Gestión documental transversal</div>
+            <div class="transversal-drive-title">Gestión · Aprobaciones por barrio</div>
+            <div class="transversal-drive-text">Acceso centralizado a las carpetas de documentación, aprobaciones, expedientes y antecedentes de gestión de los desarrollos.</div>
+          </div>
+        </div>
+        <span class="transversal-drive-btn">Abrir carpeta general <span aria-hidden="true">↗</span></span>
+      </a>
+      <div class="trans-area-slots trans-area-slots-inline">
+        <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
+        <div class="trans-slot"><strong>Próxima acción</strong><span>Espacio para completar</span></div>
+      </div>
+    </article>
+
+    <!-- 3 · VENTAS -->
+    <article class="trans-area-card area-ventas ventas-strategy-card">
+      <div class="trans-area-top"><span class="trans-area-icon">↗</span><div><div class="trans-area-kicker">Área · Objetivos y acciones</div><h4>VENTAS</h4></div></div>
+
+      <div class="sales-strategy">
+        <section class="sales-objective">
+          <div class="sales-section-label">🎯 Objetivo principal</div>
+          <p>Reactivar la venta de lotes y restablecer la confianza de los clientes mediante pasos firmes, acciones pragmáticas y resultados concretos.</p>
+        </section>
+
+        <div class="sales-panel-grid">
+          <section class="sales-panel">
+            <div class="sales-panel-title"><span aria-hidden="true">◫</span> Antecedentes y diagnóstico previo</div>
+            <div class="sales-phase-list">
+              <div class="sales-phase">
+                <strong>Fase 1 · Diciembre — Éxito inicial</strong>
+                <p>Se detectó que la falta de ventas estaba vinculada, en gran medida, con la mala imagen visual de los desarrollos: pasto alto y escasa percepción de avance. Las intervenciones comerciales y de mantenimiento realizadas junto con Luis generaron entre 8 y 9 ventas.</p>
+              </div>
+              <div class="sales-phase phase-crisis">
+                <strong>Fase 2 · Post-allanamiento — Crisis actual</strong>
+                <p>Las noticias provocaron un freno total de las ventas y un aumento de los reclamos de clientes existentes, principalmente por los plazos de entrega.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="sales-panel">
+            <div class="sales-panel-title"><span aria-hidden="true">🚀</span> Plan de acción comercial · Pasos firmes + recuperación</div>
+            <p class="sales-panel-intro">Para recuperar la tracción comercial es indispensable concretar dos hitos clave de entrega. Desde Ventas, el sostén consistirá en generar canjes y acuerdos que aporten obras y reduzcan la exposición de liquidez.</p>
+
+            <div class="sales-milestones">
+              <article class="sales-milestone">
+                <div class="sales-milestone-head">
+                  <div class="sales-milestone-name">1. Hito El Naranjo</div>
+                  <div class="sales-milestone-badge">Prioridad comercial</div>
+                </div>
+                <div class="sales-detail"><strong>Acción</strong><span>Completar y formalizar la entrega del barrio.</span></div>
+                <div class="sales-detail"><strong>Pasos necesarios</strong><span>Alineación política para habilitar la posesión y continuidad de las gestiones pendientes.</span></div>
+                <div class="sales-detail"><strong>Impacto comercial</strong><span>Reducir la incertidumbre y reconstruir el respaldo institucional frente a compradores actuales y potenciales.</span></div>
+              </article>
+
+              <article class="sales-milestone">
+                <div class="sales-milestone-head">
+                  <div class="sales-milestone-name">2. Hito CEPE</div>
+                  <div class="sales-milestone-badge">Canje por obras</div>
+                </div>
+                <div class="sales-detail"><strong>Acción</strong><span>Completar y formalizar la entrega del desarrollo, utilizando canjes para ejecutar las obras restantes.</span></div>
+                <div class="sales-detail"><strong>Pasos necesarios</strong><span>Alineación política, resolución de acuerdos previos y culminación de las obras mediante canje, con la menor exposición posible de liquidez.</span></div>
+                <div class="sales-detail"><strong>Impacto comercial</strong><span>Generar una prueba social concreta de avance y cumplimiento que permita revertir las principales objeciones del mercado.</span></div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <div class="sales-conclusion"><strong>💡 Conclusión clave:</strong> La entrega de El Naranjo y CEPE no constituye solamente un hito operativo o técnico; es la estrategia comercial primaria para destrabar el canal de ventas y volver a comercializar lotes con respaldo concreto.</div>
+
+        <section class="sales-support">
+          <div class="sales-support-title">Otras acciones que apoyan a Ventas</div>
+          <ul>
+            <li><strong>Soldini:</strong> iniciar la obra eléctrica, resolviendo la transparencia del proceso y acordando los términos necesarios con los actores de la localidad.</li>
+            <li><strong>Campo Madero:</strong> obtener avances concretos o una resolución ante EPE que permita demostrar progreso y reducir incertidumbre.</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+
+    <!-- 4 · OBRAS -->
     <article class="trans-area-card area-obras">
       <div class="trans-area-top"><span class="trans-area-icon">▰</span><div><div class="trans-area-kicker">Área</div><h4>OBRAS</h4></div></div>
       <div class="trans-area-slots">
@@ -1218,8 +1469,9 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
       </div>
     </article>
 
-    <article class="trans-area-card area-admin">
-      <div class="trans-area-top"><span class="trans-area-icon">▤</span><div><div class="trans-area-kicker">Área</div><h4>ADMINISTRACIÓN</h4></div></div>
+    <!-- 5 · ADMINISTRACIÓN Y COMPRAS -->
+    <article class="trans-area-card area-admin-compras">
+      <div class="trans-area-top"><span class="trans-area-icon">▤</span><div><div class="trans-area-kicker">Área integrada</div><h4>ADMINISTRACIÓN Y COMPRAS</h4></div></div>
       <div class="trans-area-slots">
         <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
         <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
@@ -1227,8 +1479,9 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
       </div>
     </article>
 
-    <article class="trans-area-card area-compras">
-      <div class="trans-area-top"><span class="trans-area-icon">◇</span><div><div class="trans-area-kicker">Área</div><h4>COMPRAS</h4></div></div>
+    <!-- 6 · LEGALES -->
+    <article class="trans-area-card area-legales">
+      <div class="trans-area-top"><span class="trans-area-icon">§</span><div><div class="trans-area-kicker">Área</div><h4>LEGALES</h4></div></div>
       <div class="trans-area-slots">
         <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
         <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
@@ -1236,8 +1489,9 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
       </div>
     </article>
 
-    <article class="trans-area-card area-ventas">
-      <div class="trans-area-top"><span class="trans-area-icon">↗</span><div><div class="trans-area-kicker">Área</div><h4>VENTAS</h4></div></div>
+    <!-- 7 · IT -->
+    <article class="trans-area-card area-it">
+      <div class="trans-area-top"><span class="trans-area-icon">⌘</span><div><div class="trans-area-kicker">Área · Tecnología</div><h4>IT</h4></div></div>
       <div class="trans-area-slots">
         <div class="trans-slot"><strong>Prioridades</strong><span>Espacio para completar</span></div>
         <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
@@ -1245,36 +1499,6 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
       </div>
     </article>
   </div>
-
-  <section class="transversal-postventa">
-    <div class="transversal-area-head compact">
-      <div>
-        <div class="transversal-eyebrow">Herramienta transversal</div>
-        <h3>Postventas</h3>
-      </div>
-      <span>Acceso al asistente especializado</span>
-    </div>
-
-    <div class="pv-chat-card" aria-label="Acceso al Chat de Postventas">
-      <div class="pv-chat-main">
-        <div class="pv-chat-icon">✦</div>
-        <div>
-          <div class="pv-chat-kicker">Asistente conectado a ChatGPT</div>
-          <div class="pv-chat-title">Chat de Postventas</div>
-          <div class="pv-chat-text">Consultá procedimientos, respuestas a clientes, posesiones, visados, agrimensura y documentación de los barrios desde el proyecto especializado de Postventas.</div>
-          <div class="pv-chat-prompts">
-            <span class="pv-chat-prompt">¿Cómo responder este reclamo?</span>
-            <span class="pv-chat-prompt">Proceso de posesión CEPE</span>
-            <span class="pv-chat-prompt">Documentación para construir</span>
-          </div>
-        </div>
-      </div>
-      <div class="pv-chat-actions">
-        <a class="pv-chat-btn" href="https://chatgpt.com/g/g-p-6a1074e96de48191ad06f0431f9a00df-act-chat-pv/project" target="_blank" rel="noopener noreferrer"><span>↗</span> Abrir chat</a>
-        <div class="pv-chat-note">Se abre en una pestaña nueva. Requiere acceso al proyecto de Grupo Roma.</div>
-      </div>
-    </div>
-  </section>
 
   <!-- Contenedores técnicos ocultos: mantienen compatibilidad con funciones heredadas -->
   <div id="modelos-list" style="display:none"></div>
@@ -3192,8 +3416,27 @@ function openDetail(id){
     "CDE":  "https://notebooklm.google.com/notebook/7f1f8b29-65d4-42c5-9386-317577b69912",
     "VR":   "https://notebooklm.google.com/notebook/0b88333d-47b9-42a2-a0c8-f961915d7583"
   };
+  const DOCS_APPROVAL_LINKS={
+    "CM":   "https://drive.google.com/drive/folders/1LY81ICAAuvxk6YGOg_69Ryeax3fx3NE0?usp=sharing",
+    "CEPE": "https://drive.google.com/drive/folders/11VTtAqq8KzF3bvha61q6RZqjW3jtRB0U?usp=sharing",
+    "VI":   "https://drive.google.com/drive/folders/1lZ4e3Q3ncsThNt7VtoddhG3741MvAW8l?usp=sharing",
+    "VR":   "https://drive.google.com/drive/folders/1iJAhs8cr-3NUGV6wJ2DVPsBwL5F9A7t-?usp=sharing",
+    "EN":   "https://drive.google.com/drive/folders/1l_-3tu-1p49aAtzWXDFKhsfTldtcfvKn?usp=sharing",
+    "EN2":  "https://drive.google.com/drive/folders/1CCOKJYKNTxO8Iw0gyGR7rdYgbZyq3dgz?usp=sharing",
+    "CM2":  "https://drive.google.com/drive/folders/1kbRE3gK9goshX-fDxrRWxhnM3W1jYEtl?usp=sharing",
+    "OR":   "https://drive.google.com/drive/folders/1ph_lLEvnpfgmuRSTW9JpQE9fSmmnIWR3?usp=sharing",
+    "CZ":   "https://drive.google.com/drive/folders/13oCO9guThkLUjQ19RApFDy_WTPibUIqH?usp=sharing",
+    "CDE":  "https://drive.google.com/drive/folders/1CeqEud60ko9oJpn7LgK7qx7m53PWJdEL?usp=drive_link"
+  };
+  const hasDocsApprovals=!!(DOCS_APPROVAL_LINKS[id]);
   const hasChatIA=!!(CHAT_IA_LINKS[id]);
-  const tabs=["Gestión","Obra",...(hasMasterplan?["Masterplan"]:[]),...(hasChatIA?["🤖 Chat IA"]:[])];
+  const tabs=[
+    "Gestión",
+    "Obra",
+    ...(hasMasterplan?["Masterplan"]:[]),
+    ...(hasDocsApprovals?["Docs y Aprobaciones"]:[]),
+    ...(hasChatIA?["🤖 Chat IA"]:[])
+  ];
   document.getElementById("detail-tabs").innerHTML=tabs.map((t,i)=>
     `<button class="dtab ${i===0?"active":""}" onclick="switchDTab(${i},this)">${t}</button>`
   ).join("");
@@ -3499,6 +3742,32 @@ function openDetail(id){
       </div>`;
   }
 
+  // Panel Docs y Aprobaciones — acceso directo a la carpeta Drive del proyecto
+  let docsApprovals = "";
+  if(hasDocsApprovals){
+    const docsUrl = DOCS_APPROVAL_LINKS[id];
+    docsApprovals = `
+      <div class="docs-approval-panel">
+        <div class="docs-approval-hero">
+          <div class="docs-approval-icon" aria-hidden="true">▣</div>
+          <div class="docs-approval-copy">
+            <div class="docs-approval-kicker">Carpeta documental del proyecto</div>
+            <div class="docs-approval-title">Docs y Aprobaciones · ${p.nombre}</div>
+            <div class="docs-approval-text">Accedé a la carpeta de Google Drive que reúne documentación técnica y administrativa, aprobaciones emitidas, expedientes, notas y antecedentes vinculados con ${p.nombre}.</div>
+          </div>
+        </div>
+        <div class="docs-approval-grid">
+          <div class="docs-approval-item"><strong>Documentación</strong><span>Antecedentes, notas y archivos de respaldo del proyecto.</span></div>
+          <div class="docs-approval-item"><strong>Aprobaciones</strong><span>Certificados, factibilidades, visados y actos administrativos.</span></div>
+          <div class="docs-approval-item"><strong>Seguimiento</strong><span>Material de consulta para revisar el estado de las gestiones.</span></div>
+        </div>
+        <a class="docs-approval-btn" href="${docsUrl}" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">▣</span> Abrir Docs y Aprobaciones · ${p.nombre} <span aria-hidden="true">↗</span>
+        </a>
+        <div class="docs-approval-note"><span aria-hidden="true">ℹ</span><span>La carpeta se abre en una pestaña nueva. La visualización y edición dependen de los permisos configurados en Google Drive.</span></div>
+      </div>`;
+  }
+
   // Panel Chat IA — proyectos con cuaderno NotebookLM
   let chatIA = "";
   if(hasChatIA){
@@ -3552,11 +3821,14 @@ function openDetail(id){
       </div>`;
   }
 
-  document.getElementById("detail-body").innerHTML=`
-    <div class="dpanel active" id="dp0">${g}</div>
-    <div class="dpanel" id="dp1">${o}</div>
-    ${hasMasterplan?`<div class="dpanel" id="dp2">${mp}</div>`:""}
-    ${hasChatIA?`<div class="dpanel" id="dp${hasMasterplan?3:2}">${chatIA}</div>`:""}`;
+  const detailPanels=[g,o];
+  if(hasMasterplan) detailPanels.push(mp);
+  if(hasDocsApprovals) detailPanels.push(docsApprovals);
+  if(hasChatIA) detailPanels.push(chatIA);
+
+  document.getElementById("detail-body").innerHTML=detailPanels.map((content,i)=>
+    `<div class="dpanel ${i===0?"active":""}" id="dp${i}">${content}</div>`
+  ).join("");
 
   document.getElementById("overlay").classList.add("open");
 }
@@ -4419,7 +4691,7 @@ function exportInformePDF(){
   };
 
   // Fecha y resumen de portada
-  const dateEl=document.querySelector('.topbar-date'); if(dateEl) dateEl.textContent='15·07·2026';
+  const dateEl=document.querySelector('.topbar-date'); if(dateEl) dateEl.textContent='22·07·2026';
   const stats=document.querySelectorAll('#page-home .stat-card');
   if(stats.length>=4){
     stats[0].querySelector('.stat-num').textContent=PROJS.length;
@@ -4428,23 +4700,22 @@ function exportInformePDF(){
     stats[1].querySelector('.stat-sub').textContent='Focos de gestión prioritaria';
     stats[2].querySelector('.stat-label').textContent='Actualizaciones julio';
     stats[2].querySelector('.stat-num').textContent='4';
-    stats[2].querySelector('.stat-sub').textContent='EN1 · EN2 · CEPE · Clos';
+    stats[2].querySelector('.stat-sub').textContent='EN1 · CDE · CM · CEZA';
     stats[3].querySelector('.stat-label').textContent='Plan ejecutivo';
     stats[3].querySelector('.stat-num').textContent='3';
     stats[3].querySelector('.stat-sub').textContent='meses · Espada corta';
   }
 
-  // Sustituir novedades de portada por hechos actuales
+  // Actualizar novedades ejecutivas compactas de portada
   const novHdr=[...document.querySelectorAll('#page-home .section-hdr')].find(h=>h.textContent.includes('Novedades'));
   if(novHdr){
-    const wrap=novHdr.parentElement;
-    novHdr.querySelector('span').textContent='Julio 2026';
-    const list=wrap.querySelector('div[style*="flex-direction:column"]');
+    novHdr.querySelector('span').textContent='22·07·2026';
+    const list=novHdr.parentElement.querySelector('.home-news-grid');
     if(list) list.innerHTML=`
-      <div class="card" style="border-color:rgba(46,200,122,.3);display:flex;align-items:flex-start;gap:12px"><span class="badge b-done">✓ EN1</span><div><strong>El Naranjo 1</strong> — CH2 aprobado. Próximo paso: autorización de vuelco de DPV y categorización ambiental.</div></div>
-      <div class="card" style="border-color:rgba(71,148,255,.3);display:flex;align-items:flex-start;gap:12px"><span class="badge b-proc">⟳ EN2</span><div><strong>El Naranjo 2</strong> — CH2 re-presentado; en elaboración de detalles constructivos con visto bueno preliminar.</div></div>
-      <div class="card" style="border-color:rgba(240,180,41,.3);display:flex;align-items:flex-start;gap:12px"><span class="badge b-new">⚑ CEPE</span><div><strong>Comunidad Evolutiva</strong> — foco en CLESAPE, TGI, impulsiones y proceso progresivo de posesiones.</div></div>
-      <div class="card" style="border-color:rgba(255,124,64,.35);display:flex;align-items:flex-start;gap:12px"><span class="badge b-urgent">⚡ CDE</span><div><strong>Clos del Este</strong> — incorporado como RU1 futuro urbanizable en el anteproyecto del nuevo plan urbano; ordenanza aún en tratamiento.</div></div>`;
+      <div class="home-news-card home-news-en1"><span class="badge b-done">✓ EN1</span><div class="home-news-copy"><strong>El Naranjo 1</strong>CH2 aprobado. Próximo paso: autorización de vuelco de DPV y categorización ambiental.</div></div>
+      <div class="home-news-card home-news-cde"><span class="badge b-urgent">⚡ CDE</span><div class="home-news-copy"><strong>Clos del Este</strong>Incorporado como RU1 futuro urbanizable en el anteproyecto del nuevo plan urbano; ordenanza aún en tratamiento.</div></div>
+      <div class="home-news-card home-news-cm"><span class="badge b-proc">⟳ CM</span><div class="home-news-copy"><strong>Campo Madero</strong>En el día de hoy, la EPE notificó que el expediente del proyecto de baja y media tensión fue trasladado a Santa Fe. Esto no implica necesariamente su aprobación: puede recibir observaciones o pedidos de información adicional. Es un buen indicio de que el expediente continúa en movimiento.</div></div>
+      <div class="home-news-card home-news-ceza"><span class="badge b-new">⚑ CEZA</span><div class="home-news-copy"><strong>CEZA</strong>El 21/07/2026, la SRH respondió sobre la zonificación reformulada conforme a la Ley del Ludueña N.º 13.246 y la obra de mitigación propuesta. La zonificación fue aprobada; la obra de mitigación fue observada y el ingeniero trabaja en la respuesta.</div></div>`;
   }
 
   // Recalcular vistas con datos actualizados
