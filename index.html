@@ -1111,6 +1111,37 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 @media(max-width:1100px){.home-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.home-news-grid{grid-template-columns:1fr}}
 
+/* ── BITÁCORA DE OBRAS · INTEGRACIÓN APPS SCRIPT ─────────── */
+.obra-view-nav{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 18px;padding:10px;background:linear-gradient(145deg,rgba(71,148,255,.08),rgba(255,255,255,.025));border:1px solid rgba(118,174,239,.18);border-radius:12px}
+.obra-view-tab{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.028);color:var(--muted);border-radius:9px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.45px;text-transform:uppercase;cursor:pointer;transition:.18s ease}
+.obra-view-tab:hover{color:#fff;border-color:rgba(71,148,255,.36);background:rgba(71,148,255,.09);transform:translateY(-1px)}
+.obra-view-tab.active{color:#fff;border-color:rgba(240,168,91,.58);background:linear-gradient(135deg,rgba(240,168,91,.94),rgba(213,112,38,.92));box-shadow:0 7px 20px rgba(213,112,38,.24)}
+.obra-view-tab .obra-view-icon{font-size:15px;line-height:1}
+.obra-view-open{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid rgba(71,148,255,.34);background:rgba(71,148,255,.10);color:#a9d0ff;border-radius:9px;padding:9px 13px;font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;text-decoration:none;transition:.18s ease}
+.obra-view-open:hover{color:#fff;border-color:rgba(123,185,255,.72);background:rgba(71,148,255,.2);transform:translateY(-1px)}
+.obra-view{display:none}.obra-view.active{display:block;animation:fadeIn .22s ease}
+.obra-bitacora-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr);gap:18px;align-items:center;margin-bottom:14px;padding:20px 22px;border-radius:15px;background:linear-gradient(135deg,rgba(240,168,91,.18),rgba(35,63,94,.96) 48%,rgba(28,51,80,.98));border:1px solid rgba(240,168,91,.35);box-shadow:0 12px 32px rgba(0,0,0,.16)}
+.obra-bitacora-hero:after{content:'▧';position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:92px;color:rgba(255,255,255,.035);pointer-events:none}
+.obra-bitacora-copy,.obra-bitacora-actions{position:relative;z-index:1}
+.obra-bitacora-kicker{font-family:'DM Mono',monospace;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ffc281;margin-bottom:6px}
+.obra-bitacora-title{font-family:'DM Serif Display',serif;font-size:27px;color:#fff;line-height:1.08;margin-bottom:7px}
+.obra-bitacora-text{font-size:12px;color:#c3d1e2;line-height:1.6;max-width:760px}
+.obra-bitacora-actions{display:flex;flex-direction:column;gap:8px}
+.obra-bitacora-action{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:11px 14px;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;transition:.18s ease}
+.obra-bitacora-action.primary{background:linear-gradient(135deg,#f0a85b,#d56d25);color:#241508;border:1px solid #f0a85b;box-shadow:0 8px 22px rgba(213,109,37,.25)}
+.obra-bitacora-action.secondary{background:rgba(71,148,255,.10);color:#b7d8ff;border:1px solid rgba(71,148,255,.28)}
+.obra-bitacora-action:hover{transform:translateY(-1px);filter:brightness(1.07)}
+.obra-bitacora-note{font-family:'DM Mono',monospace;font-size:8px;line-height:1.45;color:#9db0c9;text-align:center}
+.obra-bitacora-frame-card{overflow:hidden;border:1px solid rgba(240,168,91,.26);border-radius:15px;background:linear-gradient(155deg,rgba(36,64,96,.98),rgba(27,50,79,.99));box-shadow:0 12px 30px rgba(0,0,0,.16)}
+.obra-bitacora-frame-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 15px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(9,24,43,.25)}
+.obra-bitacora-frame-title{font-size:12px;font-weight:700;color:#fff}
+.obra-bitacora-frame-state{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:8px;color:var(--muted)}
+.obra-bitacora-frame-state:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(46,200,122,.5)}
+.obra-bitacora-frame{display:block;width:100%;min-height:920px;border:0;background:#f3f5f7}
+.obra-bitacora-fallback{display:flex;align-items:flex-start;gap:9px;margin-top:10px;padding:10px 12px;border-radius:9px;background:rgba(240,180,41,.075);border:1px solid rgba(240,180,41,.2);font-size:10px;line-height:1.55;color:#e2c47f}
+@media(max-width:800px){.obra-bitacora-hero{grid-template-columns:1fr}.obra-view-open{margin-left:0}.obra-bitacora-frame{min-height:1080px}}
+@media(max-width:560px){.obra-view-nav{align-items:stretch}.obra-view-tab,.obra-view-open{width:100%}.obra-bitacora-hero{padding:17px}.obra-bitacora-title{font-size:23px}.obra-bitacora-frame{min-height:1180px}}
+
 </style>
 </head>
 <body>
@@ -1240,17 +1271,51 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 ════════════════════════════════════════════════════════════ -->
 <div class="page" id="page-obra">
   <div class="section-hdr"><h2>Centro de Producción</h2><span>Obras · avance, alertas y ejecución</span><button class="report-btn" onclick="exportSectionReport('obra','Informe de Centro de Producción')"><span class="report-icon">⇩</span>Informe A4 / PDF</button></div>
-  <div class="production-toolbar">
-    <div><div class="production-toolbar-title">Tablero ejecutivo de obras</div><div class="production-toolbar-sub">Los rubros conservan su denominación original. Pago y proveedor quedan preparados para completar.</div></div>
-    <div class="production-source">FUENTE · PLANILLA DE OBRAS</div>
+
+  <nav class="obra-view-nav no-report" aria-label="Vistas del área de Obras">
+    <button class="obra-view-tab active" type="button" data-obra-view="tablero" onclick="showObraView('tablero',this)"><span class="obra-view-icon">▰</span>Tablero de ejecución</button>
+    <button class="obra-view-tab" type="button" data-obra-view="bitacora" onclick="showObraView('bitacora',this)"><span class="obra-view-icon">▧</span>Bitácora de avances</button>
+    <a id="obra-bitacora-open-top" class="obra-view-open" href="#" target="_blank" rel="noopener">↗ Abrir Bitácora completa</a>
+  </nav>
+
+  <div id="obra-view-tablero" class="obra-view active">
+    <div class="production-toolbar">
+      <div><div class="production-toolbar-title">Tablero ejecutivo de obras</div><div class="production-toolbar-sub">Los rubros conservan su denominación original. Pago y proveedor quedan preparados para completar.</div></div>
+      <div class="production-source">FUENTE · PLANILLA DE OBRAS</div>
+    </div>
+    <div class="chips">
+      <button class="chip active" onclick="setObraFilter('all',this)">Todos</button>
+      <button class="chip" onclick="setObraFilter('100',this)">100% completo</button>
+      <button class="chip" onclick="setObraFilter('parcial',this)">En ejecución</button>
+      <button class="chip" onclick="setObraFilter('bloq',this)">🔴 Bloqueado</button>
+    </div>
+    <div id="obra-list"></div>
   </div>
-  <div class="chips">
-    <button class="chip active" onclick="setObraFilter('all',this)">Todos</button>
-    <button class="chip" onclick="setObraFilter('100',this)">100% completo</button>
-    <button class="chip" onclick="setObraFilter('parcial',this)">En ejecución</button>
-    <button class="chip" onclick="setObraFilter('bloq',this)">🔴 Bloqueado</button>
+
+  <div id="obra-view-bitacora" class="obra-view no-report">
+    <section class="obra-bitacora-hero">
+      <div class="obra-bitacora-copy">
+        <div class="obra-bitacora-kicker">Registro colaborativo de campo</div>
+        <div class="obra-bitacora-title">Bitácora fotográfica de Obras</div>
+        <p class="obra-bitacora-text">El equipo puede cargar desde el celular fotografías de avances, hitos, alertas y temas a resolver. Cada registro conserva barrio, rubro, responsable, fecha y hora; además permite identificar material sugerido para Postventas.</p>
+      </div>
+      <div class="obra-bitacora-actions">
+        <a id="obra-bitacora-open" class="obra-bitacora-action primary" href="#" target="_blank" rel="noopener">＋ Cargar una novedad</a>
+        <button class="obra-bitacora-action secondary" type="button" onclick="reloadBitacora()">↻ Actualizar publicaciones</button>
+        <div class="obra-bitacora-note">Acceso disponible para usuarios autorizados de Grupo Roma.</div>
+      </div>
+    </section>
+
+    <section class="obra-bitacora-frame-card">
+      <div class="obra-bitacora-frame-head">
+        <div class="obra-bitacora-frame-title">Avances, alertas y material para Postventas</div>
+        <div class="obra-bitacora-frame-state">Conectado a Google Drive y Sheets</div>
+      </div>
+      <iframe id="obra-bitacora-frame" class="obra-bitacora-frame" title="Bitácora de Obras Grupo Roma" loading="lazy"></iframe>
+    </section>
+
+    <div class="obra-bitacora-fallback"><span>ⓘ</span><span>Si el navegador solicita iniciar sesión o no permite mostrar la aplicación dentro del panel, utilizá “Abrir Bitácora completa”. Los datos y las fotografías seguirán guardándose en la misma base.</span></div>
   </div>
-  <div id="obra-list"></div>
 </div>
 
 
@@ -4214,6 +4279,40 @@ function showPage(id, btn, fromBottomNav=false){
   }
   window.scrollTo(0,0);
 }
+// ── BITÁCORA DE OBRAS ───────────────────────────────────────
+const BITACORA_WEBAPP_URL = "https://script.google.com/a/macros/gruporoma.casa/s/AKfycbz_liGnU2BnGGw1nQmqNQIJVHOeaKNL3hN3FOd028SW9G3GIFzhLe5scPJH96puu1Cr/exec";
+let bitacoraInicializada = false;
+
+function showObraView(view, btn){
+  document.querySelectorAll('#page-obra .obra-view').forEach(panel=>panel.classList.remove('active'));
+  document.querySelectorAll('#page-obra .obra-view-tab').forEach(tab=>tab.classList.remove('active'));
+  const target=document.getElementById('obra-view-'+view);
+  if(target) target.classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(view==='bitacora') initBitacora();
+}
+
+function initBitacora(forceReload=false){
+  const frame=document.getElementById('obra-bitacora-frame');
+  const links=[document.getElementById('obra-bitacora-open'),document.getElementById('obra-bitacora-open-top')].filter(Boolean);
+  const valid=BITACORA_WEBAPP_URL && /^https:\/\/script\.google\.com\//i.test(BITACORA_WEBAPP_URL);
+  links.forEach(link=>{
+    link.href=valid?BITACORA_WEBAPP_URL:'#';
+    link.setAttribute('aria-disabled',valid?'false':'true');
+  });
+  if(!frame || !valid) return;
+  if(!bitacoraInicializada || forceReload){
+    frame.src=forceReload ? BITACORA_WEBAPP_URL + (BITACORA_WEBAPP_URL.includes('?')?'&':'?') + 'refresh=' + Date.now() : BITACORA_WEBAPP_URL;
+    bitacoraInicializada=true;
+  }
+}
+
+function reloadBitacora(){
+  initBitacora(true);
+}
+
+setTimeout(()=>initBitacora(false),0);
+
 // ══════════════════════════════════════════════════════════════
 // EXPORTAR INFORME PDF
 // ══════════════════════════════════════════════════════════════
@@ -4775,7 +4874,7 @@ function exportSectionReport(pageId, reportTitle){
 
   const clone=source.cloneNode(true);
   clone.classList.add('active');
-  clone.querySelectorAll('.search-wrap,.chips,.report-btn,.report-action-row,button,input').forEach(el=>el.remove());
+  clone.querySelectorAll('.search-wrap,.chips,.report-btn,.report-action-row,.no-report,button,input').forEach(el=>el.remove());
 
   const now=new Date();
   const fecha=now.toLocaleDateString('es-AR',{day:'2-digit',month:'long',year:'numeric'});
