@@ -1111,13 +1111,13 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 @media(max-width:1100px){.home-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.home-news-grid{grid-template-columns:1fr}}
 
-/* ── BITÁCORA DE OBRAS · INTEGRACIÓN APPS SCRIPT ─────────── */
+/* ── BITÁCORA DE OBRAS · APP V2 / MÓVIL ─────────────────── */
 .obra-view-nav{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 18px;padding:10px;background:linear-gradient(145deg,rgba(71,148,255,.08),rgba(255,255,255,.025));border:1px solid rgba(118,174,239,.18);border-radius:12px}
-.obra-view-tab{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.028);color:var(--muted);border-radius:9px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.45px;text-transform:uppercase;cursor:pointer;transition:.18s ease}
+.obra-view-tab{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.028);color:var(--muted);border-radius:9px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.45px;text-transform:uppercase;cursor:pointer;transition:.18s ease;min-height:42px}
 .obra-view-tab:hover{color:#fff;border-color:rgba(71,148,255,.36);background:rgba(71,148,255,.09);transform:translateY(-1px)}
 .obra-view-tab.active{color:#fff;border-color:rgba(240,168,91,.58);background:linear-gradient(135deg,rgba(240,168,91,.94),rgba(213,112,38,.92));box-shadow:0 7px 20px rgba(213,112,38,.24)}
 .obra-view-tab .obra-view-icon{font-size:15px;line-height:1}
-.obra-view-open{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid rgba(71,148,255,.34);background:rgba(71,148,255,.10);color:#a9d0ff;border-radius:9px;padding:9px 13px;font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;text-decoration:none;transition:.18s ease}
+.obra-view-open{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid rgba(71,148,255,.34);background:rgba(71,148,255,.10);color:#a9d0ff;border-radius:9px;padding:9px 13px;font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;text-decoration:none;transition:.18s ease;min-height:42px}
 .obra-view-open:hover{color:#fff;border-color:rgba(123,185,255,.72);background:rgba(71,148,255,.2);transform:translateY(-1px)}
 .obra-view{display:none}.obra-view.active{display:block;animation:fadeIn .22s ease}
 .obra-bitacora-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr);gap:18px;align-items:center;margin-bottom:14px;padding:20px 22px;border-radius:15px;background:linear-gradient(135deg,rgba(240,168,91,.18),rgba(35,63,94,.96) 48%,rgba(28,51,80,.98));border:1px solid rgba(240,168,91,.35);box-shadow:0 12px 32px rgba(0,0,0,.16)}
@@ -1127,7 +1127,7 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 .obra-bitacora-title{font-family:'DM Serif Display',serif;font-size:27px;color:#fff;line-height:1.08;margin-bottom:7px}
 .obra-bitacora-text{font-size:12px;color:#c3d1e2;line-height:1.6;max-width:760px}
 .obra-bitacora-actions{display:flex;flex-direction:column;gap:8px}
-.obra-bitacora-action{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:11px 14px;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;transition:.18s ease}
+.obra-bitacora-action{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:11px 14px;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;transition:.18s ease;min-height:44px}
 .obra-bitacora-action.primary{background:linear-gradient(135deg,#f0a85b,#d56d25);color:#241508;border:1px solid #f0a85b;box-shadow:0 8px 22px rgba(213,109,37,.25)}
 .obra-bitacora-action.secondary{background:rgba(71,148,255,.10);color:#b7d8ff;border:1px solid rgba(71,148,255,.28)}
 .obra-bitacora-action:hover{transform:translateY(-1px);filter:brightness(1.07)}
@@ -1135,12 +1135,13 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 .obra-bitacora-frame-card{overflow:hidden;border:1px solid rgba(240,168,91,.26);border-radius:15px;background:linear-gradient(155deg,rgba(36,64,96,.98),rgba(27,50,79,.99));box-shadow:0 12px 30px rgba(0,0,0,.16)}
 .obra-bitacora-frame-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 15px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(9,24,43,.25)}
 .obra-bitacora-frame-title{font-size:12px;font-weight:700;color:#fff}
-.obra-bitacora-frame-state{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:8px;color:var(--muted)}
-.obra-bitacora-frame-state:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(46,200,122,.5)}
-.obra-bitacora-frame{display:block;width:100%;min-height:920px;border:0;background:#f3f5f7}
+.obra-bitacora-frame-state{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:8px;color:var(--muted);text-align:right}
+.obra-bitacora-frame-state:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px rgba(240,180,41,.5);flex:none}
+.obra-bitacora-frame-state.loaded:before{background:var(--green);box-shadow:0 0 10px rgba(46,200,122,.5)}
+.obra-bitacora-frame{display:block;width:100%;height:clamp(780px,82dvh,1180px);min-height:780px;border:0;background:#f3f5f7;color-scheme:light;overscroll-behavior:contain}
 .obra-bitacora-fallback{display:flex;align-items:flex-start;gap:9px;margin-top:10px;padding:10px 12px;border-radius:9px;background:rgba(240,180,41,.075);border:1px solid rgba(240,180,41,.2);font-size:10px;line-height:1.55;color:#e2c47f}
-@media(max-width:800px){.obra-bitacora-hero{grid-template-columns:1fr}.obra-view-open{margin-left:0}.obra-bitacora-frame{min-height:1080px}}
-@media(max-width:560px){.obra-view-nav{align-items:stretch}.obra-view-tab,.obra-view-open{width:100%}.obra-bitacora-hero{padding:17px}.obra-bitacora-title{font-size:23px}.obra-bitacora-frame{min-height:1180px}}
+@media(max-width:800px){.obra-bitacora-hero{grid-template-columns:1fr}.obra-view-open{margin-left:0}.obra-bitacora-frame{height:calc(100dvh - 118px);min-height:700px;max-height:1080px}}
+@media(max-width:560px){#page-obra{padding-left:10px;padding-right:10px}.obra-view-nav{align-items:stretch;gap:8px;padding:8px}.obra-view-tab,.obra-view-open{width:100%;font-size:10px}.obra-bitacora-hero{padding:16px;margin-left:0;margin-right:0}.obra-bitacora-title{font-size:23px}.obra-bitacora-frame-card{border-radius:12px}.obra-bitacora-frame-head{align-items:flex-start;flex-direction:column;padding:10px 12px}.obra-bitacora-frame-state{text-align:left}.obra-bitacora-frame{height:calc(100dvh - 92px);min-height:680px;max-height:none}.obra-bitacora-fallback{font-size:9px}}
 
 </style>
 </head>
@@ -1297,7 +1298,7 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
       <div class="obra-bitacora-copy">
         <div class="obra-bitacora-kicker">Registro colaborativo de campo</div>
         <div class="obra-bitacora-title">Bitácora fotográfica de Obras</div>
-        <p class="obra-bitacora-text">El equipo puede cargar desde el celular fotografías de avances, hitos, alertas y temas a resolver. Cada registro conserva barrio, rubro, responsable, fecha y hora; además permite identificar material sugerido para Postventas.</p>
+        <p class="obra-bitacora-text">La nueva versión permite elegir imágenes de la galería o tomar una foto en el momento, previsualizarla antes de publicar y ver las fotografías cargadas directamente dentro de cada tarjeta. Cada registro conserva barrio, rubro, responsable, fecha y hora, y puede marcarse para uso de Postventas.</p>
       </div>
       <div class="obra-bitacora-actions">
         <a id="obra-bitacora-open" class="obra-bitacora-action primary" href="#" target="_blank" rel="noopener">＋ Cargar una novedad</a>
@@ -1309,12 +1310,12 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <section class="obra-bitacora-frame-card">
       <div class="obra-bitacora-frame-head">
         <div class="obra-bitacora-frame-title">Avances, alertas y material para Postventas</div>
-        <div class="obra-bitacora-frame-state">Conectado a Google Drive y Sheets</div>
+        <div id="obra-bitacora-frame-state" class="obra-bitacora-frame-state" aria-live="polite">Cargando nueva versión móvil...</div>
       </div>
-      <iframe id="obra-bitacora-frame" class="obra-bitacora-frame" title="Bitácora de Obras Grupo Roma" loading="lazy"></iframe>
+      <iframe id="obra-bitacora-frame" class="obra-bitacora-frame" title="Bitácora de Obras Grupo Roma" loading="eager" allow="camera; fullscreen" referrerpolicy="strict-origin-when-cross-origin" scrolling="yes"></iframe>
     </section>
 
-    <div class="obra-bitacora-fallback"><span>ⓘ</span><span>Si el navegador solicita iniciar sesión o no permite mostrar la aplicación dentro del panel, utilizá “Abrir Bitácora completa”. Los datos y las fotografías seguirán guardándose en la misma base.</span></div>
+    <div class="obra-bitacora-fallback"><span>ⓘ</span><span>La Bitácora se carga desde la nueva aplicación. En celulares, podés elegir fotos anteriores desde la galería o usar la cámara. Si el navegador impide el acceso dentro del panel, utilizá “Abrir Bitácora completa”; la información seguirá guardándose en la misma planilla y carpeta.</span></div>
   </div>
 </div>
 
@@ -4279,9 +4280,11 @@ function showPage(id, btn, fromBottomNav=false){
   }
   window.scrollTo(0,0);
 }
-// ── BITÁCORA DE OBRAS ───────────────────────────────────────
-const BITACORA_WEBAPP_URL = "https://script.google.com/a/macros/gruporoma.casa/s/AKfycbz_liGnU2BnGGw1nQmqNQIJVHOeaKNL3hN3FOd028SW9G3GIFzhLe5scPJH96puu1Cr/exec";
+// ── BITÁCORA DE OBRAS · NUEVA APP MÓVIL ─────────────────────
+const BITACORA_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbx2XDaFI307-n6fedrLoaN3xORoQqiWv_QuILwlVmVancc9fT_9Iw_RrT9g6Ep2CmNf/exec";
+const BITACORA_WEBAPP_VERSION = "2026-07-24-mobile-v2";
 let bitacoraInicializada = false;
+let bitacoraLoadConfigured = false;
 
 function showObraView(view, btn){
   document.querySelectorAll('#page-obra .obra-view').forEach(panel=>panel.classList.remove('active'));
@@ -4289,20 +4292,52 @@ function showObraView(view, btn){
   const target=document.getElementById('obra-view-'+view);
   if(target) target.classList.add('active');
   if(btn) btn.classList.add('active');
-  if(view==='bitacora') initBitacora();
+  if(view==='bitacora'){
+    initBitacora();
+    setTimeout(()=>target?.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }
+}
+
+function buildBitacoraEmbedUrl(forceReload=false){
+  const url=new URL(BITACORA_WEBAPP_URL);
+  url.searchParams.set('mode','embed');
+  url.searchParams.set('v',BITACORA_WEBAPP_VERSION);
+  if(forceReload) url.searchParams.set('refresh',String(Date.now()));
+  return url.toString();
+}
+
+function setBitacoraState(message,loaded=false){
+  const state=document.getElementById('obra-bitacora-frame-state');
+  if(!state) return;
+  state.textContent=message;
+  state.classList.toggle('loaded',loaded);
 }
 
 function initBitacora(forceReload=false){
   const frame=document.getElementById('obra-bitacora-frame');
   const links=[document.getElementById('obra-bitacora-open'),document.getElementById('obra-bitacora-open-top')].filter(Boolean);
-  const valid=BITACORA_WEBAPP_URL && /^https:\/\/script\.google\.com\//i.test(BITACORA_WEBAPP_URL);
+  const valid=BITACORA_WEBAPP_URL && /^https:\/\/script\.google\.com\/macros\/s\//i.test(BITACORA_WEBAPP_URL);
   links.forEach(link=>{
     link.href=valid?BITACORA_WEBAPP_URL:'#';
     link.setAttribute('aria-disabled',valid?'false':'true');
   });
-  if(!frame || !valid) return;
+  if(!frame || !valid){
+    setBitacoraState('No se pudo configurar la conexión.',false);
+    return;
+  }
+  if(!bitacoraLoadConfigured){
+    frame.addEventListener('load',()=>setBitacoraState('Nueva versión conectada · fotos y vista móvil',true));
+    bitacoraLoadConfigured=true;
+  }
   if(!bitacoraInicializada || forceReload){
-    frame.src=forceReload ? BITACORA_WEBAPP_URL + (BITACORA_WEBAPP_URL.includes('?')?'&':'?') + 'refresh=' + Date.now() : BITACORA_WEBAPP_URL;
+    setBitacoraState(forceReload?'Actualizando publicaciones...':'Cargando nueva versión móvil...',false);
+    const nextUrl=buildBitacoraEmbedUrl(forceReload);
+    if(forceReload){
+      frame.src='about:blank';
+      setTimeout(()=>{frame.src=nextUrl;},40);
+    }else{
+      frame.src=nextUrl;
+    }
     bitacoraInicializada=true;
   }
 }
