@@ -3467,7 +3467,7 @@ function buildGestionTable(p){
     return `<span class="badge ${d.cls}" style="font-size:9px;padding:2px 7px;white-space:nowrap">${d.icon} ${d.lbl}</span>`;
   }
 
-  function subRow(item, depth){
+  function subRow(item, depth, proyId, hitoPadre, subPadre){
     const d = EST_MAP[item.est] || EST_MAP.na;
     const bgColor = item.est==="urgent"?"rgba(255,160,60,.07)":item.est==="block"?"rgba(224,85,85,.07)":item.est==="done"?"rgba(46,200,122,.04)":"transparent";
     const indent = depth * 14;
@@ -3479,9 +3479,18 @@ function buildGestionTable(p){
       </div>
       <div style="display:flex;align-items:center;gap:5px;flex-shrink:0">
         ${item.ini?`<span style="font-family:'DM Mono',monospace;font-size:8px;color:var(--dim)">${item.ini}${item.fin?" → "+item.fin:""}</span>`:""}
-        ${badge(item.est)}
+        ${badgeSub(item.est, proyId, hitoPadre, subPadre, item.nombre)}
       </div>
     </div>`;
+  }
+
+  function badgeSub(est, proyId, hitoPadre, subPadre, nombre){
+    const d = EST_MAP[est] || EST_MAP.na;
+    if(!proyId || !hitoPadre || !nombre){
+      return `<span class="badge ${d.cls}" style="font-size:9px;padding:2px 7px;white-space:nowrap">${d.icon} ${d.lbl}</span>`;
+    }
+    const esc = s => (s||'').replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+    return `<span class="badge ${d.cls} badge-editable" style="font-size:9px;padding:2px 7px;white-space:nowrap" onclick="openSubHitoEditor('${esc(proyId)}','${esc(hitoPadre)}','${esc(subPadre)}','${esc(nombre)}','${est}')" title="Actualizar estado en Sheets">${d.icon} ${d.lbl} <span style="opacity:.5">✎</span></span>`;
   }
 
   function hitoBlock(hito, num){
@@ -3504,7 +3513,7 @@ function buildGestionTable(p){
       </div>
       ${subs.length ? subs.map(s=>{
         const sub2 = s.sub || [];
-        return subRow(s,1) + sub2.map(ss=>subRow(ss,2)).join("");
+        return subRow(s,1,p.id,hito.nombre,'') + sub2.map(ss=>subRow(ss,2,p.id,hito.nombre,s.nombre)).join("");
       }).join("") : ""}
     </div>`;
   }
@@ -4408,7 +4417,7 @@ function showPage(id, btn, fromBottomNav=false){
 // Ver INSTRUCCIONES_APPS_SCRIPT.md para desplegarlo.
 // Ejemplo: https://script.google.com/macros/s/XXXXXXXX/exec
 // ══════════════════════════════════════════════════════════════
-const DATA_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyqSOB3nVuvOPPfTm5-yIP0Sctz4UZXb2UCjUErD7cpIDR1gmfr7j00IMGPYGsvivE1/exec";
+const DATA_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwD7NwcJeqRsofd-D1iWNXiSDkphgdNNXDH2z9RNAKzjIXsFim7IrTSaNYpL3NnR7XwMw/exec";
 // Mismo valor que APP_TOKEN en Code.gs. Si lo cambiás en uno, cambialo en el otro.
 const APP_TOKEN = "5ceff9cd5268df7badafe46b4e4f2e681028ebae";
 let REMOTE_DATA = null;
@@ -4489,6 +4498,30 @@ function mergeRemoteData_(data){
     applyTo(GESTION_DATA[pid]);
     const proj = PROJS.find(x=>x.id===pid);
     if(proj) applyTo(proj.hitos);
+  });
+  // 2b) Subhitos: pisa estado/observaciones de los ítems anidados (nivel 1 y 2)
+  const subhitosPorProyecto = {};
+  (data.subHitos||[]).forEach(row=>{
+    (subhitosPorProyecto[row.proyectoId] = subhitosPorProyecto[row.proyectoId]||[]).push(row);
+  });
+  Object.keys(subhitosPorProyecto).forEach(pid=>{
+    const rows = subhitosPorProyecto[pid];
+    const applySubsTo = (list)=>{
+      if(!list) return;
+      list.forEach(h=>{
+        (h.sub||[]).forEach(s=>{
+          const m1 = rows.find(r=>r.hitoPadre===h.nombre && (r.subPadre||'')==='' && r.nombre===s.nombre);
+          if(m1){ if(m1.estado) s.est = m1.estado; }
+          (s.sub||[]).forEach(ss=>{
+            const m2 = rows.find(r=>r.hitoPadre===h.nombre && r.subPadre===s.nombre && r.nombre===ss.nombre);
+            if(m2){ if(m2.estado) ss.est = m2.estado; }
+          });
+        });
+      });
+    };
+    applySubsTo(GESTION_DATA[pid]);
+    const proj = PROJS.find(x=>x.id===pid);
+    if(proj) applySubsTo(proj.hitos);
   });
   // 3) Obra: pisa porcentaje/nota por rubro
   const obraPorProyecto = {};
@@ -4600,6 +4633,12 @@ async function updateHitoRemote(proyectoId, nombre, estado, observaciones){
   return r;
 }
 
+async function updateSubHitoRemote(proyectoId, hitoPadre, subPadre, nombre, estado, observaciones){
+  const r = await postToWebApp_('updateSubHito', {proyectoId, hitoPadre, subPadre, nombre, estado, observaciones});
+  if(r.ok) loadRemoteData(true);
+  return r;
+}
+
 // ── Editor de estado de hito (popup) ────────────────────────────
 const HE_STATES = [
   {v:'done',   l:'✅ Completado'},
@@ -4617,9 +4656,26 @@ function openHitoEditor(proyId, nombre, currentEst){
     return;
   }
   const p = PROJS.find(x=>x.id===proyId);
-  _heCtx = {proyId, nombre, est: currentEst};
+  _heCtx = {proyId, nombre, est: currentEst, isSub:false};
   document.getElementById('he-nombre').textContent = nombre;
   document.getElementById('he-proy').textContent = (p?p.nombre:proyId) + ' · ' + proyId;
+  document.getElementById('he-obs').value = '';
+  document.getElementById('he-options').innerHTML = HE_STATES.map(s=>
+    `<span class="he-opt ${s.v===currentEst?'sel':''}" data-v="${s.v}" onclick="selectHeState(this,'${s.v}')">${s.l}</span>`
+  ).join('');
+  document.getElementById('hito-editor-backdrop').classList.add('active');
+}
+
+function openSubHitoEditor(proyId, hitoPadre, subPadre, nombre, currentEst){
+  if(!isDataUrlConfigured()){
+    alert('Para editar hitos primero hay que conectar la Base de Datos App.\nVer INSTRUCCIONES_APPS_SCRIPT.md.');
+    return;
+  }
+  const p = PROJS.find(x=>x.id===proyId);
+  _heCtx = {proyId, hitoPadre, subPadre, nombre, est: currentEst, isSub:true};
+  document.getElementById('he-nombre').textContent = nombre;
+  const ruta = subPadre ? `${hitoPadre} › ${subPadre}` : hitoPadre;
+  document.getElementById('he-proy').textContent = (p?p.nombre:proyId) + ' · ' + ruta;
   document.getElementById('he-obs').value = '';
   document.getElementById('he-options').innerHTML = HE_STATES.map(s=>
     `<span class="he-opt ${s.v===currentEst?'sel':''}" data-v="${s.v}" onclick="selectHeState(this,'${s.v}')">${s.l}</span>`
@@ -4643,7 +4699,9 @@ async function saveHitoEditor(){
   const btn = document.getElementById('he-save');
   btn.disabled = true; btn.textContent = 'Guardando...';
   const obs = document.getElementById('he-obs').value.trim();
-  const r = await updateHitoRemote(_heCtx.proyId, _heCtx.nombre, _heCtx.est, obs || undefined);
+  const r = _heCtx.isSub
+    ? await updateSubHitoRemote(_heCtx.proyId, _heCtx.hitoPadre, _heCtx.subPadre, _heCtx.nombre, _heCtx.est, obs || undefined)
+    : await updateHitoRemote(_heCtx.proyId, _heCtx.nombre, _heCtx.est, obs || undefined);
   btn.disabled = false; btn.textContent = 'Guardar en Sheets';
   if(r.ok) closeHitoEditor();
 }
