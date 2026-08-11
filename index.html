@@ -1277,7 +1277,6 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <button class="ttab ceo-tab" data-page="estrategia" onclick="showPage('estrategia',this)"><span class="ttab-icon">✦</span><span>Acciones CEO</span></button>
     <button class="ttab forecast-tab" data-page="pronostico" onclick="showPage('pronostico',this)"><span class="ttab-icon">ϟ</span><span>Pronóstico</span></button>
     <button class="ttab" data-page="restante" onclick="showPage('restante',this)"><span class="ttab-icon">⌘</span><span>Empresa transversal</span></button>
-    <button class="ttab" data-page="legales" onclick="showPage('legales',this)"><span class="ttab-icon">§</span><span>Legales</span></button>
     <button class="ttab" data-page="foro" onclick="showPage('foro',this)"><span class="ttab-icon">☵</span><span>Foro</span></button>
   </div>
   <div class="command-center" title="Semáforo ejecutivo general">
@@ -1518,6 +1517,13 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 <div class="page" id="page-restante">
   <div class="section-hdr"><h2>Empresa transversal</h2><span>Coordinación por áreas · Work in progress</span><button class="report-btn" onclick="exportSectionReport('restante','Empresa Transversal',{orientation:'portrait'})"><span class="report-icon">⇩</span>Informe A4 / PDF</button></div>
 
+  <nav class="obra-view-nav no-report" aria-label="Vistas de Empresa transversal">
+    <button class="obra-view-tab active" type="button" data-restante-view="areas" onclick="showRestanteView('areas',this)"><span class="obra-view-icon">⌘</span>Áreas</button>
+    <button class="obra-view-tab" type="button" data-restante-view="legales" onclick="showRestanteView('legales',this)"><span class="obra-view-icon">§</span>Legales</button>
+  </nav>
+
+  <div id="restante-view-areas" class="obra-view active">
+
   <section class="transversal-wip" aria-label="Empresa transversal en desarrollo">
     <div class="transversal-wip-copy">
       <div class="wip-badge">SECCIÓN EN DESARROLLO</div>
@@ -1681,7 +1687,7 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
         <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
         <div class="trans-slot"><strong>Próxima acción</strong><span>Espacio para completar</span></div>
       </div>
-      <button class="report-btn" style="margin:12px 0 0" onclick="showPage('legales', document.querySelector('[data-page=\'legales\']'))">§ Ver documentación legal por proyecto ↗</button>
+      <button class="report-btn" style="margin:12px 0 0" onclick="showRestanteView('legales', document.querySelector('[data-restante-view=\'legales\']'))">§ Ver documentación legal por proyecto ↗</button>
     </article>
 
     <!-- 7 · IT -->
@@ -1695,32 +1701,32 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     </article>
   </div>
 
+  </div>
+  <!-- /restante-view-areas -->
+
+  <div id="restante-view-legales" class="obra-view">
+    <div class="section-hdr" style="margin-top:0"><h2 style="font-size:20px">Documentación legal</h2><span>Por proyecto · lectura y descarga</span></div>
+
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input class="search-input" type="text" placeholder="Buscar proyecto o documento..." oninput="filterLegales(this.value)" id="legales-search">
+    </div>
+    <div class="chips" id="legales-chips">
+      <button class="chip active" onclick="setLegalesFilter('all',this)">Todos</button>
+      <button class="chip" onclick="setLegalesFilter('aprobado',this)">✓ Aprobado</button>
+      <button class="chip" onclick="setLegalesFilter('verificar',this)">🔄 A verificar</button>
+      <button class="chip" onclick="setLegalesFilter('privilegiado',this)">🔒 Privilegiado</button>
+      <button class="chip" onclick="setLegalesFilter('vacio',this)">Sin carga</button>
+    </div>
+
+    <div class="grid4" id="legales-stats" style="margin-bottom:20px"></div>
+
+    <div id="legales-list"></div>
+  </div>
+
   <!-- Contenedores técnicos ocultos: mantienen compatibilidad con funciones heredadas -->
   <div id="modelos-list" style="display:none"></div>
   <div id="clientes-list" style="display:none"></div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PAGE: LEGALES
-════════════════════════════════════════════════════════════ -->
-<div class="page" id="page-legales">
-  <div class="section-hdr"><h2>Legales</h2><span>Documentación jurídica por proyecto · Lectura y descarga</span><button class="report-btn" onclick="exportSectionReport('legales','Documentación Legal',{orientation:'portrait'})"><span class="report-icon">⇩</span>Informe A4 / PDF</button></div>
-
-  <div class="search-wrap">
-    <span class="search-icon">⌕</span>
-    <input class="search-input" type="text" placeholder="Buscar proyecto o documento..." oninput="filterLegales(this.value)" id="legales-search">
-  </div>
-  <div class="chips" id="legales-chips">
-    <button class="chip active" onclick="setLegalesFilter('all',this)">Todos</button>
-    <button class="chip" onclick="setLegalesFilter('aprobado',this)">✓ Aprobado</button>
-    <button class="chip" onclick="setLegalesFilter('verificar',this)">🔄 A verificar</button>
-    <button class="chip" onclick="setLegalesFilter('privilegiado',this)">🔒 Privilegiado</button>
-    <button class="chip" onclick="setLegalesFilter('vacio',this)">Sin carga</button>
-  </div>
-
-  <div class="grid4" id="legales-stats" style="margin-bottom:20px"></div>
-
-  <div id="legales-list"></div>
 </div>
 
 <!-- DETAIL OVERLAY -->
@@ -4946,6 +4952,18 @@ function showObraView(view, btn){
   if(btn) btn.classList.add('active');
   if(view==='bitacora'){
     initBitacora();
+    setTimeout(()=>target?.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }
+}
+
+function showRestanteView(view, btn){
+  document.querySelectorAll('#page-restante .obra-view').forEach(panel=>panel.classList.remove('active'));
+  document.querySelectorAll('#page-restante .obra-view-tab').forEach(tab=>tab.classList.remove('active'));
+  const target=document.getElementById('restante-view-'+view);
+  if(target) target.classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(view==='legales'){
+    buildLegales(PROJS);
     setTimeout(()=>target?.scrollIntoView({behavior:'smooth',block:'start'}),80);
   }
 }
