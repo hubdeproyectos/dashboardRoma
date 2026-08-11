@@ -1277,6 +1277,7 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <button class="ttab ceo-tab" data-page="estrategia" onclick="showPage('estrategia',this)"><span class="ttab-icon">✦</span><span>Acciones CEO</span></button>
     <button class="ttab forecast-tab" data-page="pronostico" onclick="showPage('pronostico',this)"><span class="ttab-icon">ϟ</span><span>Pronóstico</span></button>
     <button class="ttab" data-page="restante" onclick="showPage('restante',this)"><span class="ttab-icon">⌘</span><span>Empresa transversal</span></button>
+    <button class="ttab" data-page="legales" onclick="showPage('legales',this)"><span class="ttab-icon">§</span><span>Legales</span></button>
     <button class="ttab" data-page="foro" onclick="showPage('foro',this)"><span class="ttab-icon">☵</span><span>Foro</span></button>
   </div>
   <div class="command-center" title="Semáforo ejecutivo general">
@@ -1680,6 +1681,7 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
         <div class="trans-slot"><strong>Pendientes</strong><span>Espacio para completar</span></div>
         <div class="trans-slot"><strong>Próxima acción</strong><span>Espacio para completar</span></div>
       </div>
+      <button class="report-btn" style="margin:12px 0 0" onclick="showPage('legales', document.querySelector('[data-page=\'legales\']'))">§ Ver documentación legal por proyecto ↗</button>
     </article>
 
     <!-- 7 · IT -->
@@ -1696,6 +1698,29 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
   <!-- Contenedores técnicos ocultos: mantienen compatibilidad con funciones heredadas -->
   <div id="modelos-list" style="display:none"></div>
   <div id="clientes-list" style="display:none"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: LEGALES
+════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-legales">
+  <div class="section-hdr"><h2>Legales</h2><span>Documentación jurídica por proyecto · Lectura y descarga</span><button class="report-btn" onclick="exportSectionReport('legales','Documentación Legal',{orientation:'portrait'})"><span class="report-icon">⇩</span>Informe A4 / PDF</button></div>
+
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input class="search-input" type="text" placeholder="Buscar proyecto o documento..." oninput="filterLegales(this.value)" id="legales-search">
+  </div>
+  <div class="chips" id="legales-chips">
+    <button class="chip active" onclick="setLegalesFilter('all',this)">Todos</button>
+    <button class="chip" onclick="setLegalesFilter('aprobado',this)">✓ Aprobado</button>
+    <button class="chip" onclick="setLegalesFilter('verificar',this)">🔄 A verificar</button>
+    <button class="chip" onclick="setLegalesFilter('privilegiado',this)">🔒 Privilegiado</button>
+    <button class="chip" onclick="setLegalesFilter('vacio',this)">Sin carga</button>
+  </div>
+
+  <div class="grid4" id="legales-stats" style="margin-bottom:20px"></div>
+
+  <div id="legales-list"></div>
 </div>
 
 <!-- DETAIL OVERLAY -->
@@ -4090,6 +4115,175 @@ function buildGestion(list){
 }
 buildGestion(PROJS);
 
+// ── LEGALES PAGE ─────────────────────────────────────────────
+// Documentos legales por proyecto. Estos son los datos base mientras
+// no haya sincronización con la pestaña "Legales" del Google Sheet
+// (ver INSTRUCCIONES_APPS_SCRIPT.md). Apenas REMOTE_DATA.legales tenga
+// filas, se usan esas en su lugar, sin tocar código.
+const LEGALES_FALLBACK = {
+  CEPE: [
+    {
+      documento:"Memorándum de Defensa Legal — CEPE",
+      tipo:"docx", fecha:"Ago 2026", estado:"privilegiado", estadoLabel:"Privilegiado",
+      linkVer:"https://drive.google.com/file/d/120ckFjwH82NifAVrBo4YgIH4eGeeNfYH/view",
+      linkDescarga:"https://drive.google.com/uc?export=download&id=120ckFjwH82NifAVrBo4YgIH4eGeeNfYH"
+    },
+    {
+      documento:"Informe de Estado de Aprobaciones — CEPE",
+      tipo:"docx", fecha:"Ago 2026", estado:"verificar", estadoLabel:"A verificar",
+      linkVer:"https://drive.google.com/drive/folders/1Zsibtga5QdDmeHvrMqTMoWlDDG70zliL",
+      linkDescarga:"https://drive.google.com/drive/folders/1Zsibtga5QdDmeHvrMqTMoWlDDG70zliL"
+    },
+    {
+      documento:"Base Unificada de Expedientes — CEPE",
+      tipo:"xlsx", fecha:"Ago 2026", estado:"aprobado", estadoLabel:"86% aprobado",
+      linkVer:"https://drive.google.com/drive/folders/1Zsibtga5QdDmeHvrMqTMoWlDDG70zliL",
+      linkDescarga:"https://drive.google.com/drive/folders/1Zsibtga5QdDmeHvrMqTMoWlDDG70zliL"
+    },
+    {
+      documento:"Carpeta de expedientes digitalizados (VUI, FFCC, Litoral Gas, EPE, DPV, MAyCC, MOP, CLESAPE, Municipalidad)",
+      tipo:"pdf", fecha:"—", estado:"aprobado", estadoLabel:"Carpeta Drive",
+      linkVer:"https://drive.google.com/drive/folders/11VTtAqq8KzF3bvha61q6RZqjW3jtRB0U",
+      linkDescarga:"https://drive.google.com/drive/folders/11VTtAqq8KzF3bvha61q6RZqjW3jtRB0U"
+    }
+  ]
+};
+let _legalesFilter = "all";
+
+function getLegales(proyectoId){
+  if(REMOTE_DATA && REMOTE_DATA.legales && REMOTE_DATA.legales.length){
+    return REMOTE_DATA.legales.filter(x=>x.proyectoId===proyectoId).map(x=>({
+      documento:x.documento, tipo:(x.tipo||"pdf").toLowerCase(), fecha:x.fecha,
+      estado:(x.estado||"").toLowerCase(), estadoLabel:x.estadoLabel,
+      linkVer:x.linkVer, linkDescarga:x.linkDescarga||x.linkVer
+    }));
+  }
+  return LEGALES_FALLBACK[proyectoId] || [];
+}
+function legalesIcon(tipo){ return tipo==="docx"?"DOC":tipo==="xlsx"?"XLS":"PDF"; }
+function legalesIconColor(tipo){ return tipo==="docx"?"#4794ff":tipo==="xlsx"?"#2ec87a":"#e05555"; }
+function legalesTagStyle(estado){
+  if(estado==="aprobado") return {bg:"var(--green-l)",color:"var(--green)"};
+  if(estado==="verificar") return {bg:"var(--amber-l)",color:"var(--amber)"};
+  if(estado==="privilegiado") return {bg:"var(--red-l)",color:"var(--red)"};
+  return {bg:"var(--border)",color:"var(--muted)"};
+}
+
+function buildLegales(list){
+  const el = document.getElementById("legales-list");
+  if(!el) return;
+  const rows = list.map(p=>({p, docs:getLegales(p.id)}));
+
+  let filtered = rows;
+  if(_legalesFilter==="vacio"){
+    filtered = rows.filter(r=>r.docs.length===0);
+  } else if(_legalesFilter!=="all"){
+    filtered = rows.map(r=>({p:r.p, docs:r.docs.filter(d=>d.estado===_legalesFilter)})).filter(r=>r.docs.length>0);
+  }
+
+  const q = (document.getElementById("legales-search")?.value||"").trim().toLowerCase();
+  const searched = q ? filtered
+    .map(r=>({p:r.p, docs:r.docs.filter(d=>d.documento.toLowerCase().includes(q))}))
+    .filter(r=>r.p.nombre.toLowerCase().includes(q) || r.docs.length>0)
+    : filtered;
+
+  renderLegalesStats(rows);
+
+  if(!searched.length){
+    el.innerHTML = `<div class="card" style="text-align:center;color:var(--muted);padding:30px">No se encontraron proyectos ni documentos.</div>`;
+    return;
+  }
+
+  el.innerHTML = searched.map(r=>{
+    const hasDocs = r.docs.length>0;
+    return `
+    <div class="card" style="margin-bottom:12px" data-id="${r.p.id}">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer" onclick="toggleLegalesCard(this)">
+        <div style="display:flex;align-items:center;gap:12px;min-width:0">
+          <div style="width:34px;height:34px;border-radius:9px;background:var(--bg3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:10px;color:var(--blue);flex:none">${r.p.id.slice(0,3)}</div>
+          <div>
+            <div style="font-size:14px;font-weight:600">${r.p.nombre}</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted)">${r.p.loc}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex:none">
+          <span class="badge ${hasDocs?"b-proc":""}" style="${hasDocs?"":"background:var(--border);color:var(--muted)"}">${hasDocs? r.docs.length+" doc."+(r.docs.length>1?"s":"") : "Sin carga"}</span>
+          <span class="legales-chev" style="color:var(--muted);transition:transform .15s;display:inline-block">⌄</span>
+        </div>
+      </div>
+      <div class="legales-body" style="max-height:0;overflow:hidden;transition:max-height .2s ease">
+        ${hasDocs ? r.docs.map(legalesDocRow).join("") : `<div style="padding:14px 0 2px;color:var(--dim);font-size:11px">Todavía no hay documentación legal cargada para este proyecto.</div>`}
+      </div>
+    </div>`;
+  }).join("");
+
+  const firstCard = el.querySelector(".card");
+  if(firstCard) openLegalesCard(firstCard);
+}
+
+function legalesDocRow(d){
+  const tag = legalesTagStyle(d.estado);
+  return `
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--border)">
+      <div style="width:30px;height:30px;border-radius:7px;flex:none;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:9px;font-weight:700;color:#fff;background:${legalesIconColor(d.tipo)}">${legalesIcon(d.tipo)}</div>
+      <div style="min-width:0;flex:1">
+        <div style="font-size:12.5px;font-weight:500;color:var(--text)">${d.documento}</div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:2px">
+          <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--dim)">${d.fecha||""}</span>
+          ${d.estadoLabel?`<span class="badge" style="background:${tag.bg};color:${tag.color}">${d.estadoLabel}</span>`:""}
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;flex:none">
+        <a href="${d.linkVer}" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;padding:6px 11px;border-radius:7px;border:1px solid var(--border);color:var(--text);text-decoration:none;white-space:nowrap">Ver</a>
+        <a href="${d.linkDescarga||d.linkVer}" target="_blank" rel="noopener" class="report-btn" style="margin:0;padding:6px 11px;font-size:9px">⇩ Descargar</a>
+      </div>
+    </div>`;
+}
+
+function toggleLegalesCard(headerEl){
+  const card = headerEl.closest(".card");
+  openLegalesCard(card, true);
+}
+function openLegalesCard(cardEl, toggle){
+  const body = cardEl.querySelector(".legales-body");
+  const chev = cardEl.querySelector(".legales-chev");
+  if(!body) return;
+  const isOpen = body.style.maxHeight && body.style.maxHeight!=="0px";
+  if(toggle){
+    body.style.maxHeight = isOpen ? "0px" : body.scrollHeight+"px";
+    if(chev) chev.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+  } else if(body.innerHTML.trim()){
+    body.style.maxHeight = body.scrollHeight+"px";
+    if(chev) chev.style.transform = "rotate(180deg)";
+  }
+}
+
+function renderLegalesStats(rows){
+  const holder = document.getElementById("legales-stats");
+  if(!holder) return;
+  const withDocs = rows.filter(r=>r.docs.length>0);
+  const allDocs = rows.flatMap(r=>r.docs);
+  const verificar = allDocs.filter(d=>d.estado==="verificar").length;
+  const privilegiados = allDocs.filter(d=>d.estado==="privilegiado").length;
+  holder.innerHTML = `
+    <div class="stat-card"><div class="stat-label">Proyectos con legales</div><div class="stat-num" style="color:var(--text);font-size:26px">${withDocs.length}</div></div>
+    <div class="stat-card"><div class="stat-label">Documentos cargados</div><div class="stat-num" style="color:var(--blue);font-size:26px">${allDocs.length}</div></div>
+    <div class="stat-card"><div class="stat-label">A verificar</div><div class="stat-num" style="color:var(--amber);font-size:26px">${verificar}</div></div>
+    <div class="stat-card"><div class="stat-label">Privilegiados</div><div class="stat-num" style="color:var(--red);font-size:26px">${privilegiados}</div></div>
+  `;
+}
+
+function setLegalesFilter(f,btn){
+  _legalesFilter = f;
+  document.querySelectorAll("#legales-chips .chip").forEach(c=>c.classList.remove("active"));
+  btn.classList.add("active");
+  buildLegales(PROJS);
+}
+function filterLegales(q){
+  buildLegales(PROJS);
+}
+buildLegales(PROJS);
+
 // ── OBRA PAGE ─────────────────────────────────────────────────
 function buildObra(list){
   const el=document.getElementById("obra-list");
@@ -4482,6 +4676,7 @@ async function loadRemoteData(manual){
     if(typeof buildProjGrid==='function') buildProjGrid(PROJS);
     if(typeof buildGestion==='function') buildGestion(PROJS);
     if(typeof buildObra==='function') buildObra(PROJS);
+    if(typeof buildLegales==='function') buildLegales(PROJS);
     if(_currentProjId && document.getElementById('overlay')?.classList.contains('active') && typeof openDetail==='function') openDetail(_currentProjId);
   }catch(err){
     console.error('loadRemoteData error:', err);
