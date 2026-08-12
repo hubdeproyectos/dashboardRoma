@@ -129,6 +129,28 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .legal-doc-view:hover{text-decoration:underline}
 .legal-doc-nofile{font-family:'DM Mono',monospace;font-size:9px;color:var(--dim);white-space:nowrap}
 
+/* ── INSTALL BANNER ── */
+.install-banner{position:sticky;top:0;z-index:220;display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#d4af37,#b8942c);color:#1a1408;padding:10px 18px;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.install-banner-text{flex:1;font-size:12.5px;font-weight:600;line-height:1.3}
+.install-banner-btn{background:#0a1a35;color:#fff;border:none;border-radius:20px;padding:8px 16px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.install-banner-btn:hover{background:#132644}
+.install-banner-close{background:transparent;border:none;color:#1a1408;opacity:.6;font-size:14px;cursor:pointer;padding:4px}
+.install-banner-close:hover{opacity:1}
+#install-banner-icon{font-size:18px;flex-shrink:0}
+@media(max-width:640px){.install-banner{padding:9px 12px;gap:8px}.install-banner-text{font-size:11.5px}.install-banner-btn{padding:7px 12px;font-size:11px}}
+
+.install-modal-backdrop{display:none;position:fixed;inset:0;background:rgba(8,15,28,.7);z-index:400;align-items:center;justify-content:center;padding:20px}
+.install-modal-backdrop.active{display:flex}
+.install-modal{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:26px 24px;width:380px;max-width:100%;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.install-modal-close{position:absolute;top:14px;right:14px;background:transparent;border:none;color:var(--muted);font-size:16px;cursor:pointer}
+.im-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.im-step-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#d4af37;color:#1a1408;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif}
+.im-step-icon{font-size:22px;flex-shrink:0;width:30px;text-align:center}
+.im-step-text{font-size:13px;color:var(--text);line-height:1.5;padding-top:4px}
+.im-step-text b{color:#fff}
+.im-title{font-family:'DM Serif Display',serif;font-size:19px;color:#fff;margin-bottom:6px}
+.im-sub{font-size:12px;color:var(--muted);margin-bottom:22px}
+
 /* ── TOPBAR ── */
 .topbar{background:linear-gradient(135deg,#0a1a35 0%,#0f2348 60%,#0d1e3a 100%);border-bottom:1px solid rgba(71,148,255,0.2);padding:0 24px;display:flex;align-items:center;gap:0;position:sticky;top:0;z-index:100;height:52px}
 .brand{font-family:'DM Serif Display',serif;font-size:18px;color:#fff;margin-right:32px;white-space:nowrap;display:flex;align-items:center;gap:8px}
@@ -1333,6 +1355,20 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 
 
 <!-- TOPBAR -->
+<div id="install-banner" class="install-banner" style="display:none">
+  <span id="install-banner-icon">📲</span>
+  <span id="install-banner-text" class="install-banner-text"></span>
+  <button id="install-banner-action" class="install-banner-btn"></button>
+  <button class="install-banner-close" onclick="dismissInstallBanner()">✕</button>
+</div>
+
+<div class="install-modal-backdrop" id="install-modal-backdrop" onclick="if(event.target===this)closeInstallModal()">
+  <div class="install-modal">
+    <button class="install-modal-close" onclick="closeInstallModal()">✕</button>
+    <div id="install-modal-body"></div>
+  </div>
+</div>
+
 <div class="topbar">
   <div class="brand"><img src="data:image/png;base64,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" alt="" class="brand-mark">Grupo Roma</div>
   <div class="topbar-tabs">
@@ -6056,6 +6092,108 @@ if('serviceWorker' in navigator){
     navigator.serviceWorker.register('sw.js').catch(err=>console.warn('SW no registrado:', err));
   });
 }
+
+// ── INSTALL BANNER: detecta plataforma y ofrece instalar con un toque ──
+let _deferredInstallPrompt = null;
+const _ua = navigator.userAgent || '';
+const _isIOS = /iphone|ipad|ipod/i.test(_ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const _isAndroid = /android/i.test(_ua);
+const _isInAppBrowser = /instagram|FBAN|FBAV|Line\//i.test(_ua);
+const _isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  _deferredInstallPrompt = e;
+  renderInstallBanner();
+});
+window.addEventListener('appinstalled', () => {
+  _deferredInstallPrompt = null;
+  hideInstallBanner();
+});
+
+function dismissInstallBanner(){
+  sessionStorage.setItem('romaInstallDismissed', '1');
+  hideInstallBanner();
+}
+function hideInstallBanner(){
+  const b = document.getElementById('install-banner');
+  if(b) b.style.display = 'none';
+}
+function showInstallBanner(text, btnText, onClick){
+  const b = document.getElementById('install-banner');
+  const t = document.getElementById('install-banner-text');
+  const btn = document.getElementById('install-banner-action');
+  if(!b) return;
+  t.textContent = text;
+  btn.textContent = btnText;
+  btn.onclick = onClick;
+  b.style.display = 'flex';
+}
+
+function renderInstallBanner(){
+  if(_isStandalone) return; // ya instalada
+  if(sessionStorage.getItem('romaInstallDismissed')) return; // ya la vio esta sesión
+
+  if(_isInAppBrowser){
+    showInstallBanner('Estás viendo esto en el navegador de Instagram/Facebook — para instalar, tocá ⋯ y elegí "Abrir en el navegador".', 'Copiar link', copyAppLink);
+    return;
+  }
+  if(_deferredInstallPrompt){
+    showInstallBanner('Instalá la app de Grupo Roma en tu celular o PC — un toque y listo.', 'Instalar', triggerNativeInstall);
+    return;
+  }
+  if(_isIOS){
+    showInstallBanner('Instalá la app de Grupo Roma en tu iPhone.', 'Ver cómo', () => openInstallModal('ios'));
+    return;
+  }
+  if(_isAndroid){
+    showInstallBanner('Instalá la app de Grupo Roma en tu celular.', 'Ver cómo', () => openInstallModal('android'));
+    return;
+  }
+  // Desktop sin prompt disponible (Safari/Firefox) — no molestar, se usa bien desde el navegador.
+}
+
+async function triggerNativeInstall(){
+  if(!_deferredInstallPrompt) return;
+  hideInstallBanner();
+  _deferredInstallPrompt.prompt();
+  await _deferredInstallPrompt.userChoice.catch(()=>{});
+  _deferredInstallPrompt = null;
+}
+
+function copyAppLink(){
+  navigator.clipboard?.writeText(location.href).then(()=>{
+    const btn = document.getElementById('install-banner-action');
+    if(btn){ const orig = btn.textContent; btn.textContent = '¡Copiado!'; setTimeout(()=>btn.textContent = orig, 1500); }
+  });
+}
+
+function openInstallModal(platform){
+  const body = document.getElementById('install-modal-body');
+  if(platform === 'ios'){
+    body.innerHTML = `
+      <div class="im-title">Instalar en iPhone</div>
+      <div class="im-sub">Tiene que ser desde Safari (no funciona desde adentro de WhatsApp o Instagram).</div>
+      <div class="im-step"><span class="im-step-icon">📤</span><div class="im-step-text">Tocá el botón de <b>Compartir</b> (el cuadradito con la flecha hacia arriba), abajo de la pantalla.</div></div>
+      <div class="im-step"><span class="im-step-icon">➕</span><div class="im-step-text">Deslizá hacia abajo en el menú y tocá <b>"Agregar a pantalla de inicio"</b>.</div></div>
+      <div class="im-step"><span class="im-step-icon">✅</span><div class="im-step-text">Tocá <b>"Agregar"</b> arriba a la derecha. Listo — el ícono de Grupo Roma queda en tu pantalla.</div></div>
+    `;
+  } else {
+    body.innerHTML = `
+      <div class="im-title">Instalar en Android</div>
+      <div class="im-sub">Tiene que ser desde Chrome (no funciona desde adentro de WhatsApp o Instagram).</div>
+      <div class="im-step"><span class="im-step-icon">⋮</span><div class="im-step-text">Tocá los <b>tres puntitos</b> arriba a la derecha del navegador.</div></div>
+      <div class="im-step"><span class="im-step-icon">➕</span><div class="im-step-text">Tocá <b>"Instalar app"</b> o <b>"Agregar a pantalla de inicio"</b>.</div></div>
+      <div class="im-step"><span class="im-step-icon">✅</span><div class="im-step-text">Confirmá. Listo — el ícono de Grupo Roma queda en tu pantalla.</div></div>
+    `;
+  }
+  document.getElementById('install-modal-backdrop').classList.add('active');
+}
+function closeInstallModal(){
+  document.getElementById('install-modal-backdrop').classList.remove('active');
+}
+
+setTimeout(renderInstallBanner, 3000); // fallback si beforeinstallprompt no llega a tiempo (iOS/in-app)
 
 </script>
 </body>
