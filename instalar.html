@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instalar la app · Grupo Roma</title>
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta property="og:title" content="Instalar la app de Grupo Roma">
+<meta property="og:description" content="Guía rápida para instalar el panel de gestión en tu celular o PC.">
+<meta property="og:image" content="https://hubdeproyectos.github.io/dashboardRoma/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:      #172b46;
+  --bg2:     #203a5a;
+  --bg3:     #294665;
+  --border:  rgba(255,255,255,0.09);
+  --border2: rgba(71,148,255,0.35);
+  --text:    #f0f4ff;
+  --muted:   #a9bdd7;
+  --dim:     #6f8eaf;
+  --green:   #2ec87a;
+  --amber:   #f0b429;
+  --red:     #e05555;
+  --blue:    #4794ff;
+  --gold:    #d4af37;
+  --gold-l:  rgba(212,175,55,0.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:radial-gradient(circle at 15% 0%,#1a3459 0%,var(--bg) 45%);
+  color:var(--text);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:720px;margin:0 auto;padding:32px 20px 80px}
+
+/* ── HEADER ── */
+.header{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+.header img{height:36px;width:auto}
+.header .brand-name{font-family:'DM Serif Display',serif;font-size:19px;color:#fff}
+.header .brand-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-top:2px}
+
+/* ── IN-APP BROWSER WARNING ── */
+.warn-banner{display:none;align-items:flex-start;gap:12px;background:linear-gradient(90deg,var(--gold),#b8942c);color:#1a1408;padding:14px 16px;border-radius:12px;margin-bottom:24px;font-size:13px;line-height:1.5;font-weight:600}
+.warn-banner.show{display:flex}
+.warn-banner .wi{font-size:20px;flex-shrink:0}
+
+/* ── HERO ── */
+h1{font-family:'DM Serif Display',serif;font-size:30px;color:#fff;line-height:1.2;margin-bottom:10px}
+.lede{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:28px;max-width:560px}
+
+/* ── DETECTED PLATFORM CARD ── */
+.detected{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:16px 18px;margin-bottom:22px}
+.detected-icon{font-size:30px;flex-shrink:0}
+.detected-text{flex:1}
+.detected-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:2px}
+.detected-name{font-size:16px;font-weight:700;color:#fff}
+.native-install-btn{display:none;background:var(--blue);color:#fff;border:none;border-radius:10px;padding:11px 20px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.native-install-btn.show{display:block}
+.native-install-btn:hover{background:#3a7de0}
+
+/* ── PLATFORM SWITCHER ── */
+.switcher{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap}
+.switch-btn{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:11px;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:all .15s}
+.switch-btn:hover{border-color:var(--border2);color:#fff}
+.switch-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* ── STEPS ── */
+.steps-panel{display:none}
+.steps-panel.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.platform-note{font-size:12.5px;color:var(--dim);margin-bottom:22px;font-style:italic}
+.step{display:flex;gap:14px;margin-bottom:6px;position:relative}
+.step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--gold);color:#1a1408;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;z-index:1}
+.step-connector{position:absolute;left:16.5px;top:34px;bottom:-6px;width:1.5px;background:var(--border);z-index:0}
+.step:last-child .step-connector{display:none}
+.step-body{flex:1;padding-bottom:26px}
+.step-icon{font-size:20px;margin-bottom:4px}
+.step-text{font-size:14px;color:var(--text);line-height:1.55}
+.step-text b{color:#fff}
+
+.tip-box{display:flex;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-top:8px;font-size:12px;color:var(--muted);line-height:1.5}
+.tip-box .ti{flex-shrink:0}
+
+/* ── FOOTER CTA ── */
+.footer-cta{margin-top:44px;padding-top:28px;border-top:1px solid var(--border);text-align:center}
+.footer-cta a{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:13px 26px;border-radius:10px}
+.footer-cta a:hover{background:#3a7de0}
+.footer-cta p{font-size:11px;color:var(--dim);margin-top:14px}
+
+@media(max-width:480px){
+  h1{font-size:24px}
+  .detected{flex-wrap:wrap}
+  .native-install-btn{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <img src="icons/icon-512.png" alt="Grupo Roma">
+    <div>
+      <div class="brand-name">Grupo Roma</div>
+      <div class="brand-sub">Instalar la app</div>
+    </div>
+  </div>
+
+  <div class="warn-banner" id="warn-banner">
+    <span class="wi">⚠️</span>
+    <span>Estás viendo esto dentro de WhatsApp o Instagram — esos navegadores internos no permiten instalar nada. Tocá <b>⋯</b> o el ícono de compartir, arriba a la derecha, y elegí <b>"Abrir en el navegador"</b>. Después volvé a esta misma página.</span>
+  </div>
+
+  <h1>Tres pasos y queda instalada.</h1>
+  <p class="lede">Es gratis, no hace falta App Store ni Google Play, y una vez instalada el panel abre directo con el ícono de Grupo Roma — como cualquier otra app.</p>
+
+  <div class="detected">
+    <span class="detected-icon" id="detected-icon">📱</span>
+    <div class="detected-text">
+      <div class="detected-label">Detectamos tu dispositivo</div>
+      <div class="detected-name" id="detected-name">Cargando…</div>
+    </div>
+    <button class="native-install-btn" id="native-install-btn">Instalar ahora</button>
+  </div>
+
+  <div class="switcher" id="switcher">
+    <button class="switch-btn" data-p="android" onclick="setPlatform('android')">📱 Android</button>
+    <button class="switch-btn" data-p="ios" onclick="setPlatform('ios')">📲 iPhone</button>
+    <button class="switch-btn" data-p="windows" onclick="setPlatform('windows')">🖥 Windows</button>
+    <button class="switch-btn" data-p="mac" onclick="setPlatform('mac')">💻 Mac</button>
+  </div>
+
+  <!-- ANDROID -->
+  <div class="steps-panel" id="panel-android">
+    <p class="platform-note">Desde el navegador Chrome.</p>
+    <div class="step"><div class="step-num">1</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">🔗</div><div class="step-text">Si no estás ya en esta página desde el celular, entrá a <b>hubdeproyectos.github.io/dashboardRoma</b></div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">📲</div><div class="step-text">Tocá el botón <b>"Instalar ahora"</b> de arriba. Si no aparece, tocá los tres puntitos ⋮ arriba a la derecha del navegador → <b>"Instalar app"</b>.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-icon">✅</div><div class="step-text">Confirmá. Listo — el ícono de Grupo Roma queda en tu pantalla como una app más.</div></div></div>
+  </div>
+
+  <!-- IOS -->
+  <div class="steps-panel" id="panel-ios">
+    <p class="platform-note">Tiene que ser desde Safari — no funciona desde Chrome en iPhone.</p>
+    <div class="step"><div class="step-num">1</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">🔗</div><div class="step-text">Si no estás ya en esta página desde Safari, entrá a <b>hubdeproyectos.github.io/dashboardRoma</b></div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">📤</div><div class="step-text">Tocá el botón de <b>Compartir</b> (el cuadradito con la flecha hacia arriba), abajo de la pantalla.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">➕</div><div class="step-text">Deslizá hacia abajo en el menú y tocá <b>"Agregar a pantalla de inicio"</b>.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-icon">✅</div><div class="step-text">Tocá <b>"Agregar"</b> arriba a la derecha. Listo — el ícono de Grupo Roma queda en tu pantalla.</div></div></div>
+  </div>
+
+  <!-- WINDOWS -->
+  <div class="steps-panel" id="panel-windows">
+    <p class="platform-note">Desde Chrome o Edge.</p>
+    <div class="step"><div class="step-num">1</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">🔗</div><div class="step-text">Entrá a <b>hubdeproyectos.github.io/dashboardRoma</b></div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">⊕</div><div class="step-text">Tocá el botón <b>"Instalar ahora"</b> de arriba, o el ícono de instalar en la barra de direcciones (a la derecha, una pantalla con una flecha).</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-icon">✅</div><div class="step-text">Confirmá con <b>"Instalar"</b>. Se abre en su propia ventana, con acceso directo en el escritorio y el menú Inicio.</div></div></div>
+    <div class="tip-box"><span class="ti">💡</span><span>Si no ves el ícono en la barra de direcciones: menú ⋮ (arriba a la derecha) → "Instalar Grupo Roma" o "Aplicaciones" → "Instalar este sitio como una aplicación".</span></div>
+  </div>
+
+  <!-- MAC -->
+  <div class="steps-panel" id="panel-mac">
+    <p class="platform-note">Desde Chrome o Edge — Safari en Mac no permite instalar esta app.</p>
+    <div class="step"><div class="step-num">1</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">🔗</div><div class="step-text">Entrá a <b>hubdeproyectos.github.io/dashboardRoma</b></div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-connector"></div><div class="step-body"><div class="step-icon">⊕</div><div class="step-text">Tocá el botón <b>"Instalar ahora"</b> de arriba, o el ícono de instalar en la barra de direcciones.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-icon">✅</div><div class="step-text">Confirmá con <b>"Instalar"</b>. Queda como una app propia en el Launchpad, junto a las demás.</div></div></div>
+    <div class="tip-box"><span class="ti">💡</span><span>Si no ves el ícono: menú ⋮ (arriba a la derecha) → "Guardar y compartir" → "Instalar Grupo Roma".</span></div>
+  </div>
+
+  <div class="footer-cta">
+    <a href="./index.html">Ir al panel →</a>
+    <p>Cualquier duda durante la instalación, se resuelve en el momento.</p>
+  </div>
+
+</div>
+
+<script>
+const PLATFORM_META = {
+  android: {icon:'📱', name:'Android · Chrome'},
+  ios:     {icon:'📲', name:'iPhone · Safari'},
+  windows: {icon:'🖥', name:'Windows · Chrome o Edge'},
+  mac:     {icon:'💻', name:'Mac · Chrome o Edge'},
+};
+
+function setPlatform(p){
+  document.querySelectorAll('.steps-panel').forEach(el=>el.classList.remove('active'));
+  document.getElementById('panel-'+p).classList.add('active');
+  document.querySelectorAll('.switch-btn').forEach(el=>el.classList.toggle('active', el.dataset.p===p));
+  document.getElementById('detected-icon').textContent = PLATFORM_META[p].icon;
+  document.getElementById('detected-name').textContent = PLATFORM_META[p].name;
+}
+
+function detectPlatform(){
+  const ua = navigator.userAgent || '';
+  const isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isAndroid = /android/i.test(ua);
+  const isMac = /Macintosh/i.test(ua) && !isIOS;
+  const isInAppBrowser = /instagram|FBAN|FBAV|Line\//i.test(ua);
+
+  if(isInAppBrowser) document.getElementById('warn-banner').classList.add('show');
+
+  if(isAndroid) return 'android';
+  if(isIOS) return 'ios';
+  if(isMac) return 'mac';
+  return 'windows'; // default para el resto de desktop (Windows/Linux)
+}
+
+setPlatform(detectPlatform());
+
+// ── Instalación nativa (Android Chrome / Windows / Mac con Chrome o Edge) ──
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('native-install-btn').classList.add('show');
+});
+document.getElementById('native-install-btn').addEventListener('click', async () => {
+  if(!deferredPrompt) return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice.catch(()=>{});
+  deferredPrompt = null;
+  document.getElementById('native-install-btn').classList.remove('show');
+});
+window.addEventListener('appinstalled', () => {
+  document.getElementById('native-install-btn').classList.remove('show');
+});
+</script>
+</body>
+</html>
