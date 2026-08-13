@@ -173,6 +173,25 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .roma-map-popup .rmp-pct{font-family:'DM Mono',monospace;font-size:10px;font-weight:700}
 .leaflet-popup-content-wrapper{border-radius:10px}
 
+/* ── NOTIFICACIONES ── */
+.notif-wrap{position:relative}
+.notif-bell{position:relative;background:transparent;border:none;font-size:15px;cursor:pointer;padding:4px 6px;line-height:1}
+.notif-badge{position:absolute;top:-3px;right:-2px;background:var(--red);color:#fff;font-family:'DM Mono',monospace;font-size:8px;font-weight:700;min-width:14px;height:14px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px;box-shadow:0 0 0 2px var(--bg)}
+.notif-panel{display:none;position:absolute;top:calc(100% + 10px);right:0;width:340px;max-height:420px;background:var(--bg2);border:1px solid var(--border2);border-radius:12px;box-shadow:0 16px 50px rgba(0,0,0,.5);z-index:300;overflow:hidden;flex-direction:column}
+.notif-panel.open{display:flex}
+.notif-panel-header{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:#fff;padding:12px 14px;border-bottom:1px solid var(--border)}
+.notif-list{overflow-y:auto;flex:1}
+.notif-item{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer}
+.notif-item:hover{background:var(--bg3)}
+.notif-item:last-child{border-bottom:none}
+.notif-item-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+.notif-item-body{flex:1;min-width:0}
+.notif-item-proj{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.5px;color:var(--gold,#d4af37);text-transform:uppercase;margin-bottom:2px}
+.notif-item-msg{font-size:11px;color:var(--text);line-height:1.4}
+.notif-item-time{font-family:'DM Mono',monospace;font-size:8.5px;color:var(--dim);margin-top:3px}
+.notif-empty{padding:24px 14px;text-align:center;color:var(--dim);font-size:11px}
+@media(max-width:480px){.notif-panel{width:280px;right:-40px}}
+
 /* ── INSTALL BANNER ── */
 .install-banner{position:sticky;top:0;z-index:220;display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#d4af37,#b8942c);color:#1a1408;padding:10px 18px;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 .install-banner-text{flex:1;font-size:12.5px;font-weight:600;line-height:1.3}
@@ -1447,6 +1466,15 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <span class="sync-dot" id="sync-dot"></span>
     <span id="sync-text">Datos locales</span>
   </button>
+  <div class="notif-wrap">
+    <button class="notif-bell" id="notif-bell" onclick="toggleNotifPanel()" title="Notificaciones">
+      🔔<span class="notif-badge" id="notif-badge" style="display:none">0</span>
+    </button>
+    <div class="notif-panel" id="notif-panel">
+      <div class="notif-panel-header">Notificaciones</div>
+      <div class="notif-list" id="notif-list"></div>
+    </div>
+  </div>
   <div class="topbar-date">20·07·2026</div>
 </div>
 
@@ -5280,7 +5308,80 @@ function mergeRemoteData_(data){
   });
   // 4) Puntos críticos y novedades quedan disponibles en REMOTE_DATA
   //    para quien quiera consumirlos (ver getPuntosCriticos / getNovedades).
+  renderNotifications(data.notificaciones || []);
 }
+
+// ── NOTIFICACIONES ──────────────────────────────────────────────
+const NOTIF_ICONS = {hito:'📌', subhito:'🔗', obra:'🏗', novedad:'💬', proyecto:'✎'};
+let _lastNotifTimestamps = [];
+
+function timeAgo(iso){
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const min = Math.floor(diffMs/60000);
+  if(min < 1) return 'ahora';
+  if(min < 60) return `hace ${min} min`;
+  const hs = Math.floor(min/60);
+  if(hs < 24) return `hace ${hs} h`;
+  const d = Math.floor(hs/24);
+  return `hace ${d} d`;
+}
+
+function renderNotifications(items){
+  _lastNotifTimestamps = items;
+  const list = document.getElementById('notif-list');
+  const badge = document.getElementById('notif-badge');
+  if(!list || !badge) return;
+
+  if(!items.length){
+    list.innerHTML = '<div class="notif-empty">Todavía no hay cambios registrados.</div>';
+    badge.style.display = 'none';
+    return;
+  }
+
+  const lastSeen = localStorage.getItem('romaNotifLastSeen') || '';
+  const unread = items.filter(n=>String(n.timestamp) > lastSeen).length;
+  if(unread > 0){
+    badge.textContent = unread > 99 ? '99+' : unread;
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
+
+  list.innerHTML = items.map(n=>`
+    <div class="notif-item" onclick="handleNotifClick('${(n.proyectoId||'').replace(/'/g,"\\'")}')">
+      <span class="notif-item-icon">${NOTIF_ICONS[n.tipo] || '•'}</span>
+      <div class="notif-item-body">
+        ${n.proyectoNombre ? `<div class="notif-item-proj">${n.proyectoNombre}</div>` : ''}
+        <div class="notif-item-msg">${n.mensaje || ''}</div>
+        <div class="notif-item-time">${timeAgo(n.timestamp)}</div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleNotifPanel(){
+  const panel = document.getElementById('notif-panel');
+  if(!panel) return;
+  const opening = !panel.classList.contains('open');
+  panel.classList.toggle('open', opening);
+  if(opening && _lastNotifTimestamps.length){
+    const newest = _lastNotifTimestamps.reduce((mx,n)=> String(n.timestamp) > mx ? String(n.timestamp) : mx, '');
+    localStorage.setItem('romaNotifLastSeen', newest);
+    document.getElementById('notif-badge').style.display = 'none';
+  }
+}
+
+function handleNotifClick(proyectoId){
+  document.getElementById('notif-panel').classList.remove('open');
+  if(proyectoId && window._mapGoToProject) window._mapGoToProject(proyectoId);
+}
+
+document.addEventListener('click', (e)=>{
+  const wrap = document.querySelector('.notif-wrap');
+  if(wrap && !wrap.contains(e.target)){
+    const panel = document.getElementById('notif-panel');
+    if(panel) panel.classList.remove('open');
+  }
+});
 
 function buildNovedadesPanel(p){
   if(!isDataUrlConfigured()){
