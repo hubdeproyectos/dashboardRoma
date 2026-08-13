@@ -129,6 +129,27 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .legal-doc-view:hover{text-decoration:underline}
 .legal-doc-nofile{font-family:'DM Mono',monospace;font-size:9px;color:var(--dim);white-space:nowrap}
 
+/* ── LEGALES: transversal + puntos críticos detallados ── */
+.legal-transversal-box{background:linear-gradient(135deg,#241a10,#1a1410);border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:20px 22px;margin-bottom:20px}
+.legal-transversal-title{font-family:'DM Serif Display',serif;font-size:15px;color:#fff;margin-bottom:8px}
+.legal-transversal-desc{font-size:11.5px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.legal-transversal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+@media(max-width:640px){.legal-transversal-grid{grid-template-columns:1fr}}
+.legal-transversal-organismo{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:#d4af37;text-transform:uppercase;margin-bottom:8px}
+.legal-transversal-proyectos{display:flex;flex-wrap:wrap;gap:6px}
+.legal-proj-chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:4px 10px;font-size:10.5px;color:var(--text)}
+.legal-transversal-nota{font-size:11px;color:#d8c88a;font-style:italic;border-top:1px solid rgba(212,175,55,.2);padding-top:12px;line-height:1.5}
+
+.legal-sem-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;flex-shrink:0;vertical-align:middle}
+.legal-pc-section{margin-bottom:18px}
+.legal-pc-card{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:10px}
+.legal-pc-head{display:flex;align-items:center;gap:0;margin-bottom:8px}
+.legal-pc-title{font-size:12.5px;font-weight:600;color:var(--text)}
+.legal-pc-contexto{font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:10px}
+.legal-pc-meta{display:flex;flex-direction:column;gap:3px}
+.legal-pc-meta div{font-size:10.5px;color:var(--muted)}
+.legal-pc-label{color:var(--dim);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.3px;margin-right:4px}
+
 /* ── INSTALL BANNER ── */
 .install-banner{position:sticky;top:0;z-index:220;display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#d4af37,#b8942c);color:#1a1408;padding:10px 18px;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 .install-banner-text{flex:1;font-size:12.5px;font-weight:600;line-height:1.3}
@@ -1571,6 +1592,8 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     </div>
   </section>
 
+  <div id="legales-transversal"></div>
+
   <div id="legales-accordion"></div>
 </div>
 
@@ -1910,6 +1933,16 @@ const LEGALES_DATA = {
       "MOP (CH2) — aprobado el 28/03/2025; revisar si el expediente sancionatorio por obras irregulares (Ley 13.740) continúa abierto.",
       "Municipalidad — Ordenanza 109/2019 (TGI): la exención pactada está en estado de judicialización por ausencia de contraprestación municipal real."
     ],
+    "puntosCriticosDetalle": [
+  {
+    "titulo": "Cobro indebido de TGI — exención pactada desconocida por la comuna",
+    "semaforo": "rojo",
+    "contexto": "La exención pactada en la Cláusula 8ª (Ordenanza 109/2019 del convenio urbanístico) no es reconocida por la Municipalidad de Pueblo Esther. La deuda reclamada está en judicialización, lo que demora los procesos de posesión y frena el libre deuda — forzando a la compañía a afrontar una deuda de $180.000.000 que crece con intereses.",
+    "intervinientes": "Intendencia: Martín Gherardi · Legales: Luciano Poggi",
+    "contactoSeguimiento": "Pablo Cofano",
+    "estado": "Sin movimientos (deuda judicializada)"
+  }
+],
     "organismos": [
       {
         "nombre": "VUI — Ventanilla Única de Inversiones",
@@ -2209,7 +2242,155 @@ const LEGALES_DATA = {
         ]
       }
     ]
-  }
+  },
+  "CM": {
+  "docsPrincipales": [],
+  "organismos": [],
+  "puntosAtencion": [],
+  "puntosCriticosDetalle": [
+    {
+      "titulo": "EPE trasladó el expediente de baja y media tensión a Santa Fe",
+      "semaforo": "rojo",
+      "contexto": "El 12/08/2026 la EPE notificó que el expediente del proyecto de baja y media tensión se trasladó a Santa Fe. La obra eléctrica se ejecutó según proyecto y proveedores homologados por EPE. Para regularizar, la empresa firmó un convenio con EPE (pago de canon en 12 meses, factibilidad eléctrica, obra complementaria). La compañía ya pagó el canon y presentó los proyectos acordados, pero EPE ahora no aprueba y pretende ampliar la obra complementaria con una adecuación de Línea de Alta Tensión, sin relación normativa, técnica ni legal con el proyecto original. No hay novedades ni próximas acciones informadas por EPE.",
+      "intervinientes": "Área de Proyectos Santa Fe (EPE) — expediente sin responsable confirmado; posibles: Melisa Uriarte, Julián Mauricio Aldecoa, Darío Panetto, Marcelo Cassín.",
+      "contactoSeguimiento": "Sin contacto político — solo seguimiento técnico/operativo desde Gestión.",
+      "estado": "Sin movimientos"
+    }
+  ]
+},
+  "EN": {
+  "docsPrincipales": [],
+  "organismos": [],
+  "puntosAtencion": [],
+  "puntosCriticosDetalle": [
+    {
+      "titulo": "Certificado Hídrico 2 condicionado a la aprobación del punto de vuelco (DPV)",
+      "semaforo": "rojo",
+      "contexto": "La SRH aprobó los Certificados 1 y 2, pero el CH2 quedó condicionado a que la Dirección Provincial de Vialidad (DPV) apruebe el punto de vuelco — esto no permite avanzar con las gestiones en Medio Ambiente y la Comuna. El 03/08 el expediente pasó a la oficina hidráulica de DPV, que va a inspeccionar la obra de descarga y revisar la documentación. Una vez aprobado el punto de vuelco, vuelve a la SRH para su emisión (Nicolás Mijich). Las gestiones de los Certificados Hídricos de El Naranjo comenzaron en marzo de 2022; aunque el predio ya tenía aprobaciones desde 2009 equivalentes al primer certificado, cambios de criterio de la SRH generaron demoras de 2 a 3 años.",
+      "intervinientes": "Secretario SRH: Nicolás Mijich · Seguimiento técnico: Ing. Pablo Bellitieri",
+      "contactoSeguimiento": "Ing. Pablo Bellitieri",
+      "estado": "En movimiento"
+    },
+    {
+      "titulo": "DPV avanza lento por mirar un proyecto macro ajeno al expediente",
+      "semaforo": "rojo",
+      "contexto": "DPV es quien debe aprobar el punto de vuelco de El Naranjo 1 (Hídrica y Vialidad), pero avanza de forma lenta porque está mirando un proyecto macro por fuera de este expediente — alargando aún más los tiempos. Es urgente obtener este visado para poder avanzar con Medio Ambiente.",
+      "intervinientes": "Administrador general: Pablo Seghezzo · Director general: Fabio Sánchez · Técnico con el expediente: José María Fernández",
+      "contactoSeguimiento": "Ing. Pablo Bellitieri",
+      "estado": "En movimiento"
+    },
+    {
+      "titulo": "Posesión provisoria del barrio pendiente de instrumento legal",
+      "semaforo": "rojo",
+      "contexto": "El intendente Jorge Masson se comprometió a otorgar la posesión con la emisión del CH2, y ya se avanzó con el \"pre-certificado 2\". Falta iniciar el instrumento legal que permita formalizar la posesión.",
+      "intervinientes": "Intendente: Jorge Masson",
+      "contactoSeguimiento": "Pablo Cofano",
+      "estado": "Sin movimientos"
+    }
+  ]
+},
+  "CM2": {
+  "docsPrincipales": [],
+  "organismos": [],
+  "puntosAtencion": [],
+  "puntosCriticosDetalle": [
+    {
+      "titulo": "Demora en visado de mensura y compensación de espacio verde sin cerrar",
+      "semaforo": "rojo",
+      "contexto": "No se ha firmado el convenio, aunque ya está redactado por completo y las obras complementarias ya se ejecutaron. Esto impide avanzar con las gestiones provinciales y en Ventanilla Única, extendiendo los plazos comprometidos con los clientes.",
+      "intervinientes": "Intendencia Comuna de Ibarlucea: Jorge Masson",
+      "contactoSeguimiento": "Pablo Cofano",
+      "estado": "Sin movimientos"
+    }
+  ]
+},
+  "EN2": {
+  "docsPrincipales": [],
+  "organismos": [],
+  "puntosAtencion": [],
+  "puntosCriticosDetalle": [
+    {
+      "titulo": "Proyecto hidráulico adaptado a la Ley del Ludueña, en revisión técnica",
+      "semaforo": "rojo",
+      "contexto": "El 22/07/2026 se ingresó el proyecto hidráulico adaptado bajo la Ley del Ludueña N° 13.246, según lo solicitado. Queda pendiente la revisión técnica del Ing. Nicolás Fernández y la posterior aprobación de Nicolás Mijich.",
+      "intervinientes": "Secretario SRH: Nicolás Mijich",
+      "contactoSeguimiento": "Ing. Pablo Bellitieri",
+      "estado": "En movimiento"
+    }
+  ]
+},
+  "CEZA": {
+  "docsPrincipales": [],
+  "organismos": [],
+  "puntosAtencion": [],
+  "puntosCriticosDetalle": [
+    {
+      "titulo": "Obra de mitigación observada tras la aprobación de la zonificación",
+      "semaforo": "amarillo",
+      "contexto": "El 21/07/2026 la SRH respondió sobre la zonificación remodelada bajo la Ley del Ludueña N° 13.246 y la obra de mitigación propuesta. La zonificación fue aprobada; la obra de mitigación quedó observada. Se está defendiendo técnicamente la obra de mitigación con el Ing. Nicolás Fernández para avanzar luego a la etapa del Certificado Hídrico 2.",
+      "intervinientes": "Secretario SRH: Nicolás Mijich",
+      "contactoSeguimiento": "Ing. Mario Chirichigno",
+      "estado": "Lento, pero en movimiento"
+    }
+  ]
+},
+  "VR": {
+  "docsPrincipales": [],
+  "organismos": [],
+  "puntosAtencion": [],
+  "puntosCriticosDetalle": [
+    {
+      "titulo": "Visado de mensura y CH2 frenados por pedido de reducir la cantidad de lotes",
+      "semaforo": "amarillo",
+      "contexto": "Se solicitó reducir la cantidad de lotes (duplicar el tamaño de lotes ya vendidos, con obras ya ejecutadas). Pese a que existe un antecedente de aprobación previo, al no haber intervención política que agilice el expediente, queda inmovilizado en una interpretación técnica-operativa.",
+      "intervinientes": "Intendente: Esteban Ferri",
+      "contactoSeguimiento": "Pablo Cofano",
+      "estado": "Lento, pero en movimiento"
+    }
+  ]
+},
+  "LM": {
+  "docsPrincipales": [],
+  "organismos": [],
+  "puntosAtencion": [],
+  "puntosCriticosDetalle": [
+    {
+      "titulo": "Reunión con la cooperativa por convenio de desglose de TGI y mantenimiento",
+      "semaforo": "amarillo",
+      "contexto": "El viernes 14/08/2026 hay reunión con el abogado de la cooperativa para avanzar un potencial convenio como instrumento de desglose de cuentas de TGI y mantenimiento del barrio, camino a la aceptación comunal del barrio.",
+      "intervinientes": "Intendente: Carina Gaspari",
+      "contactoSeguimiento": "Valeria Risiglione",
+      "estado": "En movimiento"
+    }
+  ]
+}
+};
+
+const LEGALES_TRANSVERSAL = {
+  "titulo": "Expedientes por inicio de obra sin permisos y multas — MAyCC y SRH",
+  "descripcion": "Varios desarrollos tienen expedientes abiertos por haber iniciado obra sin permiso, en dos organismos distintos.",
+  "grupos": [
+    {
+      "organismo": "MAyCC (Ambiente y Cambio Climático)",
+      "proyectos": [
+        "El Naranjo",
+        "Campo Madero",
+        "CEPE",
+        "Vitta"
+      ]
+    },
+    {
+      "organismo": "SRH (Recursos Hídricos)",
+      "proyectos": [
+        "El Naranjo",
+        "El Naranjo 2",
+        "CEPE",
+        "Vitta",
+        "Vitta Río"
+      ]
+    }
+  ],
+  "nota": "Caso más avanzado: El Naranjo, por expediente de SRH — ya se emitió la multa y todavía no se tomaron medidas legales, solo argumentos previos."
 };
 
 const PROJS = [
@@ -5137,15 +5318,50 @@ function toggleLegalProj(el){
   el.classList.toggle('open');
 }
 
+function legalSemaforoColor(sem){
+  return sem==='rojo' ? 'var(--red)' : sem==='amarillo' ? 'var(--amber)' : 'var(--green)';
+}
+
+function worstSemaforo(items){
+  if(!items || !items.length) return null;
+  if(items.some(i=>i.semaforo==='rojo')) return 'rojo';
+  if(items.some(i=>i.semaforo==='amarillo')) return 'amarillo';
+  return 'verde';
+}
+
+function buildLegalesTransversal(){
+  const cont = document.getElementById('legales-transversal');
+  if(!cont || typeof LEGALES_TRANSVERSAL==='undefined') return;
+  const t = LEGALES_TRANSVERSAL;
+  cont.innerHTML = `
+    <div class="legal-transversal-box">
+      <div class="legal-transversal-title">⚠ ${t.titulo}</div>
+      <p class="legal-transversal-desc">${t.descripcion}</p>
+      <div class="legal-transversal-grid">
+        ${t.grupos.map(g=>`
+          <div class="legal-transversal-grupo">
+            <div class="legal-transversal-organismo">${g.organismo}</div>
+            <div class="legal-transversal-proyectos">${g.proyectos.map(pr=>`<span class="legal-proj-chip">${pr}</span>`).join('')}</div>
+          </div>`).join('')}
+      </div>
+      ${t.nota ? `<div class="legal-transversal-nota">${t.nota}</div>` : ''}
+    </div>`;
+}
+
 function buildLegales(){
   const cont = document.getElementById('legales-accordion');
   if(!cont) return;
-  // Proyectos con documentación cargada primero; el resto, después, en su orden habitual.
-  const ordered = [...PROJS].sort((a,b)=>{
-    const ad = LEGALES_DATA[a.id] ? 0 : 1;
-    const bd = LEGALES_DATA[b.id] ? 0 : 1;
-    return ad - bd;
-  });
+  buildLegalesTransversal();
+  // Proyectos con documentación cargada primero (organismos con docs), después los que
+  // solo tienen puntos críticos relevados, y por último el resto sin nada cargado.
+  const rank = (id) => {
+    const d = LEGALES_DATA[id];
+    if(!d) return 2;
+    if((d.organismos||[]).length) return 0;
+    if((d.puntosCriticosDetalle||[]).length) return 1;
+    return 2;
+  };
+  const ordered = [...PROJS].sort((a,b)=> rank(a.id) - rank(b.id));
   cont.innerHTML = ordered.map(p=>{
     const data = LEGALES_DATA[p.id];
     if(!data){
@@ -5158,6 +5374,9 @@ function buildLegales(){
       </div>`;
     }
     const totalDocs = (data.organismos||[]).reduce((s,o)=>s+o.docs.length,0);
+    const sem = worstSemaforo(data.puntosCriticosDetalle);
+    const semDot = sem ? `<span class="legal-sem-dot" style="background:${legalSemaforoColor(sem)}" title="Estado general: ${sem}"></span>` : '';
+    const metaTexto = totalDocs>0 ? `${totalDocs} documentos` : (data.puntosCriticosDetalle && data.puntosCriticosDetalle.length ? 'Puntos críticos relevados · Documentación pendiente' : 'Sin documentos cargados');
     const featuredHtml = (data.docsPrincipales||[]).map(fd=>`
       <div class="legal-doc-card">
         <span class="legal-doc-card-icon">📄</span>
@@ -5170,6 +5389,23 @@ function buildLegales(){
       <div class="legal-alert">
         <div class="legal-alert-title">⚠ PUNTOS DE ATENCIÓN</div>
         <ul style="margin:0;padding-left:16px">${data.puntosAtencion.map(t=>`<li>${t}</li>`).join('')}</ul>
+      </div>` : '';
+    const pcHtml = (data.puntosCriticosDetalle && data.puntosCriticosDetalle.length) ? `
+      <div class="legal-pc-section">
+        <div class="legal-org-name">PUNTOS CRÍTICOS — SEGUIMIENTO POLÍTICO Y LEGAL</div>
+        ${data.puntosCriticosDetalle.map(pcItem=>`
+          <div class="legal-pc-card" style="border-left-color:${legalSemaforoColor(pcItem.semaforo)}">
+            <div class="legal-pc-head">
+              <span class="legal-sem-dot" style="background:${legalSemaforoColor(pcItem.semaforo)}"></span>
+              <span class="legal-pc-title">${pcItem.titulo}</span>
+              <span class="legal-estado ${legalEstadoClass(pcItem.estado)}" style="margin-left:auto">${pcItem.estado}</span>
+            </div>
+            <p class="legal-pc-contexto">${pcItem.contexto}</p>
+            <div class="legal-pc-meta">
+              ${pcItem.intervinientes ? `<div><span class="legal-pc-label">Intervinientes:</span> ${pcItem.intervinientes}</div>` : ''}
+              ${pcItem.contactoSeguimiento ? `<div><span class="legal-pc-label">Contacto de seguimiento:</span> ${pcItem.contactoSeguimiento}</div>` : ''}
+            </div>
+          </div>`).join('')}
       </div>` : '';
     const organismosHtml = (data.organismos||[]).map(org=>`
       <div class="legal-org">
@@ -5193,12 +5429,13 @@ function buildLegales(){
       </div>`).join('');
     return `<div class="legal-proj has-docs">
       <div class="legal-proj-head" onclick="toggleLegalProj(this.parentElement)">
-        <div><div class="legal-proj-name">${p.nombre}</div><div class="legal-proj-meta">${p.localidad || p.loc || ''} · ${totalDocs} documentos</div></div>
+        <div><div class="legal-proj-name">${semDot}${p.nombre}</div><div class="legal-proj-meta">${p.localidad || p.loc || ''} · ${metaTexto}</div></div>
         <span class="legal-proj-chevron">⌄</span>
       </div>
       <div class="legal-proj-body">
         ${alertHtml}
-        <div class="legal-featured">${featuredHtml}</div>
+        ${pcHtml}
+        ${featuredHtml ? `<div class="legal-featured">${featuredHtml}</div>` : ''}
         ${organismosHtml}
       </div>
     </div>`;
