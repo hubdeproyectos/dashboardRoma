@@ -150,6 +150,29 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .legal-pc-meta div{font-size:10.5px;color:var(--muted)}
 .legal-pc-label{color:var(--dim);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.3px;margin-right:4px}
 
+/* ── VIEW TOGGLE (Grilla / Mapa) ── */
+.view-toggle{display:flex;gap:8px;margin-bottom:14px}
+.vt-btn{display:flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:11.5px;font-weight:600;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif}
+.vt-btn:hover{border-color:var(--border2);color:var(--text)}
+.vt-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.vt-icon{font-size:13px}
+
+/* ── MAPA DE PROYECTOS ── */
+#proj-map-wrap{margin-top:4px}
+#proj-map{height:560px;border-radius:14px;border:1px solid var(--border);overflow:hidden}
+.map-legend{display:flex;gap:20px;margin-top:12px;flex-wrap:wrap}
+.map-legend span{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+.map-legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.roma-map-pin{display:flex;align-items:center;justify-content:center;border-radius:50%;color:#0a1a35;font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;border:2px solid rgba(255,255,255,.9);box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.roma-map-popup{font-family:'DM Sans',sans-serif;min-width:210px}
+.roma-map-popup h4{font-family:'DM Serif Display',serif;font-size:14px;color:#0a1a35;margin:0 0 8px}
+.roma-map-popup .rmp-proj{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid #e4e4e4;cursor:pointer}
+.roma-map-popup .rmp-proj:last-child{border-bottom:none}
+.roma-map-popup .rmp-proj:hover{opacity:.7}
+.roma-map-popup .rmp-name{font-size:12px;color:#1a1a1a;font-weight:600}
+.roma-map-popup .rmp-pct{font-family:'DM Mono',monospace;font-size:10px;font-weight:700}
+.leaflet-popup-content-wrapper{border-radius:10px}
+
 /* ── INSTALL BANNER ── */
 .install-banner{position:sticky;top:0;z-index:220;display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#d4af37,#b8942c);color:#1a1408;padding:10px 18px;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 .install-banner-text{flex:1;font-size:12.5px;font-weight:600;line-height:1.3}
@@ -1372,6 +1395,8 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 }
 
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 </head>
 <body>
 <div id="roma-splash">
@@ -1491,6 +1516,10 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
 
   <!-- Todos los proyectos -->
   <div class="section-hdr"><h2>Proyectos</h2><span>Tocar para ver detalle</span></div>
+  <div class="view-toggle">
+    <button class="vt-btn active" id="vt-grilla" onclick="setProjView('grilla')"><span class="vt-icon">▦</span>Grilla</button>
+    <button class="vt-btn" id="vt-mapa" onclick="setProjView('mapa')"><span class="vt-icon">🗺</span>Mapa</button>
+  </div>
   <div class="search-wrap">
     <span class="search-icon">⌕</span>
     <input class="search-input" type="text" placeholder="Buscar proyecto, expediente, localidad..." oninput="filterProjects(this.value)" id="proj-search">
@@ -1502,6 +1531,14 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
     <button class="chip" onclick="setFilter('completo',this)">Completos</button>
   </div>
   <div class="grid2 proj-grid" id="proj-grid"></div>
+  <div id="proj-map-wrap" style="display:none">
+    <div id="proj-map"></div>
+    <div class="map-legend">
+      <span><i style="background:var(--green)"></i>Avanzado (≥90%)</span>
+      <span><i style="background:var(--amber)"></i>En curso (50–89%)</span>
+      <span><i style="background:var(--red)"></i>Etapa inicial (&lt;50%)</span>
+    </div>
+  </div>
 
 </div>
 
@@ -5144,8 +5181,10 @@ function mergeRemoteData_(data){
     if(row.entrega) p.entrega = row.entrega;
     if(row.nota) p.nota = row.nota;
   });
-  // 2) Hitos: agrupa por proyecto y pisa estado/observaciones por nombre,
-  //    tanto en GESTION_DATA (vista detallada) como en PROJS[i].hitos (fallback)
+  // 2) Hitos: agrupa por proyecto y pisa estado/observaciones por nombre
+  //    (tanto en GESTION_DATA como en PROJS[i].hitos), y agrega como nuevos
+  //    los hitos que existen en la planilla pero no en la app todavía —
+  //    respetando la columna "orden" para ubicarlos en la posición correcta.
   const hitosPorProyecto = {};
   (data.hitos||[]).forEach(row=>{
     (hitosPorProyecto[row.proyectoId] = hitosPorProyecto[row.proyectoId]||[]).push(row);
@@ -5154,11 +5193,24 @@ function mergeRemoteData_(data){
     const rows = hitosPorProyecto[pid];
     const applyTo = (list)=>{
       if(!list) return;
-      list.forEach(h=>{
-        const match = rows.find(r=>r.nombre===h.nombre);
-        if(match){
-          if(match.estado) h.est = match.estado;
-          if(match.observaciones) h.obs = match.observaciones;
+      rows.forEach(r=>{
+        const h = list.find(x=>x.nombre===r.nombre);
+        if(h){
+          if(r.estado) h.est = r.estado;
+          if(r.observaciones) h.obs = r.observaciones;
+        } else {
+          // Hito nuevo cargado directo en Sheets: no existía en el código, lo insertamos.
+          const nuevo = {
+            nombre: r.nombre,
+            est: r.estado || 'prog',
+            obs: r.observaciones || '',
+            exp: r.expediente || '',
+            ini: r.inicio || '',
+            fin: r.fin || '',
+          };
+          const ordenNum = Number(r.orden);
+          const idx = (!isNaN(ordenNum) && ordenNum > 0) ? Math.min(ordenNum - 1, list.length) : list.length;
+          list.splice(idx, 0, nuevo);
         }
       });
     };
@@ -5166,7 +5218,7 @@ function mergeRemoteData_(data){
     const proj = PROJS.find(x=>x.id===pid);
     if(proj) applyTo(proj.hitos);
   });
-  // 2b) Subhitos: pisa estado/observaciones de los ítems anidados (nivel 1 y 2)
+  // 2b) Subhitos: igual que los hitos — actualiza los existentes y agrega los nuevos.
   const subhitosPorProyecto = {};
   (data.subHitos||[]).forEach(row=>{
     (subhitosPorProyecto[row.proyectoId] = subhitosPorProyecto[row.proyectoId]||[]).push(row);
@@ -5176,12 +5228,32 @@ function mergeRemoteData_(data){
     const applySubsTo = (list)=>{
       if(!list) return;
       list.forEach(h=>{
-        (h.sub||[]).forEach(s=>{
-          const m1 = rows.find(r=>r.hitoPadre===h.nombre && (r.subPadre||'')==='' && r.nombre===s.nombre);
-          if(m1){ if(m1.estado) s.est = m1.estado; }
-          (s.sub||[]).forEach(ss=>{
-            const m2 = rows.find(r=>r.hitoPadre===h.nombre && r.subPadre===s.nombre && r.nombre===ss.nombre);
-            if(m2){ if(m2.estado) ss.est = m2.estado; }
+        const rowsDeEsteHito = rows.filter(r=>r.hitoPadre===h.nombre && !(r.subPadre));
+        if(rowsDeEsteHito.length && !h.sub) h.sub = [];
+        if(!h.sub) return;
+        rowsDeEsteHito.forEach(r=>{
+          const s = h.sub.find(x=>x.nombre===r.nombre);
+          if(s){
+            if(r.estado) s.est = r.estado;
+          } else {
+            const ordenNum = Number(r.orden);
+            const idx = (!isNaN(ordenNum) && ordenNum > 0) ? Math.min(ordenNum - 1, h.sub.length) : h.sub.length;
+            h.sub.splice(idx, 0, {nombre: r.nombre, est: r.estado || 'prog'});
+          }
+        });
+        h.sub.forEach(s=>{
+          const rowsDeEsteSub = rows.filter(r=>r.hitoPadre===h.nombre && r.subPadre===s.nombre);
+          if(rowsDeEsteSub.length && !s.sub) s.sub = [];
+          if(!s.sub) return;
+          rowsDeEsteSub.forEach(r=>{
+            const ss = s.sub.find(x=>x.nombre===r.nombre);
+            if(ss){
+              if(r.estado) ss.est = r.estado;
+            } else {
+              const ordenNum = Number(r.orden);
+              const idx = (!isNaN(ordenNum) && ordenNum > 0) ? Math.min(ordenNum - 1, s.sub.length) : s.sub.length;
+              s.sub.splice(idx, 0, {nombre: r.nombre, est: r.estado || 'prog'});
+            }
           });
         });
       });
@@ -5299,6 +5371,102 @@ async function updateHitoRemote(proyectoId, nombre, estado, observaciones){
   if(r.ok) loadRemoteData(true);
   return r;
 }
+
+// ── MAPA GEOGRÁFICO DE PROYECTOS ──────────────────────────────
+const LOCALIDAD_COORDS = {
+  "Pueblo Esther": [-33.0728252, -60.5786768],
+  "General Lagos": [-33.110462, -60.5647017],
+  "Ybarlucea":     [-32.8523662, -60.7861617],
+  "Soldini":       [-33.0216342, -60.7558385],
+  "Roldán":        [-32.897695,  -60.9067969],
+  "Piñero":        [-33.1094961, -60.7958698],
+  "Zavalla":       [-33.0189687, -60.8830081],
+  "Ybarlucea (Ibarlucea)": [-32.8523662, -60.7861617],
+};
+
+let _romaMap = null;
+let _projViewMode = 'grilla';
+
+function setProjView(mode){
+  _projViewMode = mode;
+  document.getElementById('vt-grilla').classList.toggle('active', mode==='grilla');
+  document.getElementById('vt-mapa').classList.toggle('active', mode==='mapa');
+  document.getElementById('proj-grid').style.display = mode==='grilla' ? '' : 'none';
+  document.getElementById('proj-map-wrap').style.display = mode==='mapa' ? '' : 'none';
+  document.querySelector('.search-wrap').style.display = mode==='grilla' ? '' : 'none';
+  document.getElementById('proj-chips').style.display = mode==='grilla' ? '' : 'none';
+  if(mode==='mapa'){
+    if(!_romaMap) buildProjMap();
+    setTimeout(()=>_romaMap && _romaMap.invalidateSize(), 80);
+  }
+}
+
+function projSemColor(avance){
+  if(avance==null) return 'var(--dim)';
+  if(avance>=90) return 'var(--green)';
+  if(avance>=50) return 'var(--amber)';
+  return 'var(--red)';
+}
+function projSemColorHex(avance){
+  if(avance==null) return '#6f8eaf';
+  if(avance>=90) return '#2ec87a';
+  if(avance>=50) return '#f0b429';
+  return '#e05555';
+}
+
+function buildProjMap(){
+  const el = document.getElementById('proj-map');
+  if(!el || typeof L==='undefined') return;
+  _romaMap = L.map('proj-map', {scrollWheelZoom:false}).setView([-32.98,-60.72], 10);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap, © CARTO',
+    maxZoom: 18
+  }).addTo(_romaMap);
+
+  // Agrupar proyectos por localidad
+  const byLoc = {};
+  PROJS.forEach(p=>{
+    const loc = p.loc || p.localidad;
+    if(!LOCALIDAD_COORDS[loc]) return;
+    (byLoc[loc] = byLoc[loc] || []).push(p);
+  });
+
+  Object.keys(byLoc).forEach(loc=>{
+    const projs = byLoc[loc];
+    const coords = LOCALIDAD_COORDS[loc];
+    const worst = projs.reduce((w,p)=>{
+      const a = p.avanceGestion;
+      if(a==null) return w;
+      return (w==null || a<w) ? a : w;
+    }, null);
+    const color = projSemColorHex(worst);
+    const size = projs.length>1 ? 40 : 32;
+
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="roma-map-pin" style="width:${size}px;height:${size}px;background:${color}">${projs.length}</div>`,
+      iconSize: [size,size], iconAnchor: [size/2,size/2],
+    });
+
+    const popupHtml = `<div class="roma-map-popup">
+      <h4>${loc}</h4>
+      ${projs.map(p=>`
+        <div class="rmp-proj" onclick="window._mapGoToProject('${p.id}')">
+          <span class="rmp-name">${p.nombre}</span>
+          <span class="rmp-pct" style="color:${projSemColorHex(p.avanceGestion)}">${p.avanceGestion!=null?p.avanceGestion+'%':'s/d'}</span>
+        </div>`).join('')}
+    </div>`;
+
+    L.marker(coords, {icon}).addTo(_romaMap).bindPopup(popupHtml);
+  });
+}
+
+window._mapGoToProject = function(id){
+  setProjView('grilla');
+  const btn = document.querySelector('.ttab[data-page="home"]');
+  showPage('home', btn);
+  setTimeout(()=>openDetail(id), 150);
+};
 
 // ── LEGALES ─────────────────────────────────────────────────────
 const LEGAL_ESTADO_CLASS = {
