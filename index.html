@@ -172,6 +172,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .roma-map-popup .rmp-name{font-size:12px;color:#1a1a1a;font-weight:600}
 .roma-map-popup .rmp-pct{font-family:'DM Mono',monospace;font-size:10px;font-weight:700}
 .leaflet-popup-content-wrapper{border-radius:10px}
+.rmp-masterplan-btn{width:100%;padding:8px;margin-bottom:8px;border-radius:6px;border:1px solid #ccc;background:#f5f5f5;color:#1a1a1a;cursor:pointer;font-size:11px;font-family:'DM Sans',sans-serif;font-weight:600}
+.rmp-masterplan-btn:hover{background:#eaeaea}
 
 /* ── NOTIFICACIONES ── */
 .notif-wrap{position:relative}
@@ -1565,6 +1567,7 @@ body{background:linear-gradient(160deg,#172b46 0%,#1b3553 45%,#152b46 100%);back
       <span><i style="background:var(--green)"></i>Avanzado (≥90%)</span>
       <span><i style="background:var(--amber)"></i>En curso (50–89%)</span>
       <span><i style="background:var(--red)"></i>Etapa inicial (&lt;50%)</span>
+      <span style="opacity:.7">▢ Contorno sólido = polígono real relevado (tocá para ver el masterplan)</span>
     </div>
   </div>
 
@@ -5487,6 +5490,25 @@ const LOCALIDAD_COORDS = {
 
 let _romaMap = null;
 let _projViewMode = 'grilla';
+let _masterplanLayers = {};
+
+// Polígonos reales (relevados por KMZ) de proyectos que ya tienen esa info cargada.
+// Se van sumando de a uno — el resto de los proyectos sigue mostrándose con el
+// pin aproximado por localidad hasta que carguemos su polígono también.
+const PROJECT_POLYGONS = {
+  VI: {
+    coords: [
+      [-33.11423144036035,-60.5412860269142], [-33.11364823596347,-60.53707037620877],
+      [-33.11748988346523,-60.53633276631395], [-33.11779597277813,-60.5385443749193],
+      [-33.11680080312219,-60.53876314491903], [-33.11698848979496,-60.53997718934382],
+      [-33.11686332935093,-60.54011524003849], [-33.11664865961424,-60.54025530736375],
+      [-33.1165615544628,-60.53984123786721],  [-33.11551515239171,-60.54044444674575],
+      [-33.11541843369525,-60.53988024395807], [-33.11517240197677,-60.54007386347347],
+      [-33.11537854036427,-60.54070358197541], [-33.11423144036035,-60.5412860269142],
+    ],
+    masterplanImg: 'masterplans/VI.jpg',
+  },
+};
 
 function setProjView(mode){
   _projViewMode = mode;
@@ -5560,6 +5582,35 @@ function buildProjMap(){
 
     L.marker(coords, {icon}).addTo(_romaMap).bindPopup(popupHtml);
   });
+
+  // Polígonos reales de proyectos con relevamiento topográfico cargado
+  Object.keys(PROJECT_POLYGONS).forEach(pid=>{
+    const cfg = PROJECT_POLYGONS[pid];
+    const p = PROJS.find(x=>x.id===pid);
+    if(!p) return;
+    const color = projSemColorHex(p.avanceGestion);
+    const poly = L.polygon(cfg.coords, {color, weight: 2.5, fillColor: color, fillOpacity: 0.15}).addTo(_romaMap);
+    cfg._bounds = poly.getBounds();
+    poly.bindPopup(`<div class="roma-map-popup">
+      <h4>${p.nombre}</h4>
+      <div style="font-size:11px;color:#666;margin-bottom:10px">${p.loc || p.localidad} · ${p.avanceGestion!=null?p.avanceGestion+'% de avance':'s/d'}</div>
+      <button onclick="toggleMasterplan('${pid}')" class="rmp-masterplan-btn">🏗 Mostrar / ocultar masterplan</button>
+      <div class="rmp-proj" onclick="window._mapGoToProject('${pid}')" style="text-align:center;font-weight:600;border-bottom:none">Ver ficha completa →</div>
+    </div>`);
+  });
+}
+
+function toggleMasterplan(pid){
+  const cfg = PROJECT_POLYGONS[pid];
+  if(!cfg || !_romaMap) return;
+  if(_masterplanLayers[pid]){
+    _romaMap.removeLayer(_masterplanLayers[pid]);
+    delete _masterplanLayers[pid];
+  } else {
+    const layer = L.imageOverlay(cfg.masterplanImg, cfg._bounds, {opacity:0.95}).addTo(_romaMap);
+    _masterplanLayers[pid] = layer;
+    _romaMap.fitBounds(cfg._bounds, {maxZoom:17, padding:[20,20]});
+  }
 }
 
 window._mapGoToProject = function(id){
