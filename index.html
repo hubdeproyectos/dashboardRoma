@@ -5513,9 +5513,41 @@ async function postToWebApp_(action, payload){
   }
 }
 
+// ── DISCORD — se manda directo desde el navegador de cada persona,
+// no desde Apps Script. Esto evita el bloqueo que algunos Google
+// Workspace de empresa aplican a conexiones externas desde scripts.
+// Si en algún momento querés desactivarlo, dejá el string vacío "".
+const DISCORD_WEBHOOK_URL_CLIENTE = "https://discord.com/api/webhooks/1537482482885071009/-NvSN_wFPkoUGeimu_LmEpFW5bJN0DAxJ4eObcSKbm00l2yVnbquZBQq4aHFAl9jREYp";
+const DISCORD_EMOJIS_ = {hito:'📌', subhito:'🔗', obra:'🏗', novedad:'💬', proyecto:'✎'};
+
+function nombreProyecto_(proyectoId){
+  const p = (typeof PROJS!=='undefined') ? PROJS.find(x=>x.id===proyectoId) : null;
+  return p ? p.nombre : (proyectoId || 'Panel');
+}
+
+async function sendDiscordFromBrowser_(tipo, proyectoId, mensaje){
+  if(!DISCORD_WEBHOOK_URL_CLIENTE) return;
+  try{
+    const emoji = DISCORD_EMOJIS_[tipo] || '🔔';
+    const texto = `${emoji} **${nombreProyecto_(proyectoId)}**\n${mensaje}`;
+    await fetch(DISCORD_WEBHOOK_URL_CLIENTE, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({content: texto})
+    });
+  }catch(err){
+    // Si Discord no responde o el navegador bloquea la conexión, no rompemos
+    // el guardado principal — el dato ya se guardó bien en Sheets igual.
+    console.warn('No se pudo avisar a Discord desde el navegador:', err);
+  }
+}
+
 async function updateHitoRemote(proyectoId, nombre, estado, observaciones){
   const r = await postToWebApp_('updateHito', {proyectoId, nombre, estado, observaciones});
-  if(r.ok) loadRemoteData(true);
+  if(r.ok){
+    loadRemoteData(true);
+    sendDiscordFromBrowser_('hito', proyectoId, `Hito actualizado: "${nombre}"` + (estado ? ` → ${estado}` : ''));
+  }
   return r;
 }
 
@@ -5843,7 +5875,10 @@ buildLegales();
 
 async function updateSubHitoRemote(proyectoId, hitoPadre, subPadre, nombre, estado, observaciones){
   const r = await postToWebApp_('updateSubHito', {proyectoId, hitoPadre, subPadre, nombre, estado, observaciones});
-  if(r.ok) loadRemoteData(true);
+  if(r.ok){
+    loadRemoteData(true);
+    sendDiscordFromBrowser_('subhito', proyectoId, `Subhito actualizado: "${nombre}"` + (estado ? ` → ${estado}` : ''));
+  }
   return r;
 }
 
@@ -5916,7 +5951,11 @@ async function saveHitoEditor(){
 
 async function addNovedadRemote(proyectoId, autor, mensaje){
   const r = await postToWebApp_('addNovedad', {proyectoId, autor, mensaje});
-  if(r.ok) loadRemoteData(true);
+  if(r.ok){
+    loadRemoteData(true);
+    const resumen = (mensaje||'').slice(0,120) + ((mensaje||'').length>120 ? '…' : '');
+    sendDiscordFromBrowser_('novedad', proyectoId, `${autor ? autor+': ' : ''}${resumen}`);
+  }
   return r;
 }
 
