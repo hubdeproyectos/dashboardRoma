@@ -168,6 +168,18 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .legal-pc-meta div{font-size:10.5px;color:var(--muted)}
 .legal-pc-label{color:var(--dim);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.3px;margin-right:4px}
 
+/* ── Resumen Legal dentro de la ficha del proyecto ── */
+.legal-summary-card{background:linear-gradient(135deg,#241a10,#1a1410);border:1px solid rgba(212,175,55,.35);border-radius:10px;padding:12px 14px;margin-bottom:14px;cursor:pointer;transition:border-color .15s,background .15s}
+.legal-summary-card:hover{border-color:#d4af37;background:linear-gradient(135deg,#2c2013,#221a14)}
+.lsc-header{display:flex;align-items:center;gap:10px}
+.lsc-icon{font-size:18px;color:#d4af37;flex-shrink:0}
+.lsc-titles{flex:1;min-width:0}
+.lsc-title{font-size:12.5px;font-weight:700;color:#fff}
+.lsc-sub{font-size:10.5px;color:var(--muted);margin-top:2px}
+.lsc-arrow{font-size:14px;color:#d4af37;flex-shrink:0}
+.lsc-puntos-list{margin-top:8px;padding-top:8px;border-top:1px solid rgba(212,175,55,.2);display:flex;flex-direction:column;gap:5px}
+.lsc-punto{display:flex;align-items:center;font-size:10.5px;color:var(--text)}
+
 /* ── VIEW TOGGLE (Grilla / Mapa) ── */
 .view-toggle{display:flex;gap:8px;margin-bottom:14px}
 .vt-btn{display:flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:11.5px;font-weight:600;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif}
@@ -4480,7 +4492,7 @@ function openDetail(id){
       </div>
     </div>
   </div>`;
-  let g = gHeader + buildGestionTable(p);
+  let g = gHeader + legalSummaryCard_(p) + buildGestionTable(p);
 
   // Panel 1: Obra — tabla rubro / barra+% / observaciones
   let o;
@@ -5746,6 +5758,57 @@ window._mapGoToProject = function(id){
   setTimeout(()=>openDetail(id), 150);
 };
 
+// ── Resumen Legal dentro de la ficha de cada proyecto (pestaña Gestión) ──
+function goToLegalesFromDetail_(id){
+  document.getElementById('overlay').classList.remove('open');
+  const btn = document.querySelector('.ttab.legales-tab');
+  showPage('legales', btn);
+  setTimeout(()=>{
+    const card = document.querySelector(`.legal-proj[data-proj-id="${id}"]`);
+    if(card){
+      card.classList.add('open');
+      card.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }, 250);
+}
+
+function legalSummaryCard_(p){
+  const data = (typeof LEGALES_DATA!=='undefined') ? LEGALES_DATA[p.id] : null;
+  const puntos = data ? (data.puntosCriticosDetalle||[]) : [];
+  const rojos = puntos.filter(x=>x.semaforo==='rojo').length;
+  const amarillos = puntos.filter(x=>x.semaforo==='amarillo').length;
+  const totalDocs = data ? (data.organismos||[]).reduce((s,o)=>s+o.docs.length,0) : 0;
+
+  let puntosLine;
+  if(puntos.length){
+    const partes = [];
+    if(rojos) partes.push(`🔴 ${rojos} crítico(s)`);
+    if(amarillos) partes.push(`🟡 ${amarillos} en seguimiento`);
+    puntosLine = partes.length ? partes.join(' · ') : `${puntos.length} punto(s) relevado(s)`;
+  } else {
+    puntosLine = 'Sin puntos críticos relevados';
+  }
+  const docsLine = totalDocs>0 ? `${totalDocs} documento(s) disponibles` : 'Documentación pendiente de carga';
+
+  const topPuntos = puntos.slice(0,2).map(x=>`
+    <div class="lsc-punto">
+      <span class="legal-sem-dot" style="background:${legalSemaforoColor(x.semaforo)}"></span>
+      <span>${x.titulo}</span>
+    </div>`).join('');
+
+  return `<div class="legal-summary-card" onclick="goToLegalesFromDetail_('${p.id}')" title="Ver en la pestaña Legales">
+    <div class="lsc-header">
+      <span class="lsc-icon">⚖</span>
+      <div class="lsc-titles">
+        <div class="lsc-title">Resumen Legal</div>
+        <div class="lsc-sub">${docsLine} · ${puntosLine}</div>
+      </div>
+      <span class="lsc-arrow">→</span>
+    </div>
+    ${topPuntos ? `<div class="lsc-puntos-list">${topPuntos}</div>` : ''}
+  </div>`;
+}
+
 // ══════════════════════════════════════════════════════════════
 // CHAT — consultas cruzadas (100% local, sin conexión externa:
 // solo cruza los datos que la app ya tiene cargados en memoria)
@@ -6024,7 +6087,7 @@ function buildLegales(){
   cont.innerHTML = ordered.map(p=>{
     const data = LEGALES_DATA[p.id];
     if(!data){
-      return `<div class="legal-proj">
+      return `<div class="legal-proj" data-proj-id="${p.id}">
         <div class="legal-proj-head" onclick="toggleLegalProj(this.parentElement)">
           <div><div class="legal-proj-name">${p.nombre}</div><div class="legal-proj-meta">${p.localidad || p.loc || ''} · Sin documentos cargados</div></div>
           <span class="legal-proj-chevron">⌄</span>
@@ -6086,7 +6149,7 @@ function buildLegales(){
             </div>
           </div>`).join('')}
       </div>`).join('');
-    return `<div class="legal-proj has-docs">
+    return `<div class="legal-proj has-docs" data-proj-id="${p.id}">
       <div class="legal-proj-head" onclick="toggleLegalProj(this.parentElement)">
         <div><div class="legal-proj-name">${semDot}${p.nombre}</div><div class="legal-proj-meta">${p.localidad || p.loc || ''} · ${metaTexto}</div></div>
         <span class="legal-proj-chevron">⌄</span>
