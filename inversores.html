@@ -141,7 +141,7 @@ header{display:flex;align-items:flex-start;justify-content:space-between;gap:24p
 @media(max-width:640px){.intro{flex-direction:column;padding:24px}}
 
 /* ── resumen ejecutivo ── */
-.resumen-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:56px}
+.resumen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:56px}
 .stat{background:linear-gradient(160deg,#22242b,#131418);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-lg);padding:26px 24px;box-shadow:0 1px 2px rgba(28,24,16,0.04), 0 18px 40px -20px rgba(20,20,24,0.5)}
 .stat span{display:block;font-size:11px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px}
 .stat strong{font-size:36px;font-weight:680;letter-spacing:-0.025em;font-variant-numeric:tabular-nums;color:#fff}
@@ -572,21 +572,26 @@ function buildCurvaInversion(){
 
 function buildResumen(){
   const ids = Object.keys(INVERSION_DATA);
-  let lotesQuedanTotal = 0, capitalTotal = 0, sinDato = 0, urgentes = 0;
+  let lotesQuedanTotal = 0, capitalTotal = 0, sinDato = 0, urgentes = 0, costosEspeciales = 0;
   ids.forEach(id=>{
     const inv = INVERSION_DATA[id];
     lotesQuedanTotal += inv.lotesQuedan || 0;
     if(inv.obrasTotal!==null && inv.obrasTotal!==undefined) capitalTotal += inv.obrasTotal;
     else sinDato++;
     if(inv.bloque===1) urgentes++;
+    if(inv.costoEstimado!=null) costosEspeciales += inv.costoEstimado;
   });
 
   const stats = [
     {label:"Desarrollos relevados", val:ids.length, sub:"3 bloques de prioridad"},
     {label:"Lotes por liberar", val:lotesQuedanTotal.toLocaleString('es-AR'), sub:"suma de los 11 proyectos"},
+    {label:"Lotes remanentes", val:lotesQuedanTotal.toLocaleString('es-AR'), sub:"total disponible para canjear, ceder o vender"},
     {label:"Capital total estimado (USD)", val: fmtMoney(capitalTotal), sub: sinDato ? `${sinDato} proyecto(s) sin dato` : 'dólar blue'},
     {label:"Bloque 1 — urgencia", val:urgentes, sub:"proyectos a punto de cerrar"},
   ];
+  if(costosEspeciales>0){
+    stats.push({label:"Clos del Este — costo estimado (USD)", val: fmtMoney(costosEspeciales), sub:"obras + obras complementarias · aparte del capital total"});
+  }
 
   document.getElementById('resumenGrid').innerHTML = stats.map(s=>`
     <div class="stat">
@@ -751,8 +756,7 @@ function cardHTML(id){
       ${nextStep ? `<div class="next-step">🎯&nbsp;<span><b>Próximo paso:</b> ${nextStep}</span></div>` : ''}
 
       <div class="mini-metrics">
-        <div class="mm"><span>Lotes por liberar</span><strong>${inv.lotesQuedan} / ${inv.lotesTotal}</strong><small>${inv.lotesPct}% restante · pendientes de escriturar</small></div>
-        <div class="mm"><span>Lotes remanentes</span><strong>${inv.lotesRemanentes!=null ? inv.lotesRemanentes : 'Sin dato'}</strong><small>disponibles para canjear, ceder o vender</small></div>
+        <div class="mm"><span>Lotes por liberar</span><strong>${inv.lotesQuedan} / ${inv.lotesTotal}</strong><small>${inv.lotesPct}% restante · pendientes de escriturar / disponibles para canjear, ceder o vender</small></div>
         <div class="mm"><span>Fecha objetivo</span><strong>${inv.tiempo || 'Al 100%'}</strong><small>${obraPct}% de avance de obra · a definir según grado de inversión</small></div>
         <div class="mm"><span>$ Obras para posesión (USD)</span><strong>${fmtMoney(inv.obrasPosesion)}</strong><small>habilita construir + baja presión</small></div>
         <div class="mm"><span>$ Obras total (USD)</span><strong>${fmtMoney(restanteEscritura)}</strong><small>resta después de posesión para escriturar</small></div>
