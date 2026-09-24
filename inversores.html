@@ -369,7 +369,7 @@ async function aplicarDatosDeSheet(){
   const iId = col('id'), iBloque = col('bloque'), iLotesQ = col('lotesQuedan'), iLotesT = col('lotesTotal'),
         iTiempo = col('tiempo'), iPos = col('obrasPosesion'), iTot = col('obrasTotal'),
         iGest = col('avanceGestion'), iObra = col('avanceObra'), iEntrega = col('entrega'), iNota = col('nota'),
-        iLotesRem = col('lotesRemanentes');
+        iLotesRem = col('lotesRemanentes'), iCostoEst = col('costoEstimado');
   if(iId === -1) throw new Error('La hoja no tiene columna "id"');
 
   const numOr = (v, fallback) => (v===undefined || v===null || v.trim()==='') ? fallback : Number(v);
@@ -387,6 +387,8 @@ async function aplicarDatosDeSheet(){
     if(iTot>-1) inv.obrasTotal = numOr(r[iTot], inv.obrasTotal);
     // Lotes remanentes disponibles para canjear, ceder o vender (distinto de "lotes por liberar" = sin escriturar)
     if(iLotesRem>-1) inv.lotesRemanentes = numOr(r[iLotesRem], inv.lotesRemanentes);
+    // Costo estimado especial (proyectos sin obrasTotal cargado aún, ej. Clos del Este) — no entra en el total del resumen
+    if(iCostoEst>-1) inv.costoEstimado = numOr(r[iCostoEst], inv.costoEstimado);
 
     if(PROJ_DATA[id]){
       const p = PROJ_DATA[id];
@@ -818,6 +820,26 @@ function toggleDetail(el){
   el.nextElementSibling.classList.toggle('open');
 }
 
+function costoEspecialHTML(ids){
+  const especiales = ids.filter(id => INVERSION_DATA[id].costoEstimado!=null);
+  if(!especiales.length) return '';
+  return especiales.map(id=>{
+    const inv = INVERSION_DATA[id];
+    const nombre = (PROJ_DATA[id] && PROJ_DATA[id].nombre) || id;
+    return `
+    <div class="curve-card" style="border-left:4px solid var(--roma);margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+      <div style="max-width:600px">
+        <div style="font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:650">${nombre} — caso especial</div>
+        <div style="font-size:14px;color:var(--text);margin-top:6px;line-height:1.5">${inv.costoEstimadoNota || 'Costo estimado preliminar. No incluido en el total de Capital total estimado del resumen.'}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em">Costo estimado (USD)</div>
+        <div style="font-size:28px;font-weight:800;color:var(--text)">${fmtMoney(inv.costoEstimado)}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
 function bloqueSectionHTML(b){
   const info = BLOQUE_INFO[b.n];
   return `
@@ -830,6 +852,7 @@ function bloqueSectionHTML(b){
           ${riesgoBloqueHTML(b.ids)}
         </div>
       </div>
+      ${costoEspecialHTML(b.ids)}
       <div class="cards">
         ${b.ids.map(id=>cardHTML(id)).join('')}
       </div>

@@ -1,1 +1,2747 @@
-{"DOLAR_BLUE":{"venta":1560,"fecha":"24/09/2026"},"INVERSION_DATA":{"CEPE":{"bloque":1,"lotesQuedan":47,"lotesTotal":448,"lotesPct":10.5,"tiempo":null,"tiempoPct":100,"obrasPosesion":376772,"obrasTotal":791748},"CM":{"bloque":1,"lotesQuedan":14,"lotesTotal":191,"lotesPct":7.3,"tiempo":"Mar 2026","tiempoPct":98,"obrasPosesion":137673,"obrasTotal":149853},"EN":{"bloque":1,"lotesQuedan":11,"lotesTotal":91,"lotesPct":12,"tiempo":"Jun 2026","tiempoPct":91,"obrasPosesion":3806,"obrasTotal":28567},"OR":{"bloque":1,"lotesQuedan":7,"lotesTotal":128,"lotesPct":5.4,"tiempo":null,"tiempoPct":100,"obrasPosesion":99066,"obrasTotal":329871},"VI":{"bloque":2,"lotesQuedan":108,"lotesTotal":203,"lotesPct":54,"tiempo":"Jun 2026","tiempoPct":99,"obrasPosesion":283479,"obrasTotal":501605},"EN2":{"bloque":2,"lotesQuedan":86,"lotesTotal":326,"lotesPct":26,"tiempo":"Jun 2027","tiempoPct":64,"obrasPosesion":null,"obrasTotal":637184},"VR":{"bloque":2,"lotesQuedan":100,"lotesTotal":203,"lotesPct":49,"tiempo":"Dic 2028","tiempoPct":51,"obrasPosesion":null,"obrasTotal":616798},"CZ":{"bloque":2,"lotesQuedan":200,"lotesTotal":405,"lotesPct":49,"tiempo":"Jun 2028","tiempoPct":61,"obrasPosesion":null,"obrasTotal":1655879},"CM2":{"bloque":2,"lotesQuedan":179,"lotesTotal":324,"lotesPct":55,"tiempo":"Dic 2030","tiempoPct":18,"obrasPosesion":null,"obrasTotal":1339757},"CDE":{"bloque":2,"lotesQuedan":585,"lotesTotal":873,"lotesPct":67,"tiempo":"Dic 2031","tiempoPct":4,"obrasPosesion":null,"obrasTotal":null},"VN":{"bloque":3,"lotesQuedan":517,"lotesTotal":672,"lotesPct":77,"tiempo":"Dic 2034","tiempoPct":4,"obrasPosesion":null,"obrasTotal":0}},"BLOQUE_INFO":{"1":{"titulo":"Bloque 1 — Mayor urgencia","sub":"Pocos lotes restantes, ya casi en el cierre. La inversión más chica destraba el mayor impacto inmediato.","clase":"b1"},"2":{"titulo":"Bloque 2 — En desarrollo","sub":"Avance intermedio de obra y gestión. Requieren una inyección de capital más significativa para acelerar.","clase":"b2"},"3":{"titulo":"Bloque 3 — Sin prioridad por el momento","sub":"Etapa inicial. No se recomienda como primera inversión, pero se incluye para trazabilidad completa de la cartera.","clase":"b3"}},"PROJ_DATA":{"CEPE":{"nombre":"CEPE","loc":"Pueblo Esther","ha":28.3,"lotes":417,"avanceGestion":100,"avanceObra":80,"entrega":"Dic 2026","nota":"100% avance gestión para permiso prov. DPV: convenio + acta de inicio en proceso. Eléctrica interna 90%. Trafo 5MVA entregado a CLESAPE. CH3, Visado Mensura y Cambio de Zona: programados.","gestionResumen":"Cierre de convenios e inspecciones, final de obra, CH3, visado ambiental, resolución del TGI y consolidación del esquema de posesiones.","obra":[{"r":"Red de Agua (Interna)","p":100,"nota":"Próximo a inspeccionar con CLESAPE"},{"r":"Red Cloacal (Interna)","p":100,"nota":"Realizando inspecciones y hormigonando tapa de boca de inspección"},{"r":"Calzadas","p":100,"nota":"Próximo a inspeccionar por Municipalidad"},{"r":"Red Eléctrica interna","p":90,"nota":"Bases para columnas restantes de media tensión y finalización de red de baja tensión"},{"r":"Estructura para transformadores","p":70,"nota":"En proceso de instalación de equipos y accesorios"},{"r":"Convenio CLESAPE","p":75,"nota":"Trafo entregado; falta entregar caños de agua y terminar de pagar el canon"},{"r":"Estación Impulsora","p":30,"nota":"Ajustar planificación y acopio de materiales"},{"r":"Red Agua (Impulsión Ext.)","p":0,"nota":"Verificación en proceso con Municipalidad y en campo"},{"r":"Forestación","p":70,"nota":"Replantar ejemplares; revisar cantidad con Obras"},{"r":"Red Cloaca (Impulsión Ext.)","p":0,"nota":"Compra y cambio de caños; verificación pendiente con Municipalidad"},{"r":"Red de Gas Externa","p":100,"nota":"Ejecutada y entregada a Litoral Gas"},{"r":"Red de Gas Interna","p":0,"nota":"Se ejecuta después de finalizar otras obras"},{"r":"Demolición de casa ocupa","p":100,"nota":"Resolución legal judicial cerrada"}],"pendientes":[{"area":"Municipalidad","prio":"critica","titulo":"TGI — Legales, tributos y acuerdo","detalle":"Resolver con Luciano (recurso legal). Punto crítico político para posesión."},{"area":"Municipalidad","prio":"critica","titulo":"Obra complementaria: 4.500 m² de adoquines","detalle":"Definir fecha de entrega con Pavitec. Saldo pendiente con municipalidad."},{"area":"Municipalidad","prio":"alta","titulo":"Metodología de posesión con obras en proceso","detalle":"Opción 1 (3ª vía): permiso interno por empresa + regularización posterior. Alinear con municipalidad permisos sin número oficial → habilita bajada eléctrica + perforación agua. Opción 2: seguir proceso municipal según convenio de responsabilidad (más lento)."},{"area":"Municipalidad","prio":"media","titulo":"Indicadores urbanísticos frente CEPE","detalle":"Acordar FOS y FOT para lotes comerciales en colectora."},{"area":"Municipalidad","prio":"media","titulo":"Modificaciones en Masterplan","detalle":"Lotes de 200m² vendidos donde había 400m². Frente CEPE: modificaciones de lotes que alteraron el esquema base de 1.000 m²."},{"area":"Gestión","prio":"critica","titulo":"Canon cruce FFCC (cloaca y agua) — vence junio 2026","detalle":"Pagar antes de junio 2026 o gestionar con Jonatan (único apoderado que puede reactivar el trámite). No es transferible."},{"area":"Eléctrico","prio":"alta","titulo":"Obra eléctrica: cierre en ~3 semanas","detalle":"Pendiente: colocación trafo Inelpa (Jesuan provee instalación) · Cableado general · Elementos negociación CECARRI listos. Luego: inspección + conforme a obra CLESAPE → condición para bajadas eléctricas a lotes."},{"area":"Eléctrico","prio":"alta","titulo":"Convenio CLESAPE — elementos a definir","detalle":"Reconectador (posible condicionante) · Materiales repotenciación · Canon: acuerdo entrega materiales CECARRI (134 columnas). Alinear posesión mínima según avance obra eléctrica."},{"area":"Cloacas","prio":"alta","titulo":"Red cloacal interna: pruebas + recepción parcial","detalle":"Pruebas semana 20/04 con Municipalidad. Resultado define recepción parcial."},{"area":"Cloacas","prio":"critica","titulo":"Estación impulsora cloacal (30% avance)","detalle":"Falta: terminar construcción planta impulsora · Máquinas para excavación · Materiales y equipos para puesta en marcha. Requerimiento fundamental de la municipalidad."},{"area":"Cloacas","prio":"alta","titulo":"Impulsión externa cloaca y agua","detalle":"Avanzar obras de impulsión (aunque sea externas al cruce) · Pagar canon cruces antes de junio · Resolver compra de caños + cambio."},{"area":"Agua","prio":"alta","titulo":"Red de agua: pruebas de presión + recepción parcial","detalle":"Semana 20/04: avanzar con manómetros para pruebas de red. Coordinado con CLESAPE. Resultado define recepción parcial."},{"area":"Obra","prio":"media","titulo":"Alteo: planificar por sectores / manzanas","detalle":"No urgente pero necesario a corto plazo. Viviendas con permiso de edificación en ese sector requieren alteo terminado. Planificar por manzanas."},{"area":"Comercial","prio":"media","titulo":"Postventa: reubicación container y corrección de planos","detalle":"Mover container para recibir clientes en territorio. Corregir planos en campo."},{"area":"Gestión","prio":"alta","titulo":"3ª vía — Roma: 20 casas sin proceso municipal","detalle":"Objetivo: permitir a Roma construir 20 casas como dueño (área mayor) sin pasar por obras particulares de la muni. Posterior regularización. Acciones: reunión Pablo + Martín + Luciano · Alinear comunicación con obras particulares · Si hay aval político, ajustar procedimiento y discurso para postventa y clientes."}],"legal":{"puntosCriticosDetalle":[{"titulo":"Cobro indebido de TGI — exención pactada desconocida por la comuna","semaforo":"rojo","contexto":"La exención pactada en la Cláusula 8ª (Ordenanza 109/2019 del convenio urbanístico) no es reconocida por la Municipalidad de Pueblo Esther. La deuda reclamada está en judicialización, lo que demora los procesos de posesión y frena el libre deuda — forzando a la compañía a afrontar una deuda de $180.000.000 que crece con intereses.","intervinientes":"Intendencia: Martín Gherardi · Legales: Luciano Poggi","contactoSeguimiento":"Pablo Cofano","estado":"Sin movimientos (deuda judicializada)"}]}},"CM":{"nombre":"Campo Madero","loc":"Ybarlucea","ha":12,"lotes":191,"avanceGestion":100,"avanceObra":97,"entrega":"Jun 2026","nota":"100% avance gestión para permiso prov. ⚡ URGENTE: aprobación proyecto eléctrico EPE (Expte 2/2025/16430). EIA ✅.","gestionResumen":"Aprobación del proyecto eléctrico ante EPE, inspección de la infraestructura ejecutada y cierre de recepciones para habilitar el servicio.","obra":[{"r":"Pavimentación Av. de los Incas (1400 ml)","p":100,"nota":"Ejecutada"},{"r":"Red de Agua","p":100,"nota":"Ejecutada"},{"r":"Alumbrado Público","p":100,"nota":"Ejecutado"},{"r":"Obras Pluviales","p":100,"nota":"Ejecutadas"},{"r":"Señalización","p":100,"nota":"Ejecutada"},{"r":"Calzadas","p":100,"nota":"Ejecutadas"},{"r":"Plazas","p":100,"nota":"Ejecutadas"},{"r":"Red Eléctrica Interna","p":100,"nota":"Ejecutada; falta inspección EPE y resolución en Santa Fe"},{"r":"Red Eléctrica Externa","p":0,"nota":"Espera aprobación de EPE Santa Fe"},{"r":"Planta de Agua","p":100,"nota":"Ejecutada"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[{"titulo":"EPE trasladó el expediente de baja y media tensión a Santa Fe","semaforo":"rojo","contexto":"El 12/08/2026 la EPE notificó que el expediente del proyecto de baja y media tensión se trasladó a Santa Fe. La obra eléctrica se ejecutó según proyecto y proveedores homologados por EPE. Para regularizar, la empresa firmó un convenio con EPE (pago de canon en 12 meses, factibilidad eléctrica, obra complementaria). La compañía ya pagó el canon y presentó los proyectos acordados, pero EPE ahora no aprueba y pretende ampliar la obra complementaria con una adecuación de Línea de Alta Tensión, sin relación normativa, técnica ni legal con el proyecto original. No hay novedades ni próximas acciones informadas por EPE.","intervinientes":"Área de Proyectos Santa Fe (EPE) — expediente sin responsable confirmado; posibles: Melisa Uriarte, Julián Mauricio Aldecoa, Darío Panetto, Marcelo Cassín.","contactoSeguimiento":"Sin contacto político — solo seguimiento técnico/operativo desde Gestión.","estado":"Sin movimientos"}]}},"EN":{"nombre":"El Naranjo","loc":"Ybarlucea","ha":5.2,"lotes":93,"avanceGestion":91,"avanceObra":98,"entrega":"Jun 2026","nota":"CH2 en proceso. CAT iniciado. 91% avance gestión. 100% obra interna lista.","gestionResumen":"Permiso de vuelco ante Vialidad, categorización ambiental y acuerdo con la Comuna para instrumentar la posesión y las bajadas domiciliarias.","obra":[{"r":"Planta Provisoria Agua","p":100,"nota":"Ejecutada"},{"r":"Pluviales Internos","p":100,"nota":"Ejecutados"},{"r":"Nivelación de terreno","p":100,"nota":"Ejecutada"},{"r":"Pórtico de ingreso","p":100,"nota":"Ejecutado"},{"r":"Calzadas","p":100,"nota":"Ejecutadas"},{"r":"Cordones cuneta","p":100,"nota":"Ejecutados"},{"r":"Red Eléctrica","p":100,"nota":"Ejecutada"},{"r":"Colocación de Juegos","p":100,"nota":"Etapa final"},{"r":"Obras Pluviales Ext. aporte a comuna","p":80,"nota":"En ejecución avanzada - Salvat"},{"r":"Señalización","p":50,"nota":"En proceso"},{"r":"Conexión Agua Externa","p":0,"nota":"Convenio Ibarlucea"},{"r":"Iluminación pórtico","p":0,"nota":"Verificar"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[{"titulo":"Certificado Hídrico 2 condicionado a la aprobación del punto de vuelco (DPV)","semaforo":"rojo","contexto":"La SRH aprobó los Certificados 1 y 2, pero el CH2 quedó condicionado a que la Dirección Provincial de Vialidad (DPV) apruebe el punto de vuelco — esto no permite avanzar con las gestiones en Medio Ambiente y la Comuna. El 03/08 el expediente pasó a la oficina hidráulica de DPV, que va a inspeccionar la obra de descarga y revisar la documentación. Una vez aprobado el punto de vuelco, vuelve a la SRH para su emisión (Nicolás Mijich). Las gestiones de los Certificados Hídricos de El Naranjo comenzaron en marzo de 2022; aunque el predio ya tenía aprobaciones desde 2009 equivalentes al primer certificado, cambios de criterio de la SRH generaron demoras de 2 a 3 años.","intervinientes":"Secretario SRH: Nicolás Mijich · Seguimiento técnico: Ing. Pablo Bellitieri","contactoSeguimiento":"Ing. Pablo Bellitieri","estado":"En movimiento"},{"titulo":"DPV avanza lento por mirar un proyecto macro ajeno al expediente","semaforo":"rojo","contexto":"DPV es quien debe aprobar el punto de vuelco de El Naranjo 1 (Hídrica y Vialidad), pero avanza de forma lenta porque está mirando un proyecto macro por fuera de este expediente — alargando aún más los tiempos. Es urgente obtener este visado para poder avanzar con Medio Ambiente.","intervinientes":"Administrador general: Pablo Seghezzo · Director general: Fabio Sánchez · Técnico con el expediente: José María Fernández","contactoSeguimiento":"Ing. Pablo Bellitieri","estado":"En movimiento"},{"titulo":"Posesión provisoria del barrio pendiente de instrumento legal","semaforo":"rojo","contexto":"El intendente Jorge Masson se comprometió a otorgar la posesión con la emisión del CH2, y ya se avanzó con el \"pre-certificado 2\". Falta iniciar el instrumento legal que permita formalizar la posesión.","intervinientes":"Intendente: Jorge Masson","contactoSeguimiento":"Pablo Cofano","estado":"Sin movimientos"}]}},"OR":{"nombre":"Orígenes","loc":"Soldini","ha":7.3,"lotes":129,"avanceGestion":100,"avanceObra":73,"entrega":"Jun 2026","nota":"100% avance gestión para permiso prov. Cooperativa eléctrica en proceso — convenio urgente.","gestionResumen":"Definición del convenio eléctrico con la Cooperativa, canon y condiciones para contratar, ejecutar e inspeccionar la red eléctrica.","obra":[{"r":"Red de Agua","p":100,"nota":"Ejecutada"},{"r":"Red de Cloacas","p":100,"nota":"Ejecutada"},{"r":"Impulsión Cloaca","p":100,"nota":"Obra complementaria OK"},{"r":"Calzadas Internas","p":100,"nota":"Ejecutadas"},{"r":"Alumbrado Público","p":100,"nota":"Ejecutado"},{"r":"Obras Pluviales","p":40,"nota":"Falta cámara de regulación y alcantarilla; provisoriamente canal"},{"r":"Asfalto calle principal","p":0,"nota":"Rubro interno"},{"r":"Red Eléctrica interna","p":0,"nota":"Espera firma Cooperativa"},{"r":"Red Eléctrica Externa","p":0,"nota":"Conexión más reconectador"},{"r":"Obra Complementaria paquete estructural Islas Malvinas 150 m","p":0,"nota":"Depende de adenda comunal"},{"r":"Obra Complementaria asfalto calle Islas Malvinas","p":0,"nota":"Depende de adenda comunal"},{"r":"Obra Complementaria asfalto calle Venezuela","p":0,"nota":"Depende de adenda comunal"},{"r":"Señalización","p":0,"nota":"Pendiente; acordar tipología con Comuna"},{"r":"Plazas","p":0,"nota":"Pendiente"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[]}},"VI":{"nombre":"Vitta","loc":"General Lagos","ha":12.7,"lotes":203,"avanceGestion":99,"avanceObra":100,"entrega":"Dic 2028","nota":"99% avance gestión. CAT en proceso (02102-0014904-9). CH2 ✅. Convenio Urbanístico en proceso. DPV en proceso.","gestionResumen":"Categorización ambiental, convenio urbanístico, gestiones viales y planificación de las obras pendientes para continuar el cierre técnico.","obra":[{"r":"Red de Agua","p":100,"nota":"Ejecutada (ajustes de detalles)"},{"r":"Calzadas","p":100,"nota":"Ejecutadas (ajustes de detalles)"},{"r":"Red Cloacal Interna","p":100,"nota":"Ejecutada"},{"r":"Forestación","p":100,"nota":"Revisión de ejemplares a corregir"},{"r":"Estación Elevadora","p":0,"nota":"Pendiente"},{"r":"Conexión Cloacal Ext.","p":0,"nota":"Pendiente"},{"r":"Obra Eléctrica","p":0,"nota":"Pendiente"},{"r":"Pluviales","p":10,"nota":"Pendiente"},{"r":"Pórtico","p":0,"nota":"Ajustando proyecto para inicio de obra"},{"r":"Obra complementaria restante","p":0,"nota":"Revisar convenio urbanístico"},{"r":"Cerco perimetral","p":20,"nota":"En proceso de ejecución"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[]}},"EN2":{"nombre":"El Naranjo 2","loc":"Ybarlucea","ha":18.2,"lotes":336,"avanceGestion":64,"avanceObra":76,"entrega":"Dic 2028","nota":"64% avance gestión. CH2 iniciado 21/03/25. CAT programado. Cooperativa eléctrica: prefactibilidad ✅, pendiente proyecto.","gestionResumen":"Aprobación del CH2 y sus detalles constructivos, categorización ambiental y avance del proyecto y convenio eléctrico.","obra":[{"r":"Paquete estructural Calzadas","p":100,"nota":"Ejecutadas"},{"r":"Cordones cuneta","p":95,"nota":"Ejecutados"},{"r":"Pluviales","p":15,"nota":"Pendiente; depende de la emisión del Certificado Hídrico 2"},{"r":"Red de Agua","p":90,"nota":"Ejecutada"},{"r":"Obras Pluviales Ext. aporte con comuna","p":70,"nota":"Obra en conjunto"},{"r":"Pórtico de ingreso","p":0,"nota":"En planificación"},{"r":"Obra Eléctrica","p":0,"nota":"Pendiente; proyecto eléctrico en proceso"},{"r":"Alumbrado Público","p":0,"nota":"Pendiente; depende del proyecto eléctrico"},{"r":"Cloacas","p":0,"nota":"Pendiente; información interna, no comunicar aún a clientes"},{"r":"Señalización","p":0,"nota":"Pendiente"},{"r":"Plazas","p":0,"nota":"Pendiente"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[{"titulo":"Proyecto hidráulico adaptado a la Ley del Ludueña, en revisión técnica","semaforo":"rojo","contexto":"El 22/07/2026 se ingresó el proyecto hidráulico adaptado bajo la Ley del Ludueña N° 13.246, según lo solicitado. Queda pendiente la revisión técnica del Ing. Nicolás Fernández y la posterior aprobación de Nicolás Mijich.","intervinientes":"Secretario SRH: Nicolás Mijich","contactoSeguimiento":"Ing. Pablo Bellitieri","estado":"En movimiento"}]}},"VR":{"nombre":"Vitta Río","loc":"General Lagos","ha":17.4,"lotes":196,"avanceGestion":52,"avanceObra":37,"entrega":"Jun 2031","nota":"52% avance gestión. CH2 en proceso. Convenio Urbanístico en proceso. Prefactibilidades servicios: todas completadas.","gestionResumen":"Observaciones y visado comunal de mensura, presentación del CH2, categorización ambiental y consolidación de convenios de servicios.","obra":[{"r":"Calzadas","p":5,"nota":"Inicio de trazado"},{"r":"Obras Pluviales","p":5,"nota":"Inicio de ejecución"},{"r":"Red de Agua","p":0,"nota":"Convenio macro"},{"r":"Red de Cloacas","p":0,"nota":"Convenio macro"},{"r":"Estación elevadora","p":0,"nota":"Pendiente de acuerdo con Life"},{"r":"Alumbrado","p":0,"nota":"Pendiente"},{"r":"Plazas","p":0,"nota":"Pendiente"},{"r":"Red Eléctrica interna EPE","p":0,"nota":"Canon EPE abonado"},{"r":"Red Eléctrica Externa","p":0,"nota":"Posterior a la ejecución de la obra interna"},{"r":"Forestación","p":0,"nota":"Pendiente"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[{"titulo":"Visado de mensura y CH2 frenados por pedido de reducir la cantidad de lotes","semaforo":"amarillo","contexto":"Se solicitó reducir la cantidad de lotes (duplicar el tamaño de lotes ya vendidos, con obras ya ejecutadas). Pese a que existe un antecedente de aprobación previo, al no haber intervención política que agilice el expediente, queda inmovilizado en una interpretación técnica-operativa.","intervinientes":"Intendente: Esteban Ferri","contactoSeguimiento":"Pablo Cofano","estado":"Lento, pero en movimiento"}]}},"CZ":{"nombre":"CEZA","loc":"Zavalla","ha":23,"lotes":380,"avanceGestion":61,"avanceObra":30,"entrega":"Dic 2030","nota":"61% avance gestión. CH1+CH2 en proceso (01907-0020149-7). Admisibilidad en proceso. Convenio ✅. Calzada Sarmiento 60%.","gestionResumen":"Admisibilidad, CH1 y CH2, categorización ambiental y cierre de prefactibilidades para habilitar las etapas siguientes.","obra":[{"r":"Calzadas","p":10,"nota":"600 m de calle Sarmiento"},{"r":"Red de Agua","p":0,"nota":"Pendiente"},{"r":"Red de Cloacas","p":0,"nota":"Pendiente"},{"r":"Alumbrado","p":0,"nota":"Pendiente"},{"r":"Red Eléctrica","p":0,"nota":"Pendiente"},{"r":"Plazas y Señalización","p":0,"nota":"Pendiente"},{"r":"Obras Pluviales","p":0,"nota":"Pendiente"},{"r":"Obra Complementaria de Agua","p":0,"nota":"Acordar con Cooperativa"},{"r":"Obra Complementaria de Cloaca","p":0,"nota":"Pendiente"},{"r":"Forestación","p":0,"nota":"Pendiente"},{"r":"Plazas","p":0,"nota":"Pendiente"},{"r":"Red de Gas","p":0,"nota":"Pendiente"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[{"titulo":"Obra de mitigación observada tras la aprobación de la zonificación","semaforo":"amarillo","contexto":"El 21/07/2026 la SRH respondió sobre la zonificación remodelada bajo la Ley del Ludueña N° 13.246 y la obra de mitigación propuesta. La zonificación fue aprobada; la obra de mitigación quedó observada. Se está defendiendo técnicamente la obra de mitigación con el Ing. Nicolás Fernández para avanzar luego a la etapa del Certificado Hídrico 2.","intervinientes":"Secretario SRH: Nicolás Mijich","contactoSeguimiento":"Ing. Mario Chirichigno","estado":"Lento, pero en movimiento"}]}},"CM2":{"nombre":"Campo Madero 2","loc":"Ybarlucea","ha":16.7,"lotes":324,"avanceGestion":18,"avanceObra":67,"entrega":"Jun 2033","nota":"18% avance gestión. ✅ Admisibilidad completada. ⚡ CH1 urgente (proyecto mensura 01/07/25). ⚡ Convenio Urbanístico urgente.","gestionResumen":"CH1, convenio urbanístico, nueva mensura con el espacio verde complementario para El Naranjo y desarrollo del proyecto eléctrico.","obra":[{"r":"Calzadas","p":0,"nota":"Pendiente"},{"r":"Red de Agua","p":0,"nota":"Pendiente"},{"r":"Red Eléctrica interna","p":0,"nota":"Pendiente"},{"r":"Red Eléctrica Externa","p":0,"nota":"Pendiente"},{"r":"Red de Cloacas","p":0,"nota":"Pendiente"},{"r":"Planta Compacta Cloacal","p":0,"nota":"Pendiente"},{"r":"Red de Gas","p":0,"nota":"Pendiente"},{"r":"Obras Pluviales","p":0,"nota":"Pendiente"},{"r":"Alumbrado Público","p":0,"nota":"Pendiente"},{"r":"Plazas","p":0,"nota":"Pendiente"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[{"titulo":"Demora en visado de mensura y compensación de espacio verde sin cerrar","semaforo":"rojo","contexto":"No se ha firmado el convenio, aunque ya está redactado por completo y las obras complementarias ya se ejecutaron. Esto impide avanzar con las gestiones provinciales y en Ventanilla Única, extendiendo los plazos comprometidos con los clientes.","intervinientes":"Intendencia Comuna de Ibarlucea: Jorge Masson","contactoSeguimiento":"Pablo Cofano","estado":"Sin movimientos"}]}},"CDE":{"nombre":"Clos del Este","loc":"Roldán","ha":66,"lotes":880,"avanceGestion":4,"avanceObra":0,"entrega":"Dic 2034","nota":"4% avance gestión. Uso conforme urgente (desde 07/12/23). Concejo Municipal pendiente (Expte 1617). Admisibilidad en proceso.","gestionResumen":"Tratamiento del nuevo ordenamiento urbano, reconocimiento normativo del barrio cerrado y preparación del futuro convenio urbanístico.","obra":[{"r":"Mojonamiento","p":0,"nota":"Espera acuerdo municipal"},{"r":"Calzadas","p":0,"nota":"Pendiente"},{"r":"Red de Agua","p":0,"nota":"Pendiente"},{"r":"Red de Cloacas","p":0,"nota":"Pendiente"},{"r":"Alumbrado","p":0,"nota":"Pendiente"},{"r":"Red Eléctrica","p":0,"nota":"Pendiente"},{"r":"Plazas y Señalización","p":0,"nota":"Pendiente"},{"r":"Obras Pluviales","p":0,"nota":"Pendiente"},{"r":"Planta de Agua","p":0,"nota":"Pendiente"},{"r":"Planta Impulsora Cloacal","p":0,"nota":"Pendiente"},{"r":"Forestación","p":0,"nota":"Pendiente"},{"r":"Plazas","p":0,"nota":"Pendiente"},{"r":"Red de Gas","p":0,"nota":"Pendiente"}],"pendientes":[],"legal":{"puntosCriticosDetalle":[]}},"VN":{"nombre":"Vitta Norte","loc":"Ybarlucea","ha":"","lotes":"","avanceGestion":4,"avanceObra":0,"entrega":"Jun 2036","nota":"4% avance gestión. Uso Conforme urgente desde 15/03/24. CH1 en proceso. Casi todo programado.","gestionResumen":"Uso conforme, CH1 y documentación inicial para habilitar la secuencia de aprobaciones del proyecto.","obra":[],"pendientes":[],"legal":{"puntosCriticosDetalle":[]}}},"ORDEN_BLOQUE1":["CEPE","CM","EN","OR"],"ORDEN_BLOQUE2":["VI","VR","EN2","CM2","CZ","CDE"],"ORDEN_BLOQUE3":["VN"],"OBRA_OVERRIDE":{"CEPE":80,"CM":90,"EN":95,"OR":85},"DEMORA_DATA":{"CM":{"fechaPrometida":"01/03/2022","demoraAnios":4.3},"CEPE":{"fechaPrometida":"14/07/2023","demoraAnios":3.5},"EN":{"fechaPrometida":"01/08/2022","demoraAnios":3.9},"VI":{"fechaPrometida":"28/11/2022","demoraAnios":6.1},"OR":{"fechaPrometida":"09/08/2024","demoraAnios":1.9},"EN2":{"fechaPrometida":"24/09/2024","demoraAnios":4.3},"VR":{"fechaPrometida":"28/03/2025","demoraAnios":5.8},"CM2":{"fechaPrometida":"02/11/2026","demoraAnios":6.2},"CZ":{"fechaPrometida":"03/01/2027","demoraAnios":4},"CDE":{"fechaPrometida":"31/12/2028","demoraAnios":5.5},"VN":{"fechaPrometida":"31/12/2035","demoraAnios":-1}},"CEO_ACCIONABLES":{"OR":[{"titulo":"Resolver relación y firma de convenio con la Cooperativa Eléctrica (Leonardo Costa)","prio":"critica","area":"Presidente Cooperativa Eléctrica","detalle":"Informar personalmente que la ejecución de la mano de obra se contratará con otro proveedor, antes de iniciar cualquier otro trámite. Solicitar financiar el canon eléctrico en 12 cuotas (mismo criterio que EPE). Definir la fecha de retiro de los transformadores de GabEE y coordinar con Mariano. Secuencia obligatoria: primero la conversación con Costa, luego acordar canon y permiso, y recién después coordinar operativamente — no iniciar la obra sin ordenar antes esta relación institucional."},{"titulo":"Resolver actualización del convenio con el Intendente Leonardo Marconcini","prio":"critica","area":"Intendente de Soldini","detalle":"Informar la contratación de la red eléctrica y demostrar cumplimiento con el inicio concreto del frente eléctrico. Negociar que la garantía de la adenda quede limitada a lotes o al campo, descartando la garantía aseguradora (hoy no gestionable). Debe realizarse después de hablar con el presidente de la Cooperativa. Objetivo: evitar la baja del convenio y cerrar una garantía viable."}],"EN":[{"titulo":"Definiciones con el Intendente Jorge Masson — posesión de El Naranjo 1","prio":"alta","area":"Presidente Comunal de Ybarlucea","detalle":"Avanzar con la posesión de El Naranjo 1 mediante un instrumento comunal, tomando como antecedente la ordenanza usada en Campo Madero. El CH2 de El Naranjo 1 ya fue presentado; falta donar 300 m² adicionales de espacio verde compensatorio en Campo Madero 2, visar la nueva mensura y emitir la ordenanza de aceptación para cerrar el trámite ante el MAyCC."}],"CM2":[{"titulo":"Habilitación del visado de mensura de Campo Madero 2 (espacio verde compensatorio de El Naranjo 1)","prio":"alta","area":"Presidente Comunal de Ybarlucea","detalle":"Solicitar al Intendente Jorge Masson la habilitación del visado de mensura de Campo Madero 2, incorporando el espacio verde compensatorio requerido para El Naranjo 1 (300 m² adicionales), y dar luz verde al equipo técnico para avanzar con la mensura y la ordenanza de aceptación."}],"VR":[{"titulo":"Destrabar el acuerdo político para los visados (mensura y CH2)","prio":"alta","area":"Intendente de General Lagos","detalle":"El visado de mensura y el Certificado Hídrico 2 están frenados por el pedido de reducir la cantidad de lotes (duplicar el tamaño de los ya vendidos, con obras ya ejecutadas). Existe un antecedente de aprobación previo, pero sin intervención política que agilice el expediente queda inmovilizado en una interpretación técnico-operativa. Gestionar el acuerdo político con el Intendente Esteban Ferri para destrabar ambos visados."}],"VI":[{"titulo":"Visado de mensura — gestionar el pago de USD 12.000","prio":"alta","area":"Municipalidad / Área técnica","detalle":"El visado de mensura de Vitta requiere gestionar un pago de USD 12.000 para poder avanzar. Definir el circuito de pago y la fecha estimada de visado una vez abonado."}]},"GESTION_HITOS":{"CEPE":[{"nombre":"Admisibilidad de Proyecto","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"01/06/19","fin":"27/11/19"},{"nombre":"Certificado Hídrico 1","est":"done","plazo":"16m","ini":"14/12/20","fin":"06/01/22"},{"nombre":"Certificado Hídrico 2","est":"done","plazo":"23m","ini":"23/05/22","fin":"02/04/25"},{"nombre":"Convenio Urbanístico","est":"done","plazo":null,"ini":"01/06/19","fin":"26/11/19"},{"nombre":"Categorización Ambiental","est":"done","plazo":null,"ini":"26/07/22","fin":"13/05/25"},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"done","plazo":null,"ini":"07/07/25","fin":"02/10/25"},{"nombre":"CUR 1","est":"done","plazo":null,"ini":"02/10/25","fin":"28/10/25"},{"nombre":"Gestiones DPV","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"done","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa CLESAPE","est":"done","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"CM":[{"nombre":"Admisibilidad de Proyecto","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"21/12/18","fin":"10/09/19"},{"nombre":"Certificado Hídrico 1","est":"done","plazo":"16m","ini":"21/12/18","fin":"11/10/20"},{"nombre":"Certificado Hídrico 2","est":"done","plazo":"23m","ini":"04/08/22","fin":"04/04/23"},{"nombre":"Convenio Urbanístico","est":"done","plazo":null,"ini":"21/12/18","fin":"01/01/22"},{"nombre":"Categorización Ambiental","est":"done","plazo":null,"ini":"19/11/21","fin":"06/08/23"},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"done","plazo":null,"ini":"27/10/23","fin":"07/05/25"},{"nombre":"CUR 1","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"urgent","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"done","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"EN":[{"nombre":"Admisibilidad de Proyecto","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"20/12/19","fin":"30/11/21"},{"nombre":"Certificado Hídrico 1","est":"done","plazo":"16m","ini":"06/10/23","fin":"16/08/24"},{"nombre":"Certificado Hídrico 2","est":"proc","plazo":"23m","ini":"21/03/25","fin":null},{"nombre":"Convenio Urbanístico","est":"done","plazo":"30m","ini":"20/12/19","fin":"23/10/24"},{"nombre":"Categorización Ambiental","est":"proc","plazo":"4m","ini":"08/04/25","fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"done","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"done","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":"23m","ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"OR":[{"nombre":"Admisibilidad de Proyecto","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"29/10/20","fin":"19/03/21"},{"nombre":"Certificado Hídrico 1","est":"done","plazo":"16m","ini":"26/10/21","fin":"08/08/24"},{"nombre":"Certificado Hídrico 2","est":"done","plazo":"23m","ini":"26/10/21","fin":"08/08/24"},{"nombre":"Convenio Urbanístico","est":"done","plazo":null,"ini":"29/10/20","fin":"22/06/21"},{"nombre":"Categorización Ambiental","est":"done","plazo":null,"ini":"26/09/24","fin":"04/11/24"},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"VI":[{"nombre":"Admisibilidad de Proyecto","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"23/06/20","fin":"06/04/21"},{"nombre":"Certificado Hídrico 1","est":"prog","plazo":null,"ini":"01/04/21","fin":"05/01/23"},{"nombre":"Certificado Hídrico 2","est":"done","plazo":"23m","ini":"11/05/23","fin":"23/09/25"},{"nombre":"Convenio Urbanístico","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Categorización Ambiental","est":"proc","plazo":null,"ini":"11/04/25","fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"done","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"EN2":[{"nombre":"Admisibilidad de Proyecto","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"18/06/21","fin":"28/04/23"},{"nombre":"Certificado Hídrico 1","est":"done","plazo":"16m","ini":"06/10/23","fin":"16/08/24"},{"nombre":"Certificado Hídrico 2","est":"proc","plazo":null,"ini":"21/03/25","fin":null},{"nombre":"Convenio Urbanístico","est":"done","plazo":null,"ini":"18/06/21","fin":"23/10/24"},{"nombre":"Categorización Ambiental","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"VR":[{"nombre":"Admisibilidad de Proyecto","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"29/04/21","fin":"30/12/21"},{"nombre":"Certificado Hídrico 1","est":"done","plazo":"16m","ini":"07/06/22","fin":"30/07/24"},{"nombre":"Certificado Hídrico 2","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Convenio Urbanístico","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Categorización Ambiental","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"done","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"CZ":[{"nombre":"Admisibilidad de Proyecto","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"07/12/22","fin":"17/02/23"},{"nombre":"Certificado Hídrico 1","est":"proc","plazo":"16m","ini":"27/08/24","fin":null},{"nombre":"Certificado Hídrico 2","est":"proc","plazo":"23m","ini":"27/08/24","fin":null},{"nombre":"Convenio Urbanístico","est":"done","plazo":null,"ini":"07/12/22","fin":null},{"nombre":"Categorización Ambiental","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"CM2":[{"nombre":"Admisibilidad de Proyecto","est":"done","plazo":null,"ini":"03/02/25","fin":"17/06/25"},{"nombre":"Uso Conforme","est":"done","plazo":"23m","ini":"27/10/21","fin":"30/10/24"},{"nombre":"Certificado Hídrico 1","est":"urgent","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 2","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Convenio Urbanístico","est":"urgent","plazo":null,"ini":"27/10/2021","fin":null},{"nombre":"Categorización Ambiental","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"CDE":[{"nombre":"Admisibilidad de Proyecto","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"urgent","plazo":"23m","ini":"07/12/23","fin":null},{"nombre":"Certificado Hídrico 1","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 2","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Categorización Ambiental","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}],"VN":[{"nombre":"Admisibilidad de Proyecto","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Uso Conforme","est":"urgent","plazo":"23m","ini":"15/03/24","fin":null},{"nombre":"Certificado Hídrico 1","est":"proc","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 2","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Categorización Ambiental","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Estudio de Impacto Ambiental (EIA)","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"CUR 1","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Gestiones DPV","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación EPE","est":"na","plazo":null,"ini":null,"fin":null},{"nombre":"Aprobación Cooperativa Eléctrica","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Obra Comunal o Municipal","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Conv. de Responsabilidad Empresarial","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Certificado Hídrico 3","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Visado Mensura MAyCC","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Cambio de Zona","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Inscripción Catastro","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Donación Calles y Espacios Verdes","est":"prog","plazo":null,"ini":null,"fin":null},{"nombre":"Final de Convenio Urbanístico","est":"prog","plazo":null,"ini":null,"fin":null}]},"ENTE_LINKS":{},"LEGAL_DOCS_LINKS":{"CEPE":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/1TP_2GhHgQic61bKafKQRA7M-NJRzc2uM?usp=sharing"}],"CM":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/1bQl0UYWp2sTVUJYxdsBx-r4Bk_QeHDnM?usp=sharing"}],"CM2":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/1g690NypOFk1Cd5Z8BPVEpAHOm58pjX_3?usp=sharing"}],"EN":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/1TLbdN-NxThFJVambw-ZZQhIQJiDM8MJR?usp=sharing"}],"EN2":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/1rgydFXpHuRKycHhPtnAZo9FYzwonvS0Q?usp=sharing"}],"OR":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/17CVhhbINVbLAvSbV-qjrSxuDfIoC6M8a?usp=sharing"}],"VI":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/17xjDF_GolyO-GsNMMz5_DWUW3WlWjVC_?usp=sharing"}],"CDE":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/1k64ikWUNYZklE5rm7AxkW9NXlWm0Mt1t?usp=sharing"}],"CZ":[{"titulo":"Carpeta de documentos legales (Drive)","url":"https://drive.google.com/drive/folders/1Nc_uMywzeCKk0KV-u33kVZgIJvtif5pr?usp=sharing"}]}}
+{
+  "DOLAR_BLUE": {
+    "venta": 1560,
+    "fecha": "24/09/2026"
+  },
+  "INVERSION_DATA": {
+    "CEPE": {
+      "bloque": 1,
+      "lotesQuedan": 47,
+      "lotesTotal": 448,
+      "lotesPct": 10.5,
+      "tiempo": null,
+      "tiempoPct": 100,
+      "obrasPosesion": 339831.86,
+      "obrasTotal": 695967.79,
+      "lotesRemanentes": null
+    },
+    "CM": {
+      "bloque": 1,
+      "lotesQuedan": 14,
+      "lotesTotal": 191,
+      "lotesPct": 7.3,
+      "tiempo": "Mar 2026",
+      "tiempoPct": 98,
+      "obrasPosesion": 49593.43,
+      "obrasTotal": 61773.7,
+      "lotesRemanentes": null
+    },
+    "EN": {
+      "bloque": 1,
+      "lotesQuedan": 11,
+      "lotesTotal": 91,
+      "lotesPct": 12,
+      "tiempo": "Jun 2026",
+      "tiempoPct": 91,
+      "obrasPosesion": 4810.29,
+      "obrasTotal": 29571.39,
+      "lotesRemanentes": null
+    },
+    "OR": {
+      "bloque": 1,
+      "lotesQuedan": 7,
+      "lotesTotal": 128,
+      "lotesPct": 5.4,
+      "tiempo": null,
+      "tiempoPct": 100,
+      "obrasPosesion": 30676,
+      "obrasTotal": 212368,
+      "lotesRemanentes": null
+    },
+    "VI": {
+      "bloque": 2,
+      "lotesQuedan": 108,
+      "lotesTotal": 203,
+      "lotesPct": 54,
+      "tiempo": "Jun 2026",
+      "tiempoPct": 99,
+      "obrasPosesion": 283479,
+      "obrasTotal": 501605,
+      "lotesRemanentes": null
+    },
+    "EN2": {
+      "bloque": 2,
+      "lotesQuedan": 86,
+      "lotesTotal": 326,
+      "lotesPct": 26,
+      "tiempo": "Jun 2027",
+      "tiempoPct": 64,
+      "obrasPosesion": null,
+      "obrasTotal": 637184,
+      "lotesRemanentes": null
+    },
+    "VR": {
+      "bloque": 2,
+      "lotesQuedan": 100,
+      "lotesTotal": 203,
+      "lotesPct": 49,
+      "tiempo": "Dic 2028",
+      "tiempoPct": 51,
+      "obrasPosesion": null,
+      "obrasTotal": 616798,
+      "lotesRemanentes": null
+    },
+    "CZ": {
+      "bloque": 2,
+      "lotesQuedan": 200,
+      "lotesTotal": 405,
+      "lotesPct": 49,
+      "tiempo": "Jun 2028",
+      "tiempoPct": 61,
+      "obrasPosesion": null,
+      "obrasTotal": 1655879,
+      "lotesRemanentes": null
+    },
+    "CM2": {
+      "bloque": 2,
+      "lotesQuedan": 179,
+      "lotesTotal": 324,
+      "lotesPct": 55,
+      "tiempo": "Dic 2030",
+      "tiempoPct": 18,
+      "obrasPosesion": null,
+      "obrasTotal": 1339757,
+      "lotesRemanentes": null
+    },
+    "CDE": {
+      "bloque": 2,
+      "lotesQuedan": 585,
+      "lotesTotal": 873,
+      "lotesPct": 67,
+      "tiempo": "Dic 2031",
+      "tiempoPct": 4,
+      "obrasPosesion": null,
+      "obrasTotal": null,
+      "lotesRemanentes": null,
+      "costoEstimado": 12450010,
+      "costoEstimadoNota": "Estimado preliminar (contempla obras + obras complementarias generales). No incluido en el total de Capital total estimado del resumen."
+    },
+    "VN": {
+      "bloque": 3,
+      "lotesQuedan": 517,
+      "lotesTotal": 672,
+      "lotesPct": 77,
+      "tiempo": "Dic 2034",
+      "tiempoPct": 4,
+      "obrasPosesion": null,
+      "obrasTotal": 0,
+      "lotesRemanentes": null
+    }
+  },
+  "BLOQUE_INFO": {
+    "1": {
+      "titulo": "Bloque 1 — Mayor urgencia",
+      "sub": "Pocos lotes restantes, ya casi en el cierre. La inversión más chica destraba el mayor impacto inmediato.",
+      "clase": "b1"
+    },
+    "2": {
+      "titulo": "Bloque 2 — En desarrollo",
+      "sub": "Avance intermedio de obra y gestión. Requieren una inyección de capital más significativa para acelerar.",
+      "clase": "b2"
+    },
+    "3": {
+      "titulo": "Bloque 3 — Sin prioridad por el momento",
+      "sub": "Etapa inicial. No se recomienda como primera inversión, pero se incluye para trazabilidad completa de la cartera.",
+      "clase": "b3"
+    }
+  },
+  "PROJ_DATA": {
+    "CEPE": {
+      "nombre": "CEPE",
+      "loc": "Pueblo Esther",
+      "ha": 28.3,
+      "lotes": 417,
+      "avanceGestion": 100,
+      "avanceObra": 80,
+      "entrega": "Dic 2026",
+      "nota": "100% avance gestión para permiso prov. DPV: convenio + acta de inicio en proceso. Eléctrica interna 90%. Trafo 5MVA entregado a CLESAPE. CH3, Visado Mensura y Cambio de Zona: programados.",
+      "gestionResumen": "Cierre de convenios e inspecciones, final de obra, CH3, visado ambiental, resolución del TGI y consolidación del esquema de posesiones.",
+      "obra": [
+        {
+          "r": "Red de Agua (Interna)",
+          "p": 100,
+          "nota": "Próximo a inspeccionar con CLESAPE"
+        },
+        {
+          "r": "Red Cloacal (Interna)",
+          "p": 100,
+          "nota": "Realizando inspecciones y hormigonando tapa de boca de inspección"
+        },
+        {
+          "r": "Calzadas",
+          "p": 100,
+          "nota": "Próximo a inspeccionar por Municipalidad"
+        },
+        {
+          "r": "Red Eléctrica interna",
+          "p": 90,
+          "nota": "Bases para columnas restantes de media tensión y finalización de red de baja tensión"
+        },
+        {
+          "r": "Estructura para transformadores",
+          "p": 70,
+          "nota": "En proceso de instalación de equipos y accesorios"
+        },
+        {
+          "r": "Convenio CLESAPE",
+          "p": 75,
+          "nota": "Trafo entregado; falta entregar caños de agua y terminar de pagar el canon"
+        },
+        {
+          "r": "Estación Impulsora",
+          "p": 30,
+          "nota": "Ajustar planificación y acopio de materiales"
+        },
+        {
+          "r": "Red Agua (Impulsión Ext.)",
+          "p": 0,
+          "nota": "Verificación en proceso con Municipalidad y en campo"
+        },
+        {
+          "r": "Forestación",
+          "p": 70,
+          "nota": "Replantar ejemplares; revisar cantidad con Obras"
+        },
+        {
+          "r": "Red Cloaca (Impulsión Ext.)",
+          "p": 0,
+          "nota": "Compra y cambio de caños; verificación pendiente con Municipalidad"
+        },
+        {
+          "r": "Red de Gas Externa",
+          "p": 100,
+          "nota": "Ejecutada y entregada a Litoral Gas"
+        },
+        {
+          "r": "Red de Gas Interna",
+          "p": 0,
+          "nota": "Se ejecuta después de finalizar otras obras"
+        },
+        {
+          "r": "Demolición de casa ocupa",
+          "p": 100,
+          "nota": "Resolución legal judicial cerrada"
+        }
+      ],
+      "pendientes": [
+        {
+          "area": "Municipalidad",
+          "prio": "critica",
+          "titulo": "TGI — Legales, tributos y acuerdo",
+          "detalle": "Resolver con Luciano (recurso legal). Punto crítico político para posesión."
+        },
+        {
+          "area": "Municipalidad",
+          "prio": "critica",
+          "titulo": "Obra complementaria: 4.500 m² de adoquines",
+          "detalle": "Definir fecha de entrega con Pavitec. Saldo pendiente con municipalidad."
+        },
+        {
+          "area": "Municipalidad",
+          "prio": "alta",
+          "titulo": "Metodología de posesión con obras en proceso",
+          "detalle": "Opción 1 (3ª vía): permiso interno por empresa + regularización posterior. Alinear con municipalidad permisos sin número oficial → habilita bajada eléctrica + perforación agua. Opción 2: seguir proceso municipal según convenio de responsabilidad (más lento)."
+        },
+        {
+          "area": "Municipalidad",
+          "prio": "media",
+          "titulo": "Indicadores urbanísticos frente CEPE",
+          "detalle": "Acordar FOS y FOT para lotes comerciales en colectora."
+        },
+        {
+          "area": "Municipalidad",
+          "prio": "media",
+          "titulo": "Modificaciones en Masterplan",
+          "detalle": "Lotes de 200m² vendidos donde había 400m². Frente CEPE: modificaciones de lotes que alteraron el esquema base de 1.000 m²."
+        },
+        {
+          "area": "Gestión",
+          "prio": "critica",
+          "titulo": "Canon cruce FFCC (cloaca y agua) — vence junio 2026",
+          "detalle": "Pagar antes de junio 2026 o gestionar con Jonatan (único apoderado que puede reactivar el trámite). No es transferible."
+        },
+        {
+          "area": "Eléctrico",
+          "prio": "alta",
+          "titulo": "Obra eléctrica: cierre en ~3 semanas",
+          "detalle": "Pendiente: colocación trafo Inelpa (Jesuan provee instalación) · Cableado general · Elementos negociación CECARRI listos. Luego: inspección + conforme a obra CLESAPE → condición para bajadas eléctricas a lotes."
+        },
+        {
+          "area": "Eléctrico",
+          "prio": "alta",
+          "titulo": "Convenio CLESAPE — elementos a definir",
+          "detalle": "Reconectador (posible condicionante) · Materiales repotenciación · Canon: acuerdo entrega materiales CECARRI (134 columnas). Alinear posesión mínima según avance obra eléctrica."
+        },
+        {
+          "area": "Cloacas",
+          "prio": "alta",
+          "titulo": "Red cloacal interna: pruebas + recepción parcial",
+          "detalle": "Pruebas semana 20/04 con Municipalidad. Resultado define recepción parcial."
+        },
+        {
+          "area": "Cloacas",
+          "prio": "critica",
+          "titulo": "Estación impulsora cloacal (30% avance)",
+          "detalle": "Falta: terminar construcción planta impulsora · Máquinas para excavación · Materiales y equipos para puesta en marcha. Requerimiento fundamental de la municipalidad."
+        },
+        {
+          "area": "Cloacas",
+          "prio": "alta",
+          "titulo": "Impulsión externa cloaca y agua",
+          "detalle": "Avanzar obras de impulsión (aunque sea externas al cruce) · Pagar canon cruces antes de junio · Resolver compra de caños + cambio."
+        },
+        {
+          "area": "Agua",
+          "prio": "alta",
+          "titulo": "Red de agua: pruebas de presión + recepción parcial",
+          "detalle": "Semana 20/04: avanzar con manómetros para pruebas de red. Coordinado con CLESAPE. Resultado define recepción parcial."
+        },
+        {
+          "area": "Obra",
+          "prio": "media",
+          "titulo": "Alteo: planificar por sectores / manzanas",
+          "detalle": "No urgente pero necesario a corto plazo. Viviendas con permiso de edificación en ese sector requieren alteo terminado. Planificar por manzanas."
+        },
+        {
+          "area": "Comercial",
+          "prio": "media",
+          "titulo": "Postventa: reubicación container y corrección de planos",
+          "detalle": "Mover container para recibir clientes en territorio. Corregir planos en campo."
+        },
+        {
+          "area": "Gestión",
+          "prio": "alta",
+          "titulo": "3ª vía — Roma: 20 casas sin proceso municipal",
+          "detalle": "Objetivo: permitir a Roma construir 20 casas como dueño (área mayor) sin pasar por obras particulares de la muni. Posterior regularización. Acciones: reunión Pablo + Martín + Luciano · Alinear comunicación con obras particulares · Si hay aval político, ajustar procedimiento y discurso para postventa y clientes."
+        }
+      ],
+      "legal": {
+        "puntosCriticosDetalle": [
+          {
+            "titulo": "Cobro indebido de TGI — exención pactada desconocida por la comuna",
+            "semaforo": "rojo",
+            "contexto": "La exención pactada en la Cláusula 8ª (Ordenanza 109/2019 del convenio urbanístico) no es reconocida por la Municipalidad de Pueblo Esther. La deuda reclamada está en judicialización, lo que demora los procesos de posesión y frena el libre deuda — forzando a la compañía a afrontar una deuda de $180.000.000 que crece con intereses.",
+            "intervinientes": "Intendencia: Martín Gherardi · Legales: Luciano Poggi",
+            "contactoSeguimiento": "Pablo Cofano",
+            "estado": "Sin movimientos (deuda judicializada)"
+          }
+        ]
+      }
+    },
+    "CM": {
+      "nombre": "Campo Madero",
+      "loc": "Ybarlucea",
+      "ha": 12,
+      "lotes": 191,
+      "avanceGestion": 100,
+      "avanceObra": 97,
+      "entrega": "Jun 2026",
+      "nota": "100% avance gestión para permiso prov. ⚡ URGENTE: aprobación proyecto eléctrico EPE (Expte 2/2025/16430). EIA ✅.",
+      "gestionResumen": "Aprobación del proyecto eléctrico ante EPE, inspección de la infraestructura ejecutada y cierre de recepciones para habilitar el servicio.",
+      "obra": [
+        {
+          "r": "Pavimentación Av. de los Incas (1400 ml)",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Red de Agua",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Alumbrado Público",
+          "p": 100,
+          "nota": "Ejecutado"
+        },
+        {
+          "r": "Obras Pluviales",
+          "p": 100,
+          "nota": "Ejecutadas"
+        },
+        {
+          "r": "Señalización",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Calzadas",
+          "p": 100,
+          "nota": "Ejecutadas"
+        },
+        {
+          "r": "Plazas",
+          "p": 100,
+          "nota": "Ejecutadas"
+        },
+        {
+          "r": "Red Eléctrica Interna",
+          "p": 100,
+          "nota": "Ejecutada; falta inspección EPE y resolución en Santa Fe"
+        },
+        {
+          "r": "Red Eléctrica Externa",
+          "p": 0,
+          "nota": "Espera aprobación de EPE Santa Fe"
+        },
+        {
+          "r": "Planta de Agua",
+          "p": 100,
+          "nota": "Ejecutada"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": [
+          {
+            "titulo": "EPE trasladó el expediente de baja y media tensión a Santa Fe",
+            "semaforo": "rojo",
+            "contexto": "El 12/08/2026 la EPE notificó que el expediente del proyecto de baja y media tensión se trasladó a Santa Fe. La obra eléctrica se ejecutó según proyecto y proveedores homologados por EPE. Para regularizar, la empresa firmó un convenio con EPE (pago de canon en 12 meses, factibilidad eléctrica, obra complementaria). La compañía ya pagó el canon y presentó los proyectos acordados, pero EPE ahora no aprueba y pretende ampliar la obra complementaria con una adecuación de Línea de Alta Tensión, sin relación normativa, técnica ni legal con el proyecto original. No hay novedades ni próximas acciones informadas por EPE.",
+            "intervinientes": "Área de Proyectos Santa Fe (EPE) — expediente sin responsable confirmado; posibles: Melisa Uriarte, Julián Mauricio Aldecoa, Darío Panetto, Marcelo Cassín.",
+            "contactoSeguimiento": "Sin contacto político — solo seguimiento técnico/operativo desde Gestión.",
+            "estado": "Sin movimientos"
+          }
+        ]
+      }
+    },
+    "EN": {
+      "nombre": "El Naranjo",
+      "loc": "Ybarlucea",
+      "ha": 5.2,
+      "lotes": 93,
+      "avanceGestion": 91,
+      "avanceObra": 98,
+      "entrega": "Jun 2026",
+      "nota": "CH2 en proceso. CAT iniciado. 91% avance gestión. 100% obra interna lista.",
+      "gestionResumen": "Permiso de vuelco ante Vialidad, categorización ambiental y acuerdo con la Comuna para instrumentar la posesión y las bajadas domiciliarias.",
+      "obra": [
+        {
+          "r": "Planta Provisoria Agua",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Pluviales Internos",
+          "p": 100,
+          "nota": "Ejecutados"
+        },
+        {
+          "r": "Nivelación de terreno",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Pórtico de ingreso",
+          "p": 100,
+          "nota": "Ejecutado"
+        },
+        {
+          "r": "Calzadas",
+          "p": 100,
+          "nota": "Ejecutadas"
+        },
+        {
+          "r": "Cordones cuneta",
+          "p": 100,
+          "nota": "Ejecutados"
+        },
+        {
+          "r": "Red Eléctrica",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Colocación de Juegos",
+          "p": 100,
+          "nota": "Etapa final"
+        },
+        {
+          "r": "Obras Pluviales Ext. aporte a comuna",
+          "p": 80,
+          "nota": "En ejecución avanzada - Salvat"
+        },
+        {
+          "r": "Señalización",
+          "p": 50,
+          "nota": "En proceso"
+        },
+        {
+          "r": "Conexión Agua Externa",
+          "p": 0,
+          "nota": "Convenio Ibarlucea"
+        },
+        {
+          "r": "Iluminación pórtico",
+          "p": 0,
+          "nota": "Verificar"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": [
+          {
+            "titulo": "Certificado Hídrico 2 condicionado a la aprobación del punto de vuelco (DPV)",
+            "semaforo": "rojo",
+            "contexto": "La SRH aprobó los Certificados 1 y 2, pero el CH2 quedó condicionado a que la Dirección Provincial de Vialidad (DPV) apruebe el punto de vuelco — esto no permite avanzar con las gestiones en Medio Ambiente y la Comuna. El 03/08 el expediente pasó a la oficina hidráulica de DPV, que va a inspeccionar la obra de descarga y revisar la documentación. Una vez aprobado el punto de vuelco, vuelve a la SRH para su emisión (Nicolás Mijich). Las gestiones de los Certificados Hídricos de El Naranjo comenzaron en marzo de 2022; aunque el predio ya tenía aprobaciones desde 2009 equivalentes al primer certificado, cambios de criterio de la SRH generaron demoras de 2 a 3 años.",
+            "intervinientes": "Secretario SRH: Nicolás Mijich · Seguimiento técnico: Ing. Pablo Bellitieri",
+            "contactoSeguimiento": "Ing. Pablo Bellitieri",
+            "estado": "En movimiento"
+          },
+          {
+            "titulo": "DPV avanza lento por mirar un proyecto macro ajeno al expediente",
+            "semaforo": "rojo",
+            "contexto": "DPV es quien debe aprobar el punto de vuelco de El Naranjo 1 (Hídrica y Vialidad), pero avanza de forma lenta porque está mirando un proyecto macro por fuera de este expediente — alargando aún más los tiempos. Es urgente obtener este visado para poder avanzar con Medio Ambiente.",
+            "intervinientes": "Administrador general: Pablo Seghezzo · Director general: Fabio Sánchez · Técnico con el expediente: José María Fernández",
+            "contactoSeguimiento": "Ing. Pablo Bellitieri",
+            "estado": "En movimiento"
+          },
+          {
+            "titulo": "Posesión provisoria del barrio pendiente de instrumento legal",
+            "semaforo": "rojo",
+            "contexto": "El intendente Jorge Masson se comprometió a otorgar la posesión con la emisión del CH2, y ya se avanzó con el \"pre-certificado 2\". Falta iniciar el instrumento legal que permita formalizar la posesión.",
+            "intervinientes": "Intendente: Jorge Masson",
+            "contactoSeguimiento": "Pablo Cofano",
+            "estado": "Sin movimientos"
+          }
+        ]
+      }
+    },
+    "OR": {
+      "nombre": "Orígenes",
+      "loc": "Soldini",
+      "ha": 7.3,
+      "lotes": 129,
+      "avanceGestion": 100,
+      "avanceObra": 73,
+      "entrega": "Jun 2026",
+      "nota": "100% avance gestión para permiso prov. Cooperativa eléctrica en proceso — convenio urgente.",
+      "gestionResumen": "Definición del convenio eléctrico con la Cooperativa, canon y condiciones para contratar, ejecutar e inspeccionar la red eléctrica.",
+      "obra": [
+        {
+          "r": "Red de Agua",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Red de Cloacas",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Impulsión Cloaca",
+          "p": 100,
+          "nota": "Obra complementaria OK"
+        },
+        {
+          "r": "Calzadas Internas",
+          "p": 100,
+          "nota": "Ejecutadas"
+        },
+        {
+          "r": "Alumbrado Público",
+          "p": 100,
+          "nota": "Ejecutado"
+        },
+        {
+          "r": "Obras Pluviales",
+          "p": 40,
+          "nota": "Falta cámara de regulación y alcantarilla; provisoriamente canal"
+        },
+        {
+          "r": "Asfalto calle principal",
+          "p": 0,
+          "nota": "Rubro interno"
+        },
+        {
+          "r": "Red Eléctrica interna",
+          "p": 0,
+          "nota": "Espera firma Cooperativa"
+        },
+        {
+          "r": "Red Eléctrica Externa",
+          "p": 0,
+          "nota": "Conexión más reconectador"
+        },
+        {
+          "r": "Obra Complementaria paquete estructural Islas Malvinas 150 m",
+          "p": 0,
+          "nota": "Depende de adenda comunal"
+        },
+        {
+          "r": "Obra Complementaria asfalto calle Islas Malvinas",
+          "p": 0,
+          "nota": "Depende de adenda comunal"
+        },
+        {
+          "r": "Obra Complementaria asfalto calle Venezuela",
+          "p": 0,
+          "nota": "Depende de adenda comunal"
+        },
+        {
+          "r": "Señalización",
+          "p": 0,
+          "nota": "Pendiente; acordar tipología con Comuna"
+        },
+        {
+          "r": "Plazas",
+          "p": 0,
+          "nota": "Pendiente"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": []
+      }
+    },
+    "VI": {
+      "nombre": "Vitta",
+      "loc": "General Lagos",
+      "ha": 12.7,
+      "lotes": 203,
+      "avanceGestion": 99,
+      "avanceObra": 100,
+      "entrega": "Dic 2028",
+      "nota": "99% avance gestión. CAT en proceso (02102-0014904-9). CH2 ✅. Convenio Urbanístico en proceso. DPV en proceso.",
+      "gestionResumen": "Categorización ambiental, convenio urbanístico, gestiones viales y planificación de las obras pendientes para continuar el cierre técnico.",
+      "obra": [
+        {
+          "r": "Red de Agua",
+          "p": 100,
+          "nota": "Ejecutada (ajustes de detalles)"
+        },
+        {
+          "r": "Calzadas",
+          "p": 100,
+          "nota": "Ejecutadas (ajustes de detalles)"
+        },
+        {
+          "r": "Red Cloacal Interna",
+          "p": 100,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Forestación",
+          "p": 100,
+          "nota": "Revisión de ejemplares a corregir"
+        },
+        {
+          "r": "Estación Elevadora",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Conexión Cloacal Ext.",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Obra Eléctrica",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Pluviales",
+          "p": 10,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Pórtico",
+          "p": 0,
+          "nota": "Ajustando proyecto para inicio de obra"
+        },
+        {
+          "r": "Obra complementaria restante",
+          "p": 0,
+          "nota": "Revisar convenio urbanístico"
+        },
+        {
+          "r": "Cerco perimetral",
+          "p": 20,
+          "nota": "En proceso de ejecución"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": []
+      }
+    },
+    "EN2": {
+      "nombre": "El Naranjo 2",
+      "loc": "Ybarlucea",
+      "ha": 18.2,
+      "lotes": 336,
+      "avanceGestion": 64,
+      "avanceObra": 76,
+      "entrega": "Dic 2028",
+      "nota": "64% avance gestión. CH2 iniciado 21/03/25. CAT programado. Cooperativa eléctrica: prefactibilidad ✅, pendiente proyecto.",
+      "gestionResumen": "Aprobación del CH2 y sus detalles constructivos, categorización ambiental y avance del proyecto y convenio eléctrico.",
+      "obra": [
+        {
+          "r": "Paquete estructural Calzadas",
+          "p": 100,
+          "nota": "Ejecutadas"
+        },
+        {
+          "r": "Cordones cuneta",
+          "p": 95,
+          "nota": "Ejecutados"
+        },
+        {
+          "r": "Pluviales",
+          "p": 15,
+          "nota": "Pendiente; depende de la emisión del Certificado Hídrico 2"
+        },
+        {
+          "r": "Red de Agua",
+          "p": 90,
+          "nota": "Ejecutada"
+        },
+        {
+          "r": "Obras Pluviales Ext. aporte con comuna",
+          "p": 70,
+          "nota": "Obra en conjunto"
+        },
+        {
+          "r": "Pórtico de ingreso",
+          "p": 0,
+          "nota": "En planificación"
+        },
+        {
+          "r": "Obra Eléctrica",
+          "p": 0,
+          "nota": "Pendiente; proyecto eléctrico en proceso"
+        },
+        {
+          "r": "Alumbrado Público",
+          "p": 0,
+          "nota": "Pendiente; depende del proyecto eléctrico"
+        },
+        {
+          "r": "Cloacas",
+          "p": 0,
+          "nota": "Pendiente; información interna, no comunicar aún a clientes"
+        },
+        {
+          "r": "Señalización",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Plazas",
+          "p": 0,
+          "nota": "Pendiente"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": [
+          {
+            "titulo": "Proyecto hidráulico adaptado a la Ley del Ludueña, en revisión técnica",
+            "semaforo": "rojo",
+            "contexto": "El 22/07/2026 se ingresó el proyecto hidráulico adaptado bajo la Ley del Ludueña N° 13.246, según lo solicitado. Queda pendiente la revisión técnica del Ing. Nicolás Fernández y la posterior aprobación de Nicolás Mijich.",
+            "intervinientes": "Secretario SRH: Nicolás Mijich",
+            "contactoSeguimiento": "Ing. Pablo Bellitieri",
+            "estado": "En movimiento"
+          }
+        ]
+      }
+    },
+    "VR": {
+      "nombre": "Vitta Río",
+      "loc": "General Lagos",
+      "ha": 17.4,
+      "lotes": 196,
+      "avanceGestion": 52,
+      "avanceObra": 37,
+      "entrega": "Jun 2031",
+      "nota": "52% avance gestión. CH2 en proceso. Convenio Urbanístico en proceso. Prefactibilidades servicios: todas completadas.",
+      "gestionResumen": "Observaciones y visado comunal de mensura, presentación del CH2, categorización ambiental y consolidación de convenios de servicios.",
+      "obra": [
+        {
+          "r": "Calzadas",
+          "p": 5,
+          "nota": "Inicio de trazado"
+        },
+        {
+          "r": "Obras Pluviales",
+          "p": 5,
+          "nota": "Inicio de ejecución"
+        },
+        {
+          "r": "Red de Agua",
+          "p": 0,
+          "nota": "Convenio macro"
+        },
+        {
+          "r": "Red de Cloacas",
+          "p": 0,
+          "nota": "Convenio macro"
+        },
+        {
+          "r": "Estación elevadora",
+          "p": 0,
+          "nota": "Pendiente de acuerdo con Life"
+        },
+        {
+          "r": "Alumbrado",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Plazas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red Eléctrica interna EPE",
+          "p": 0,
+          "nota": "Canon EPE abonado"
+        },
+        {
+          "r": "Red Eléctrica Externa",
+          "p": 0,
+          "nota": "Posterior a la ejecución de la obra interna"
+        },
+        {
+          "r": "Forestación",
+          "p": 0,
+          "nota": "Pendiente"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": [
+          {
+            "titulo": "Visado de mensura y CH2 frenados por pedido de reducir la cantidad de lotes",
+            "semaforo": "amarillo",
+            "contexto": "Se solicitó reducir la cantidad de lotes (duplicar el tamaño de lotes ya vendidos, con obras ya ejecutadas). Pese a que existe un antecedente de aprobación previo, al no haber intervención política que agilice el expediente, queda inmovilizado en una interpretación técnica-operativa.",
+            "intervinientes": "Intendente: Esteban Ferri",
+            "contactoSeguimiento": "Pablo Cofano",
+            "estado": "Lento, pero en movimiento"
+          }
+        ]
+      }
+    },
+    "CZ": {
+      "nombre": "CEZA",
+      "loc": "Zavalla",
+      "ha": 23,
+      "lotes": 380,
+      "avanceGestion": 61,
+      "avanceObra": 30,
+      "entrega": "Dic 2030",
+      "nota": "61% avance gestión. CH1+CH2 en proceso (01907-0020149-7). Admisibilidad en proceso. Convenio ✅. Calzada Sarmiento 60%.",
+      "gestionResumen": "Admisibilidad, CH1 y CH2, categorización ambiental y cierre de prefactibilidades para habilitar las etapas siguientes.",
+      "obra": [
+        {
+          "r": "Calzadas",
+          "p": 10,
+          "nota": "600 m de calle Sarmiento"
+        },
+        {
+          "r": "Red de Agua",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Cloacas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Alumbrado",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red Eléctrica",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Plazas y Señalización",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Obras Pluviales",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Obra Complementaria de Agua",
+          "p": 0,
+          "nota": "Acordar con Cooperativa"
+        },
+        {
+          "r": "Obra Complementaria de Cloaca",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Forestación",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Plazas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Gas",
+          "p": 0,
+          "nota": "Pendiente"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": [
+          {
+            "titulo": "Obra de mitigación observada tras la aprobación de la zonificación",
+            "semaforo": "amarillo",
+            "contexto": "El 21/07/2026 la SRH respondió sobre la zonificación remodelada bajo la Ley del Ludueña N° 13.246 y la obra de mitigación propuesta. La zonificación fue aprobada; la obra de mitigación quedó observada. Se está defendiendo técnicamente la obra de mitigación con el Ing. Nicolás Fernández para avanzar luego a la etapa del Certificado Hídrico 2.",
+            "intervinientes": "Secretario SRH: Nicolás Mijich",
+            "contactoSeguimiento": "Ing. Mario Chirichigno",
+            "estado": "Lento, pero en movimiento"
+          }
+        ]
+      }
+    },
+    "CM2": {
+      "nombre": "Campo Madero 2",
+      "loc": "Ybarlucea",
+      "ha": 16.7,
+      "lotes": 324,
+      "avanceGestion": 18,
+      "avanceObra": 67,
+      "entrega": "Jun 2033",
+      "nota": "18% avance gestión. ✅ Admisibilidad completada. ⚡ CH1 urgente (proyecto mensura 01/07/25). ⚡ Convenio Urbanístico urgente.",
+      "gestionResumen": "CH1, convenio urbanístico, nueva mensura con el espacio verde complementario para El Naranjo y desarrollo del proyecto eléctrico.",
+      "obra": [
+        {
+          "r": "Calzadas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Agua",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red Eléctrica interna",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red Eléctrica Externa",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Cloacas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Planta Compacta Cloacal",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Gas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Obras Pluviales",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Alumbrado Público",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Plazas",
+          "p": 0,
+          "nota": "Pendiente"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": [
+          {
+            "titulo": "Demora en visado de mensura y compensación de espacio verde sin cerrar",
+            "semaforo": "rojo",
+            "contexto": "No se ha firmado el convenio, aunque ya está redactado por completo y las obras complementarias ya se ejecutaron. Esto impide avanzar con las gestiones provinciales y en Ventanilla Única, extendiendo los plazos comprometidos con los clientes.",
+            "intervinientes": "Intendencia Comuna de Ibarlucea: Jorge Masson",
+            "contactoSeguimiento": "Pablo Cofano",
+            "estado": "Sin movimientos"
+          }
+        ]
+      }
+    },
+    "CDE": {
+      "nombre": "Clos del Este",
+      "loc": "Roldán",
+      "ha": 66,
+      "lotes": 880,
+      "avanceGestion": 4,
+      "avanceObra": 0,
+      "entrega": "Dic 2034",
+      "nota": "4% avance gestión. Uso conforme urgente (desde 07/12/23). Concejo Municipal pendiente (Expte 1617). Admisibilidad en proceso.",
+      "gestionResumen": "Tratamiento del nuevo ordenamiento urbano, reconocimiento normativo del barrio cerrado y preparación del futuro convenio urbanístico.",
+      "obra": [
+        {
+          "r": "Mojonamiento",
+          "p": 0,
+          "nota": "Espera acuerdo municipal"
+        },
+        {
+          "r": "Calzadas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Agua",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Cloacas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Alumbrado",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red Eléctrica",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Plazas y Señalización",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Obras Pluviales",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Planta de Agua",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Planta Impulsora Cloacal",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Forestación",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Plazas",
+          "p": 0,
+          "nota": "Pendiente"
+        },
+        {
+          "r": "Red de Gas",
+          "p": 0,
+          "nota": "Pendiente"
+        }
+      ],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": []
+      }
+    },
+    "VN": {
+      "nombre": "Vitta Norte",
+      "loc": "Ybarlucea",
+      "ha": "",
+      "lotes": "",
+      "avanceGestion": 4,
+      "avanceObra": 0,
+      "entrega": "Jun 2036",
+      "nota": "4% avance gestión. Uso Conforme urgente desde 15/03/24. CH1 en proceso. Casi todo programado.",
+      "gestionResumen": "Uso conforme, CH1 y documentación inicial para habilitar la secuencia de aprobaciones del proyecto.",
+      "obra": [],
+      "pendientes": [],
+      "legal": {
+        "puntosCriticosDetalle": []
+      }
+    }
+  },
+  "ORDEN_BLOQUE1": [
+    "CEPE",
+    "CM",
+    "EN",
+    "OR"
+  ],
+  "ORDEN_BLOQUE2": [
+    "VI",
+    "VR",
+    "EN2",
+    "CM2",
+    "CZ",
+    "CDE"
+  ],
+  "ORDEN_BLOQUE3": [
+    "VN"
+  ],
+  "OBRA_OVERRIDE": {
+    "CEPE": 80,
+    "CM": 90,
+    "EN": 95,
+    "OR": 85
+  },
+  "DEMORA_DATA": {
+    "CM": {
+      "fechaPrometida": "01/03/2022",
+      "demoraAnios": 4.3
+    },
+    "CEPE": {
+      "fechaPrometida": "14/07/2023",
+      "demoraAnios": 3.5
+    },
+    "EN": {
+      "fechaPrometida": "01/08/2022",
+      "demoraAnios": 3.9
+    },
+    "VI": {
+      "fechaPrometida": "28/11/2022",
+      "demoraAnios": 6.1
+    },
+    "OR": {
+      "fechaPrometida": "09/08/2024",
+      "demoraAnios": 1.9
+    },
+    "EN2": {
+      "fechaPrometida": "24/09/2024",
+      "demoraAnios": 4.3
+    },
+    "VR": {
+      "fechaPrometida": "28/03/2025",
+      "demoraAnios": 5.8
+    },
+    "CM2": {
+      "fechaPrometida": "02/11/2026",
+      "demoraAnios": 6.2
+    },
+    "CZ": {
+      "fechaPrometida": "03/01/2027",
+      "demoraAnios": 4
+    },
+    "CDE": {
+      "fechaPrometida": "31/12/2028",
+      "demoraAnios": 5.5
+    },
+    "VN": {
+      "fechaPrometida": "31/12/2035",
+      "demoraAnios": -1
+    }
+  },
+  "CEO_ACCIONABLES": {
+    "OR": [
+      {
+        "titulo": "Resolver relación y firma de convenio con la Cooperativa Eléctrica (Leonardo Costa)",
+        "prio": "critica",
+        "area": "Presidente Cooperativa Eléctrica",
+        "detalle": "Informar personalmente que la ejecución de la mano de obra se contratará con otro proveedor, antes de iniciar cualquier otro trámite. Solicitar financiar el canon eléctrico en 12 cuotas (mismo criterio que EPE). Definir la fecha de retiro de los transformadores de GabEE y coordinar con Mariano. Secuencia obligatoria: primero la conversación con Costa, luego acordar canon y permiso, y recién después coordinar operativamente — no iniciar la obra sin ordenar antes esta relación institucional."
+      },
+      {
+        "titulo": "Resolver actualización del convenio con el Intendente Leonardo Marconcini",
+        "prio": "critica",
+        "area": "Intendente de Soldini",
+        "detalle": "Informar la contratación de la red eléctrica y demostrar cumplimiento con el inicio concreto del frente eléctrico. Negociar que la garantía de la adenda quede limitada a lotes o al campo, descartando la garantía aseguradora (hoy no gestionable). Debe realizarse después de hablar con el presidente de la Cooperativa. Objetivo: evitar la baja del convenio y cerrar una garantía viable."
+      }
+    ],
+    "EN": [
+      {
+        "titulo": "Definiciones con el Intendente Jorge Masson — posesión de El Naranjo 1",
+        "prio": "alta",
+        "area": "Presidente Comunal de Ybarlucea",
+        "detalle": "Avanzar con la posesión de El Naranjo 1 mediante un instrumento comunal, tomando como antecedente la ordenanza usada en Campo Madero. El CH2 de El Naranjo 1 ya fue presentado; falta donar 300 m² adicionales de espacio verde compensatorio en Campo Madero 2, visar la nueva mensura y emitir la ordenanza de aceptación para cerrar el trámite ante el MAyCC."
+      }
+    ],
+    "CM2": [
+      {
+        "titulo": "Habilitación del visado de mensura de Campo Madero 2 (espacio verde compensatorio de El Naranjo 1)",
+        "prio": "alta",
+        "area": "Presidente Comunal de Ybarlucea",
+        "detalle": "Solicitar al Intendente Jorge Masson la habilitación del visado de mensura de Campo Madero 2, incorporando el espacio verde compensatorio requerido para El Naranjo 1 (300 m² adicionales), y dar luz verde al equipo técnico para avanzar con la mensura y la ordenanza de aceptación."
+      }
+    ],
+    "VR": [
+      {
+        "titulo": "Destrabar el acuerdo político para los visados (mensura y CH2)",
+        "prio": "alta",
+        "area": "Intendente de General Lagos",
+        "detalle": "El visado de mensura y el Certificado Hídrico 2 están frenados por el pedido de reducir la cantidad de lotes (duplicar el tamaño de los ya vendidos, con obras ya ejecutadas). Existe un antecedente de aprobación previo, pero sin intervención política que agilice el expediente queda inmovilizado en una interpretación técnico-operativa. Gestionar el acuerdo político con el Intendente Esteban Ferri para destrabar ambos visados."
+      }
+    ],
+    "VI": [
+      {
+        "titulo": "Visado de mensura — gestionar el pago de USD 12.000",
+        "prio": "alta",
+        "area": "Municipalidad / Área técnica",
+        "detalle": "El visado de mensura de Vitta requiere gestionar un pago de USD 12.000 para poder avanzar. Definir el circuito de pago y la fecha estimada de visado una vez abonado."
+      }
+    ]
+  },
+  "GESTION_HITOS": {
+    "CEPE": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "01/06/19",
+        "fin": "27/11/19"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "done",
+        "plazo": "16m",
+        "ini": "14/12/20",
+        "fin": "06/01/22"
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "23/05/22",
+        "fin": "02/04/25"
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "done",
+        "plazo": null,
+        "ini": "01/06/19",
+        "fin": "26/11/19"
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "done",
+        "plazo": null,
+        "ini": "26/07/22",
+        "fin": "13/05/25"
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "done",
+        "plazo": null,
+        "ini": "07/07/25",
+        "fin": "02/10/25"
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "done",
+        "plazo": null,
+        "ini": "02/10/25",
+        "fin": "28/10/25"
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "done",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa CLESAPE",
+        "est": "done",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "CM": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "21/12/18",
+        "fin": "10/09/19"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "done",
+        "plazo": "16m",
+        "ini": "21/12/18",
+        "fin": "11/10/20"
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "04/08/22",
+        "fin": "04/04/23"
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "done",
+        "plazo": null,
+        "ini": "21/12/18",
+        "fin": "01/01/22"
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "done",
+        "plazo": null,
+        "ini": "19/11/21",
+        "fin": "06/08/23"
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "done",
+        "plazo": null,
+        "ini": "27/10/23",
+        "fin": "07/05/25"
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "urgent",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "done",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "EN": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "20/12/19",
+        "fin": "30/11/21"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "done",
+        "plazo": "16m",
+        "ini": "06/10/23",
+        "fin": "16/08/24"
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "proc",
+        "plazo": "23m",
+        "ini": "21/03/25",
+        "fin": null
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "done",
+        "plazo": "30m",
+        "ini": "20/12/19",
+        "fin": "23/10/24"
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "proc",
+        "plazo": "4m",
+        "ini": "08/04/25",
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "done",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "done",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": "23m",
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "OR": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "29/10/20",
+        "fin": "19/03/21"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "done",
+        "plazo": "16m",
+        "ini": "26/10/21",
+        "fin": "08/08/24"
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "26/10/21",
+        "fin": "08/08/24"
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "done",
+        "plazo": null,
+        "ini": "29/10/20",
+        "fin": "22/06/21"
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "done",
+        "plazo": null,
+        "ini": "26/09/24",
+        "fin": "04/11/24"
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "VI": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "23/06/20",
+        "fin": "06/04/21"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "prog",
+        "plazo": null,
+        "ini": "01/04/21",
+        "fin": "05/01/23"
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "11/05/23",
+        "fin": "23/09/25"
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "proc",
+        "plazo": null,
+        "ini": "11/04/25",
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "done",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "EN2": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "18/06/21",
+        "fin": "28/04/23"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "done",
+        "plazo": "16m",
+        "ini": "06/10/23",
+        "fin": "16/08/24"
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "proc",
+        "plazo": null,
+        "ini": "21/03/25",
+        "fin": null
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "done",
+        "plazo": null,
+        "ini": "18/06/21",
+        "fin": "23/10/24"
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "VR": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "29/04/21",
+        "fin": "30/12/21"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "done",
+        "plazo": "16m",
+        "ini": "07/06/22",
+        "fin": "30/07/24"
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "done",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "CZ": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "07/12/22",
+        "fin": "17/02/23"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "proc",
+        "plazo": "16m",
+        "ini": "27/08/24",
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "proc",
+        "plazo": "23m",
+        "ini": "27/08/24",
+        "fin": null
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "done",
+        "plazo": null,
+        "ini": "07/12/22",
+        "fin": null
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "CM2": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "done",
+        "plazo": null,
+        "ini": "03/02/25",
+        "fin": "17/06/25"
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "done",
+        "plazo": "23m",
+        "ini": "27/10/21",
+        "fin": "30/10/24"
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "urgent",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "urgent",
+        "plazo": null,
+        "ini": "27/10/2021",
+        "fin": null
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "CDE": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "urgent",
+        "plazo": "23m",
+        "ini": "07/12/23",
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ],
+    "VN": [
+      {
+        "nombre": "Admisibilidad de Proyecto",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Uso Conforme",
+        "est": "urgent",
+        "plazo": "23m",
+        "ini": "15/03/24",
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 1",
+        "est": "proc",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 2",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Categorización Ambiental",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Estudio de Impacto Ambiental (EIA)",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "CUR 1",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Gestiones DPV",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación EPE",
+        "est": "na",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Aprobación Cooperativa Eléctrica",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Obra Comunal o Municipal",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Conv. de Responsabilidad Empresarial",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Certificado Hídrico 3",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Visado Mensura MAyCC",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Cambio de Zona",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Inscripción Catastro",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Donación Calles y Espacios Verdes",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      },
+      {
+        "nombre": "Final de Convenio Urbanístico",
+        "est": "prog",
+        "plazo": null,
+        "ini": null,
+        "fin": null
+      }
+    ]
+  },
+  "ENTE_LINKS": {},
+  "LEGAL_DOCS_LINKS": {
+    "CEPE": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/1TP_2GhHgQic61bKafKQRA7M-NJRzc2uM?usp=sharing"
+      }
+    ],
+    "CM": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/1bQl0UYWp2sTVUJYxdsBx-r4Bk_QeHDnM?usp=sharing"
+      }
+    ],
+    "CM2": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/1g690NypOFk1Cd5Z8BPVEpAHOm58pjX_3?usp=sharing"
+      }
+    ],
+    "EN": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/1TLbdN-NxThFJVambw-ZZQhIQJiDM8MJR?usp=sharing"
+      }
+    ],
+    "EN2": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/1rgydFXpHuRKycHhPtnAZo9FYzwonvS0Q?usp=sharing"
+      }
+    ],
+    "OR": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/17CVhhbINVbLAvSbV-qjrSxuDfIoC6M8a?usp=sharing"
+      }
+    ],
+    "VI": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/17xjDF_GolyO-GsNMMz5_DWUW3WlWjVC_?usp=sharing"
+      }
+    ],
+    "CDE": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/1k64ikWUNYZklE5rm7AxkW9NXlWm0Mt1t?usp=sharing"
+      }
+    ],
+    "CZ": [
+      {
+        "titulo": "Carpeta de documentos legales (Drive)",
+        "url": "https://drive.google.com/drive/folders/1Nc_uMywzeCKk0KV-u33kVZgIJvtif5pr?usp=sharing"
+      }
+    ]
+  }
+}
