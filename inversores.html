@@ -728,6 +728,9 @@ function cardHTML(id){
         : `${Math.abs(dem.demoraAnios).toFixed(1)} años de anticipo`)
     : '';
   const nextStep = nextStepText(id);
+  // inv.obrasTotal ya es el TOTAL general (posesión + resto) — lo que falta específicamente
+  // para pasar de posesión a escritura es la diferencia entre ambos.
+  const restanteEscritura = (inv.obrasPosesion!=null && inv.obrasTotal!=null) ? (inv.obrasTotal - inv.obrasPosesion) : inv.obrasTotal;
 
   return `
   <div class="card" data-nombre="${p.nombre.toLowerCase()}" data-loc="${(p.loc||'').toLowerCase()}" data-bloque="${inv.bloque}">
@@ -746,10 +749,10 @@ function cardHTML(id){
         <div class="mm"><span>Lotes por liberar</span><strong>${inv.lotesQuedan} / ${inv.lotesTotal}</strong><small>${inv.lotesPct}% restante</small></div>
         <div class="mm"><span>Fecha objetivo</span><strong>${inv.tiempo || 'Al 100%'}</strong><small>${obraPct}% de avance de obra · a definir según grado de inversión</small></div>
         <div class="mm"><span>$ Obras para posesión (USD)</span><strong>${fmtMoney(inv.obrasPosesion)}</strong><small>habilita construir + baja presión</small></div>
-        <div class="mm"><span>$ Obras total (USD)</span><strong>${fmtMoney(inv.obrasTotal)}</strong><small>necesario para escriturar</small></div>
+        <div class="mm"><span>$ Obras total (USD)</span><strong>${fmtMoney(restanteEscritura)}</strong><small>resta después de posesión para escriturar</small></div>
         ${dem ? `
         <div class="mm"><span>Fecha de entrega (según 1er boleto)</span><strong>${dem.fechaPrometida}</strong><small>${demoraTxt} · actualizado a hoy</small></div>` : ''}
-        <div class="mm"><span>Total posesión + escrituración (USD)</span><strong>${(inv.obrasPosesion==null && inv.obrasTotal==null) ? 'Sin dato' : fmtMoney((inv.obrasPosesion||0) + (inv.obrasTotal||0))}</strong><small>suma de ambos montos</small></div>
+        <div class="mm"><span>Total posesión + escrituración (USD)</span><strong>${fmtMoney(inv.obrasTotal)}</strong><small>monto general del barrio (posesión + resto)</small></div>
       </div>
 
       <div class="progress-row">
