@@ -316,14 +316,84 @@ footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--border);font-
 
 <script>
 /* ══════════════════════════════════════════════════════════════
-   DATOS — se cargan en runtime desde roma_inversores_data.json, que se
-   regenera a partir del panel base de gestión (index.html). Subir siempre
-   los dos archivos juntos (inversores.html + roma_inversores_data.json)
-   a la misma carpeta en GitHub Pages.
+   DATOS — se cargan en runtime en dos capas:
+   1) roma_inversores_data.json — base completa (hitos de gestión, legales,
+      accionables, links). Se regenera a partir del panel base (index.html).
+   2) Google Sheet editable — pisa los campos de uso frecuente (lotes,
+      montos, % de avance, nota) para que el número de hoy se pueda
+      actualizar sin tocar GitHub. Se lee vía el export CSV de la hoja
+      (gviz/tq), que requiere que el archivo esté compartido como
+      "Cualquier persona con el enlace puede ver".
+   Subir siempre inversores.html + roma_inversores_data.json juntos, a la
+   misma carpeta en GitHub Pages.
    ══════════════════════════════════════════════════════════════ */
+const SHEET_ID = "1fsxT__WtTPxDxmypPtmWvZI-VWX1czz7BDbUhHciUhs";
+const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=0`;
+
 let DOLAR_BLUE, INVERSION_DATA, BLOQUE_INFO, PROJ_DATA;
 let ORDEN_BLOQUE1, ORDEN_BLOQUE2, ORDEN_BLOQUE3, OBRA_OVERRIDE, DEMORA_DATA;
 let CEO_ACCIONABLES, GESTION_HITOS, ENTE_LINKS, LEGAL_DOCS_LINKS;
+
+/* Parser CSV simple: soporta campos entre comillas con comas y comillas escapadas ("") adentro */
+function parseCSV(text){
+  const rows = [];
+  let row = [], field = '', inQuotes = false;
+  for(let i=0; i<text.length; i++){
+    const c = text[i], next = text[i+1];
+    if(inQuotes){
+      if(c === '"' && next === '"'){ field += '"'; i++; }
+      else if(c === '"'){ inQuotes = false; }
+      else field += c;
+    } else {
+      if(c === '"') inQuotes = true;
+      else if(c === ','){ row.push(field); field = ''; }
+      else if(c === '\n' || c === '\r'){
+        if(c === '\r' && next === '\n') i++;
+        row.push(field); field = '';
+        rows.push(row); row = [];
+      } else field += c;
+    }
+  }
+  if(field.length || row.length){ row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(f => f !== ''));
+}
+
+/* Trae la hoja editable y pisa los campos de INVERSION_DATA / PROJ_DATA que trae,
+   fila por fila (columna "id" = clave de barrio, igual a las usadas en el JSON base) */
+async function aplicarDatosDeSheet(){
+  const res = await fetch(SHEET_CSV_URL);
+  if(!res.ok) throw new Error('HTTP ' + res.status);
+  const rows = parseCSV(await res.text());
+  const header = rows[0].map(h => h.trim());
+  const col = name => header.indexOf(name);
+  const iId = col('id'), iBloque = col('bloque'), iLotesQ = col('lotesQuedan'), iLotesT = col('lotesTotal'),
+        iTiempo = col('tiempo'), iPos = col('obrasPosesion'), iTot = col('obrasTotal'),
+        iGest = col('avanceGestion'), iObra = col('avanceObra'), iEntrega = col('entrega'), iNota = col('nota');
+  if(iId === -1) throw new Error('La hoja no tiene columna "id"');
+
+  const numOr = (v, fallback) => (v===undefined || v===null || v.trim()==='') ? fallback : Number(v);
+
+  rows.slice(1).forEach(r=>{
+    const id = (r[iId]||'').trim();
+    if(!id || !INVERSION_DATA[id]) return; // fila vacía o id que no existe en la base
+    const inv = INVERSION_DATA[id];
+    if(iBloque>-1) inv.bloque = numOr(r[iBloque], inv.bloque);
+    if(iLotesQ>-1) inv.lotesQuedan = numOr(r[iLotesQ], inv.lotesQuedan);
+    if(iLotesT>-1) inv.lotesTotal = numOr(r[iLotesT], inv.lotesTotal);
+    if(iLotesQ>-1 && iLotesT>-1 && inv.lotesTotal) inv.lotesPct = +(inv.lotesQuedan/inv.lotesTotal*100).toFixed(1);
+    if(iTiempo>-1 && r[iTiempo] && r[iTiempo].trim()) inv.tiempo = r[iTiempo].trim();
+    if(iPos>-1) inv.obrasPosesion = numOr(r[iPos], inv.obrasPosesion);
+    if(iTot>-1) inv.obrasTotal = numOr(r[iTot], inv.obrasTotal);
+
+    if(PROJ_DATA[id]){
+      const p = PROJ_DATA[id];
+      if(iGest>-1) p.avanceGestion = numOr(r[iGest], p.avanceGestion);
+      if(iObra>-1) p.avanceObra = numOr(r[iObra], p.avanceObra);
+      if(iEntrega>-1 && r[iEntrega] && r[iEntrega].trim()) p.entrega = r[iEntrega].trim();
+      if(iNota>-1 && r[iNota] && r[iNota].trim()) p.nota = r[iNota].trim();
+    }
+  });
+}
 
 /* Los montos de INVERSION_DATA ya están expresados en dólar blue — se muestran tal cual, sin reconvertir */
 function fmtMoney(n){
@@ -678,8 +748,8 @@ function cardHTML(id){
         <div class="mm"><span>$ Obras para posesión (USD)</span><strong>${fmtMoney(inv.obrasPosesion)}</strong><small>habilita construir + baja presión</small></div>
         <div class="mm"><span>$ Obras total (USD)</span><strong>${fmtMoney(inv.obrasTotal)}</strong><small>necesario para escriturar</small></div>
         ${dem ? `
-        <div class="mm"><span>Fecha prometida (1er boleto)</span><strong>${dem.fechaPrometida}</strong><small>compromiso original de entrega</small></div>
-        <div class="mm"><span>Demora actualizada</span><strong>${demoraTxt}</strong><small>desde la fecha prometida a hoy</small></div>` : ''}
+        <div class="mm"><span>Fecha de firma (1er boleto)</span><strong>${dem.fechaPrometida}</strong><small>${demoraTxt} · actualizado a hoy</small></div>` : ''}
+        <div class="mm"><span>Total posesión + escrituración (USD)</span><strong>${(inv.obrasPosesion==null && inv.obrasTotal==null) ? 'Sin dato' : fmtMoney((inv.obrasPosesion||0) + (inv.obrasTotal||0))}</strong><small>suma de ambos montos</small></div>
       </div>
 
       <div class="progress-row">
@@ -809,6 +879,16 @@ async function initPanel(){
     ORDEN_BLOQUE3 = d.ORDEN_BLOQUE3; OBRA_OVERRIDE = d.OBRA_OVERRIDE; DEMORA_DATA = d.DEMORA_DATA;
     CEO_ACCIONABLES = d.CEO_ACCIONABLES; GESTION_HITOS = d.GESTION_HITOS; ENTE_LINKS = d.ENTE_LINKS;
     LEGAL_DOCS_LINKS = d.LEGAL_DOCS_LINKS;
+
+    // Capa 2: pisa lotes/montos/avances con lo que haya cargado en la Google Sheet editable.
+    // Si todavía no está compartida como "cualquiera con el enlace", o falla la red,
+    // el panel sigue funcionando igual con los datos del JSON base (no se corta nada).
+    try{
+      await aplicarDatosDeSheet();
+    }catch(sheetErr){
+      console.warn('No se pudo leer la Google Sheet editable, se usan los datos del JSON base:', sheetErr);
+    }
+
     buildResumen();
     buildCurvaInversion();
     buildBloques();
