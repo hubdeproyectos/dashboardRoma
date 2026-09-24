@@ -327,7 +327,7 @@ footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--border);font-
    Subir siempre inversores.html + roma_inversores_data.json juntos, a la
    misma carpeta en GitHub Pages.
    ══════════════════════════════════════════════════════════════ */
-const SHEET_ID = "1fsxT__WtTPxDxmypPtmWvZI-VWX1czz7BDbUhHciUhs";
+const SHEET_ID = "1haP5UEqUSNQAXQDH0QROepAO-PwVIPMOFX28AVP4OI0";
 const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=0`;
 
 let DOLAR_BLUE, INVERSION_DATA, BLOQUE_INFO, PROJ_DATA;
@@ -368,7 +368,8 @@ async function aplicarDatosDeSheet(){
   const col = name => header.indexOf(name);
   const iId = col('id'), iBloque = col('bloque'), iLotesQ = col('lotesQuedan'), iLotesT = col('lotesTotal'),
         iTiempo = col('tiempo'), iPos = col('obrasPosesion'), iTot = col('obrasTotal'),
-        iGest = col('avanceGestion'), iObra = col('avanceObra'), iEntrega = col('entrega'), iNota = col('nota');
+        iGest = col('avanceGestion'), iObra = col('avanceObra'), iEntrega = col('entrega'), iNota = col('nota'),
+        iLotesRem = col('lotesRemanentes');
   if(iId === -1) throw new Error('La hoja no tiene columna "id"');
 
   const numOr = (v, fallback) => (v===undefined || v===null || v.trim()==='') ? fallback : Number(v);
@@ -384,6 +385,8 @@ async function aplicarDatosDeSheet(){
     if(iTiempo>-1 && r[iTiempo] && r[iTiempo].trim()) inv.tiempo = r[iTiempo].trim();
     if(iPos>-1) inv.obrasPosesion = numOr(r[iPos], inv.obrasPosesion);
     if(iTot>-1) inv.obrasTotal = numOr(r[iTot], inv.obrasTotal);
+    // Lotes remanentes disponibles para canjear, ceder o vender (distinto de "lotes por liberar" = sin escriturar)
+    if(iLotesRem>-1) inv.lotesRemanentes = numOr(r[iLotesRem], inv.lotesRemanentes);
 
     if(PROJ_DATA[id]){
       const p = PROJ_DATA[id];
@@ -746,7 +749,8 @@ function cardHTML(id){
       ${nextStep ? `<div class="next-step">🎯&nbsp;<span><b>Próximo paso:</b> ${nextStep}</span></div>` : ''}
 
       <div class="mini-metrics">
-        <div class="mm"><span>Lotes por liberar</span><strong>${inv.lotesQuedan} / ${inv.lotesTotal}</strong><small>${inv.lotesPct}% restante</small></div>
+        <div class="mm"><span>Lotes por liberar</span><strong>${inv.lotesQuedan} / ${inv.lotesTotal}</strong><small>${inv.lotesPct}% restante · pendientes de escriturar</small></div>
+        <div class="mm"><span>Lotes remanentes</span><strong>${inv.lotesRemanentes!=null ? inv.lotesRemanentes : 'Sin dato'}</strong><small>disponibles para canjear, ceder o vender</small></div>
         <div class="mm"><span>Fecha objetivo</span><strong>${inv.tiempo || 'Al 100%'}</strong><small>${obraPct}% de avance de obra · a definir según grado de inversión</small></div>
         <div class="mm"><span>$ Obras para posesión (USD)</span><strong>${fmtMoney(inv.obrasPosesion)}</strong><small>habilita construir + baja presión</small></div>
         <div class="mm"><span>$ Obras total (USD)</span><strong>${fmtMoney(restanteEscritura)}</strong><small>resta después de posesión para escriturar</small></div>
