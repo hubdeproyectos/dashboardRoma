@@ -748,7 +748,7 @@ function cardHTML(id){
         <div class="mm"><span>$ Obras para posesión (USD)</span><strong>${fmtMoney(inv.obrasPosesion)}</strong><small>habilita construir + baja presión</small></div>
         <div class="mm"><span>$ Obras total (USD)</span><strong>${fmtMoney(inv.obrasTotal)}</strong><small>necesario para escriturar</small></div>
         ${dem ? `
-        <div class="mm"><span>Fecha de firma (1er boleto)</span><strong>${dem.fechaPrometida}</strong><small>${demoraTxt} · actualizado a hoy</small></div>` : ''}
+        <div class="mm"><span>Fecha de entrega (según 1er boleto)</span><strong>${dem.fechaPrometida}</strong><small>${demoraTxt} · actualizado a hoy</small></div>` : ''}
         <div class="mm"><span>Total posesión + escrituración (USD)</span><strong>${(inv.obrasPosesion==null && inv.obrasTotal==null) ? 'Sin dato' : fmtMoney((inv.obrasPosesion||0) + (inv.obrasTotal||0))}</strong><small>suma de ambos montos</small></div>
       </div>
 
