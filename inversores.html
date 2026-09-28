@@ -746,6 +746,10 @@ function cardHTML(id){
   // inv.obrasTotal ya es el TOTAL general (posesión + resto) — lo que falta específicamente
   // para pasar de posesión a escritura es la diferencia entre ambos.
   const restanteEscritura = (inv.obrasPosesion!=null && inv.obrasTotal!=null) ? (inv.obrasTotal - inv.obrasPosesion) : inv.obrasTotal;
+  // Lotes: el total sale del relevamiento de campo (p.lotes). "Remanentes" toma directamente
+  // el valor de lotesQuedan del Sheet, y "vendidos" es la resta entre el total y los remanentes.
+  const lotesRemanentes = inv.lotesQuedan!=null ? inv.lotesQuedan : null;
+  const lotesVendidos = (p.lotes!=null && lotesRemanentes!=null) ? (p.lotes - lotesRemanentes) : null;
 
   return `
   <div class="card" data-nombre="${p.nombre.toLowerCase()}" data-loc="${(p.loc||'').toLowerCase()}" data-bloque="${inv.bloque}">
@@ -761,7 +765,7 @@ function cardHTML(id){
       ${nextStep ? `<div class="next-step">🎯&nbsp;<span><b>Próximo paso:</b> ${nextStep}</span></div>` : ''}
 
       <div class="mini-metrics">
-        <div class="mm"><span>Lotes total / vendidos / remanentes</span><strong>${p.lotes || 'Sin dato'} / ${p.lotesVendidos!=null ? p.lotesVendidos : 'Sin dato'} / ${inv.lotesRemanentes!=null ? inv.lotesRemanentes : 'Sin dato'}</strong><small>el total surge del relevamiento de campo · vendidos y remanentes a completar en el Sheet</small></div>
+        <div class="mm"><span>Lotes total / vendidos / remanentes</span><strong>${p.lotes || 'Sin dato'} / ${lotesVendidos!=null ? lotesVendidos : 'Sin dato'} / ${lotesRemanentes!=null ? lotesRemanentes : 'Sin dato'}</strong><small>remanentes = lotesQuedan del Sheet · vendidos = total − remanentes</small></div>
         <div class="mm"><span>m² vendibles</span><strong>${p.m2Vendibles!=null ? Number(p.m2Vendibles).toLocaleString('es-AR') + ' m²' : 'Sin dato'}</strong><small>superficie total vendible del barrio</small></div>
         <div class="mm"><span>Fecha objetivo</span><strong>${inv.tiempo || 'Al 100%'}</strong><small>${obraPct}% de avance de obra · a definir según grado de inversión</small></div>
         <div class="mm"><span>$ Obras para posesión (USD)</span><strong>${fmtMoney(inv.obrasPosesion)}</strong><small>habilita construir + baja presión</small></div>
