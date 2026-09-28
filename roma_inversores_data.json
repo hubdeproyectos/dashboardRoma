@@ -326,7 +326,9 @@
             "estado": "Sin movimientos (deuda judicializada)"
           }
         ]
-      }
+      },
+      "m2Vendibles": 137680.99,
+      "lotesVendidos": null
     },
     "CM": {
       "nombre": "Campo Madero",
@@ -402,7 +404,9 @@
             "estado": "Sin movimientos"
           }
         ]
-      }
+      },
+      "m2Vendibles": 66505.16,
+      "lotesVendidos": null
     },
     "EN": {
       "nombre": "El Naranjo",
@@ -504,7 +508,9 @@
             "estado": "Sin movimientos"
           }
         ]
-      }
+      },
+      "m2Vendibles": 28092.31,
+      "lotesVendidos": null
     },
     "OR": {
       "nombre": "Orígenes",
@@ -591,7 +597,9 @@
       "pendientes": [],
       "legal": {
         "puntosCriticosDetalle": []
-      }
+      },
+      "m2Vendibles": 37817.01,
+      "lotesVendidos": null
     },
     "VI": {
       "nombre": "Vitta",
@@ -663,7 +671,9 @@
       "pendientes": [],
       "legal": {
         "puntosCriticosDetalle": []
-      }
+      },
+      "m2Vendibles": 66548.26,
+      "lotesVendidos": null
     },
     "EN2": {
       "nombre": "El Naranjo 2",
@@ -744,7 +754,9 @@
             "estado": "En movimiento"
           }
         ]
-      }
+      },
+      "m2Vendibles": 84488.94,
+      "lotesVendidos": null
     },
     "VR": {
       "nombre": "Vitta Río",
@@ -820,7 +832,9 @@
             "estado": "Lento, pero en movimiento"
           }
         ]
-      }
+      },
+      "m2Vendibles": 105746.66,
+      "lotesVendidos": null
     },
     "CZ": {
       "nombre": "CEZA",
@@ -906,7 +920,9 @@
             "estado": "Lento, pero en movimiento"
           }
         ]
-      }
+      },
+      "m2Vendibles": 121024.35,
+      "lotesVendidos": null
     },
     "CM2": {
       "nombre": "Campo Madero 2",
@@ -982,7 +998,9 @@
             "estado": "Sin movimientos"
           }
         ]
-      }
+      },
+      "m2Vendibles": 86432.3,
+      "lotesVendidos": null
     },
     "CDE": {
       "nombre": "Clos del Este",
@@ -1064,13 +1082,15 @@
       "pendientes": [],
       "legal": {
         "puntosCriticosDetalle": []
-      }
+      },
+      "m2Vendibles": 380590.54,
+      "lotesVendidos": null
     },
     "VN": {
       "nombre": "Vitta Norte",
       "loc": "Ybarlucea",
-      "ha": "",
-      "lotes": "",
+      "ha": 29,
+      "lotes": 1607,
       "avanceGestion": 4,
       "avanceObra": 0,
       "entrega": "Jun 2036",
@@ -1080,7 +1100,9 @@
       "pendientes": [],
       "legal": {
         "puntosCriticosDetalle": []
-      }
+      },
+      "m2Vendibles": 189477.41,
+      "lotesVendidos": null
     }
   },
   "ORDEN_BLOQUE1": [

@@ -327,7 +327,7 @@ footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--border);font-
    Subir siempre inversores.html + roma_inversores_data.json juntos, a la
    misma carpeta en GitHub Pages.
    ══════════════════════════════════════════════════════════════ */
-const SHEET_ID = "1haP5UEqUSNQAXQDH0QROepAO-PwVIPMOFX28AVP4OI0";
+const SHEET_ID = "1U5FxZGcnebTVTjlVQBNW3dudc7TesEeYz_DlWQkjJmE";
 const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=0`;
 
 let DOLAR_BLUE, INVERSION_DATA, BLOQUE_INFO, PROJ_DATA;
@@ -369,7 +369,8 @@ async function aplicarDatosDeSheet(){
   const iId = col('id'), iBloque = col('bloque'), iLotesQ = col('lotesQuedan'), iLotesT = col('lotesTotal'),
         iTiempo = col('tiempo'), iPos = col('obrasPosesion'), iTot = col('obrasTotal'),
         iGest = col('avanceGestion'), iObra = col('avanceObra'), iEntrega = col('entrega'), iNota = col('nota'),
-        iLotesRem = col('lotesRemanentes'), iCostoEst = col('costoEstimado');
+        iLotesRem = col('lotesRemanentes'), iCostoEst = col('costoEstimado'),
+        iArea = col('areaHa'), iM2 = col('m2Vendibles'), iLotesVend = col('lotesVendidos');
   if(iId === -1) throw new Error('La hoja no tiene columna "id"');
 
   const numOr = (v, fallback) => (v===undefined || v===null || v.trim()==='') ? fallback : Number(v);
@@ -396,6 +397,10 @@ async function aplicarDatosDeSheet(){
       if(iObra>-1) p.avanceObra = numOr(r[iObra], p.avanceObra);
       if(iEntrega>-1 && r[iEntrega] && r[iEntrega].trim()) p.entrega = r[iEntrega].trim();
       if(iNota>-1 && r[iNota] && r[iNota].trim()) p.nota = r[iNota].trim();
+      // Área de campo, m2 vendibles y lotes vendidos (este último a completar más adelante)
+      if(iArea>-1) p.ha = numOr(r[iArea], p.ha);
+      if(iM2>-1) p.m2Vendibles = numOr(r[iM2], p.m2Vendibles);
+      if(iLotesVend>-1) p.lotesVendidos = numOr(r[iLotesVend], p.lotesVendidos);
     }
   });
 }
@@ -757,6 +762,8 @@ function cardHTML(id){
 
       <div class="mini-metrics">
         <div class="mm"><span>Lotes por liberar</span><strong>${inv.lotesQuedan} / ${inv.lotesTotal}</strong><small>${inv.lotesPct}% restante · pendientes de escriturar / disponibles para canjear, ceder o vender</small></div>
+        <div class="mm"><span>m² vendibles</span><strong>${p.m2Vendibles!=null ? Number(p.m2Vendibles).toLocaleString('es-AR') + ' m²' : 'Sin dato'}</strong><small>superficie total vendible del barrio</small></div>
+        <div class="mm"><span>Lotes vendidos</span><strong>${p.lotesVendidos!=null ? p.lotesVendidos : 'Sin dato'}</strong><small>a completar</small></div>
         <div class="mm"><span>Fecha objetivo</span><strong>${inv.tiempo || 'Al 100%'}</strong><small>${obraPct}% de avance de obra · a definir según grado de inversión</small></div>
         <div class="mm"><span>$ Obras para posesión (USD)</span><strong>${fmtMoney(inv.obrasPosesion)}</strong><small>habilita construir + baja presión</small></div>
         <div class="mm"><span>$ Obras total (USD)</span><strong>${fmtMoney(restanteEscritura)}</strong><small>resta después de posesión para escriturar</small></div>
